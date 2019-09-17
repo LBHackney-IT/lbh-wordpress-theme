@@ -78,7 +78,13 @@ input:focus {
 }
 /* header */
 .header {
-
+	width: 100%;
+    float: left;
+    background-color: #00664f;
+    height: 76px;
+    position: relative;
+    margin: 0;
+    z-index: 999;
 }
 /* logo */
 .logo {
@@ -86,6 +92,9 @@ input:focus {
 }
 .logo-img {
 
+}
+main{
+	padding: 100px 0;
 }
 /* nav */
 .nav {
@@ -97,7 +106,23 @@ input:focus {
 }
 /* footer */
 .footer {
-
+	width: 100%;
+    height: auto;
+    background: #00513f;
+    color: #fff;
+    text-align: center;
+    float: left;
+    text-align: left;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    position: relative;
+	padding: 50px 0;
+	margin-top: 100px;
 }
 
 /*------------------------------------*\
@@ -731,7 +756,7 @@ a img.aligncenter {
   .list-inline li {
 	display: inline-block;
   }
-  .wp-block-button__link, .calltoaction, .fasc-button {
+  .wp-block-button__link, .calltoaction, .fasc-button{
 	box-shadow: inset 0 -2px 0 0 #003d2f !important;
 	background-color: #00664f !important;
 	font-weight: 400;
@@ -748,7 +773,25 @@ a img.aligncenter {
 	margin: 20px 20px 10px 0;
 	display: inline-block;
   }
-  .wp-block-button__link:hover, .calltoaction:hover, .fasc-button:hover {
+  .search-submit {
+	box-shadow: inset 0 -2px 0 0 #003d2f !important;
+	background-color: #00664f !important;
+	font-weight: 400;
+	font-family: 'Montserrat';
+	font-size: 19px;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.42;
+	letter-spacing: normal;
+	color: #fff !important;
+	padding: 12px 24px;
+	text-decoration: none;
+	clear: both;
+	margin:  0;
+	display: inline-block;
+  }
+  .wp-block-button__link:hover, .calltoaction:hover, .fasc-button:hover,
+  .search-submit:hover {
 	cursor: pointer;
 	background: #00513f !important;
   }
@@ -968,7 +1011,7 @@ a img.aligncenter {
   }
   .lbhHeaderBlock .lbhContainer .lbhLHeaderLogoContainer {
 	float: left;
-	width: 50%;
+	width: 25%;
   }
   @media (max-width: 768px) {
 	.lbhHeaderBlock .lbhContainer .lbhLHeaderLogoContainer {
@@ -983,7 +1026,7 @@ a img.aligncenter {
   }
   .lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks {
 	float: left;
-	width: 50%;
+	width: 75%;
 	height: 30px;
 	position: relative;
   }
@@ -994,7 +1037,9 @@ a img.aligncenter {
   .lbhHeaderMenuLinks ul li{
 	  float: right;
   }
-  .lbhHeaderMenuLinks ul li a{
+  .lbhHeaderMenuLinks ul li a,
+  .lbhHeaderMenuLinks ul li span
+  {
 	color: white;
 	text-decoration: none;
 	padding: 10px;
@@ -1074,3 +1119,13 @@ a img.aligncenter {
   }
   
 /* header css end */
+
+input[type=text],
+input[type=search]
+ {
+    width: calc(100% - 150px);
+    padding: 10px;
+    border: 2px solid #0b0c0c;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+}

@@ -26,30 +26,45 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-		<!-- wrapper -->
-		<div class="wrapper">
+		
 
 			<!-- header -->
 			<header class="header clear" role="banner">
-
-					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-<!-- 							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img"> -->
-							<h1>
-								Hackney Council
-							</h1>
-						</a>
+				<div class="lbhHeaderBlock">
+					<div class="lbhContainer">
+						<div class="lbhRow">
+							<div class="lbhColumnFull">
+								<a href="https://hackney.gov.uk/">
+									<div class="lbhLHeaderLogoContainer">
+									<a href="<?php echo home_url(); ?>">
+										<img src="<?php the_field('header_logo', 'option'); ?>" alt="Hackney Council Logo" class="lbhHeaderLogo">
+									</a>
+									</div>
+								</a>
+								<div class="lbhHeaderMenuLinks">
+									<ul>
+										<li>
+											<a href="<?php echo home_url(); ?>/search">Search</a>
+										</li>
+										<li>
+											<a href="<?php echo home_url(); ?>/news">News</a>
+										</li>
+										<li>
+											<a href="<?php echo home_url(); ?>/nav">A to Z</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
-					<!-- /logo -->
-
-					<!-- nav -->
-					<nav class="nav" role="navigation">
-						<a href="#content">Jump to content</a>
-						<?php html5blank_nav(); ?>
-					</nav>
-					<!-- /nav -->
-
+				</div>
 			</header>
 			<!-- /header -->
+<!-- wrapper -->
+<div class="wrapper">
+
+	<!-- nav -->
+	<!-- <nav class="nav" role="navigation">
+		<a href="#content">Jump to content</a>
+	</nav> -->
+	<!-- /nav -->

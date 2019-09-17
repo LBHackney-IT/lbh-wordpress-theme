@@ -1,9 +1,11 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main role="main" >
 		<!-- section -->
 		<section>
-
+		<div class="lbhContainer">
+		<div class="lbhRow">
+			<div class="lbhColumnFull">
 			<h1 id="content"><?php the_title(); ?></h1>
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
@@ -61,7 +63,9 @@ endif;
 			<!-- /article -->
 
 		<?php endif; ?>
-
+		</div>
+			</div>
+		</div>
 		</section>
 		<!-- /section -->
 	</main>
