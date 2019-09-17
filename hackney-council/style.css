@@ -1,0 +1,1076 @@
+/*
+	Theme Name: Hackney Council
+	Theme URI: http://hackney.gov.uk
+	Description: A custom theme for Hackney's Web Content API
+	Version: 1.0.0
+	Author: Mohamed Mulla (@tweetzal) | Based on HTML5 Blank by Todd Motto (@toddmotto)
+	Author URI: http://www.designppl.com
+*/
+
+/*------------------------------------*\
+    MAIN
+\*------------------------------------*/
+
+/* global box-sizing */
+*,
+*:after,
+*:before {
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+/* html element 62.5% font-size for REM use */
+html {
+	font-size:62.5%;
+}
+body {
+	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color:#444;
+}
+/* clear */
+.clear:before,
+.clear:after {
+    content:' ';
+    display:table;
+}
+
+.clear:after {
+    clear:both;
+}
+.clear {
+    *zoom:1;
+}
+img {
+	max-width:100%;
+	vertical-align:bottom;
+}
+a {
+	color:#444;
+	text-decoration:none;
+}
+a:hover {
+	color:#444;
+}
+a:focus {
+	outline:0;
+}
+a:hover,
+a:active {
+	outline:0;
+}
+input:focus {
+	outline:0;
+	border:1px solid #04A4CC;
+}
+
+/*------------------------------------*\
+    STRUCTURE
+\*------------------------------------*/
+
+/* wrapper */
+.wrapper {
+	max-width:1280px;
+	width:95%;
+	margin:0 auto;
+	position:relative;
+}
+/* header */
+.header {
+
+}
+/* logo */
+.logo {
+
+}
+.logo-img {
+
+}
+/* nav */
+.nav {
+
+}
+/* sidebar */
+.sidebar {
+
+}
+/* footer */
+.footer {
+
+}
+
+/*------------------------------------*\
+    PAGES
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+    IMAGES
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+	TYPOGRAPHY
+\*------------------------------------*/
+
+@font-face {
+	font-family:'Font-Name';
+	src:url('fonts/font-name.eot');
+	src:url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
+		url('fonts/font-name.woff') format('woff'),
+		url('fonts/font-name.ttf') format('truetype'),
+		url('fonts/font-name.svg#font-name') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+/*------------------------------------*\
+    RESPONSIVE
+\*------------------------------------*/
+
+@media only screen and (min-width:320px) {
+
+}
+@media only screen and (min-width:480px) {
+
+}
+@media only screen and (min-width:768px) {
+
+}
+@media only screen and (min-width:1024px) {
+
+}
+@media only screen and (min-width:1140px) {
+
+}
+@media only screen and (min-width:1280px) {
+
+}
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),
+	   only screen and (min-resolution:144dpi) {
+
+}
+
+/*------------------------------------*\
+    MISC
+\*------------------------------------*/
+
+::selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+::-webkit-selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+::-moz-selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+
+/*------------------------------------*\
+    WORDPRESS CORE
+\*------------------------------------*/
+
+.alignnone {
+	margin:5px 20px 20px 0;
+}
+.aligncenter,
+div.aligncenter {
+	display:block;
+	margin:5px auto 5px auto;
+}
+.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+a img.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+a img.alignnone {
+	margin:5px 20px 20px 0;
+}
+a img.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+a img.aligncenter {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+.wp-caption {
+	background:#FFF;
+	border:1px solid #F0F0F0;
+	max-width:96%;
+	padding:5px 3px 10px;
+	text-align:center;
+}
+.wp-caption.alignnone {
+	margin:5px 20px 20px 0;
+}
+.wp-caption.alignleft {
+	margin:5px 20px 20px 0;
+}
+.wp-caption.alignright {
+	margin:5px 0 20px 20px;
+}
+.wp-caption img {
+	border:0 none;
+	height:auto;
+	margin:0;
+	max-width:98.5%;
+	padding:0;
+	width:auto;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption {
+	font-size:11px;
+	line-height:17px;
+	margin:0;
+	padding:0 4px 5px;
+}
+.sticky {
+
+}
+.bypostauthor {
+
+}
+
+/*------------------------------------*\
+    PRINT
+\*------------------------------------*/
+
+@media print {
+	* {
+		background:transparent !important;
+		color:#000 !important;
+		box-shadow:none !important;
+		text-shadow:none !important;
+	}
+	a,
+	a:visited {
+		text-decoration:underline;
+	}
+	a[href]:after {
+		content:" (" attr(href) ")";
+	}
+	abbr[title]:after {
+		content:" (" attr(title) ")";
+	}
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content:"";
+	}
+	pre,blockquote {
+		border:1px solid #999;
+		page-break-inside:avoid;
+	}
+	thead {
+		display:table-header-group;
+	}
+	tr,img {
+		page-break-inside:avoid;
+	}
+	img {
+		max-width:100% !important;
+	}
+	@page {
+		margin:0.5cm;
+	}
+	p,
+	h2,
+	h3 {
+		orphans:3;
+		widows:3;
+	}
+	h2,
+	h3 {
+		page-break-after:avoid;
+	}
+}
+
+
+/* lbh css start */
+	body {
+	float: left;
+	margin: 0;
+	width: 100%;
+	font-family: 'Montserrat', 'sans-serif';
+	font-size: 20px;
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.42;
+	letter-spacing: normal;
+	color: #000;
+	-webkit-font-smoothing: antialiased;
+  }
+  body b, body strong {
+	font-family: 'Montserrat', 'sans-serif';
+	font-size: 20px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.25;
+	letter-spacing: normal;
+	color: #000;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+  }
+  body p {
+	margin: 12px 0 0 0;
+  }
+  body p + p {
+	margin: 12px 0 0 0;
+  }
+  .lbhContent{
+	margin-bottom: 24px;
+	float: left;
+	width: 100%;
+	font-family:  Montserrat,'sans-serif';
+	font-size: 20px;
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.63;
+	letter-spacing: normal;
+  }
+  h1 {
+	font-family: 'Montserrat', 'sans-serif';
+	font-size: 48px;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.2;
+	letter-spacing: normal;
+	color: #000;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	margin: 60px 0 36px 0;
+  }
+  h2 {
+	font-family: 'Montserrat', 'sans-serif';
+	font-size: 30px;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.2;
+	letter-spacing: normal;
+	color: #000;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	margin: 48px 0 0 0;
+  }
+  h3 {
+	font-family: 'Montserrat', 'sans-serif';
+	font-size: 24px;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.16;
+	letter-spacing: normal;
+	color: #000;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	margin: 36px 0 0 0;
+  }
+  h4 {
+	font-family: 'Montserrat', 'sans-serif';
+	font-size: 20px;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.25;
+	letter-spacing: normal;
+	color: #000;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	margin: 36px 0 0 0;
+  }
+  h5 {
+	font-family: 'Montserrat', 'sans-serif';
+	font-size: 18px;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.25;
+	letter-spacing: normal;
+	color: #000;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	margin: 6px 0 6px 0;
+  }
+  h6 {
+	font-family: 'Montserrat', 'sans-serif';
+	font-size: 16px;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.25;
+	letter-spacing: normal;
+	color: #000;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	margin: 6px 0 6px 0;
+  }
+  iframe {
+	border: none;
+	width: 100%;
+	min-height: 500px;
+	border: solid 1px #eaeaea;
+	margin: 36px 0;
+  }
+  a {
+	color: currentColor;
+  }
+  .wrapper {
+	width: calc(100% - 10vmin);
+	margin: 0 auto;
+  }
+  .lbhtable {
+	overflow-x: auto;
+	width: 100%;
+	float: left;
+	position: relative;
+  }
+  .lbhtable table {
+	border: 0;
+	border-collapse: collapse;
+	margin: 36px 0 36px 0;
+  }
+  .lbhtable table tbody {
+	border: 0;
+  }
+  .lbhtable table tbody tr {
+	border: 0;
+  }
+  .lbhtable table tbody tr td {
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+	border-bottom: solid 1px #bbbdbf;
+	padding: 12px 6px;
+	vertical-align: top;
+  }
+  @media (min-width: 768px) {
+	.lbhtable table tbody tr td {
+	  width: auto;
+	}
+  }
+  @media (min-width: 768px) {
+  }
+
+  /* START FORM */
+		#lbh-form form {
+			width: 100%;
+			float: left;
+			padding: 20px 0 !important;
+			/* background: red; */
+		}
+		#lbh-form form fieldset{
+			width: 100%;
+			float: left;
+			/* background: yellow; */
+			border: none;
+			font-weight: 500;
+			padding: 0;
+		}
+		#lbh-form form .formItem{
+			width: 100%;
+			float: left;
+			margin: 20px 0;
+		}
+
+	/* Styled Radio Buttons */
+
+		/*style wrapper to give some space*/
+		.lbhRadio {
+			position: relative;
+			margin-bottom: 1rem;
+			margin-top: 1rem;
+		}
+
+		/*style label to give some more space*/
+		.lbhRadio label {
+		display: block;
+		padding: 8px 0 10px 60px;
+		}
+
+		/*style and hide original checkbox*/
+		.lbhRadio input {
+		height: 40px;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		width: 40px;
+		}
+
+		/*position new box*/
+		.lbhRadio input + label::before {
+		border: 2px solid;
+		content: "";
+		height: 40px;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 40px;
+		border-radius: 50%;
+		}
+
+		/*radio pseudo element styles*/
+		.lbhRadio input + label::after {
+		content: "";
+		opacity: 0;
+		border: 12px solid;
+		border-radius: 50%;
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		transition: opacity 0.2s ease-in-out;
+		cursor: pointer;
+
+		}
+
+		/*reveal check for 'on' state*/
+		.lbhRadio input:checked + label::after {
+		opacity: 1;
+		cursor: pointer;
+
+		}
+
+		/*focus styles*/
+		.lbhRadio input:focus + label::before {
+		box-shadow: 0 0 0 3px #ffbf47;  
+		cursor: pointer;
+		outline: 3px solid transparent; /* For Windows high contrast mode. */
+		}
+
+	/* End Styled Radio Buttons */
+	/* Start Styled Checkboxes */
+																
+		/*style wrapper to give some space*/
+		.lbhCheckbox {
+			position: relative;
+		margin-bottom: 1rem;
+		margin-top: 1rem;
+		}
+
+		/*style label to give some more space*/
+		.lbhCheckbox label {
+		display: block;
+		padding: 8px 0 10px 60px;
+		}
+
+		/*style and hide original checkbox*/
+		.lbhCheckbox input {
+		height: 40px;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		width: 40px;
+		}
+
+		/*position new box*/
+		.lbhCheckbox input + label::before {
+		border: 2px solid;
+		content: "";
+		height: 40px;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 40px;
+		}
+
+		/*create check symbol with pseudo element*/
+		.lbhCheckbox input + label::after {
+		content: "";
+		border: 4px solid;
+		border-left: 0;
+		border-top: 0;
+		height: 20px;
+		left: 14px;
+		opacity: 0;
+		position: absolute;
+		top: 6px;
+		transform: rotate(45deg);
+		transition: opacity 0.2s ease-in-out;
+		width: 12px;
+		cursor: pointer;
+
+		}
+
+		/*reveal check for 'on' state*/
+		.lbhCheckbox input:checked + label::after {
+		opacity: 1;
+		cursor: pointer;
+
+		}
+		/*focus styles*/
+		.lbhCheckbox input:focus + label::before {
+			box-shadow: 0 0 0 3px #ffbf47;  
+			cursor: pointer;
+			outline: 3px solid transparent; /* For Windows high contrast mode. */
+			}
+
+		/* End Styled Checkboxes */
+		#lbh-form form label,
+		#lbh-form form input{
+			width: 100%;
+			border: none;
+		}
+		#lbh-form form input:focus{
+			box-shadow: 0 0 0 3px #ffbf47;  
+			cursor: pointer;
+			outline: 3px solid transparent; /* For Windows high contrast mode. */
+		}
+		#lbh-form form input[type="email"],
+		#lbh-form form input[type="text"] {
+			height: 40px;
+			border: solid 2px #000;
+			background: #fff;
+			border-radius: 0;
+			width: 100%;
+		}
+		#lbh-form form label[for="checkbox-header"]{
+			width: 100%;
+			float: left;
+			/* background: purple; */
+		}
+		#lbh-form form label[for="checkbox"]{
+			width: 100%;
+			/* float: left; */
+			/* background: purple; */
+		}
+		#lbh-form form input[type="checkbox"]{
+			border: 1px solid black;
+			width: 44px;
+			height: 44px;
+		}
+		#lbh-form form input[type="checkbox"] label{
+			background-color: yellow;
+		}
+		#lbh-form form input[type="email"]::placeholder,
+		#lbh-form form input[type="text"]::placeholder{
+			padding: 6px;
+			font-family: 'Montserrat';
+		}
+
+		#lbh-form form button[type="submit"] {
+			box-shadow: inset 0 -2px 0 0 #003d2f !important;
+			border: none;
+			background-color: #00664f !important;
+			font-weight: 400;
+			font-family: 'Montserrat';
+			font-size: 19px;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: 1.42;
+			letter-spacing: normal;
+			color: #fff;
+			padding: 12px 24px;
+			text-decoration: none;
+			clear: both;
+			margin: 0 20px 10px 0;
+			display: inline-block;
+			height: auto;
+			border-radius: 0;
+			width: auto;
+		}
+		@media (min-width: 768px) {
+			#lbh-form form button {
+			width: auto;
+			}
+		}
+		#lbh-form form button:hover {
+			cursor: pointer;
+			background: #00513f !important;
+		}
+			/*focus styles*/
+		#lbh-form form button:focus {
+			box-shadow: 0 0 0 3px #ffbf47;  
+			cursor: pointer;
+			outline: 3px solid transparent; /* For Windows high contrast mode. */
+		}
+  /* END FORM */
+  /**
+   * article grid
+   */
+  .article-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+/* 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+	grid-gap: 5vmin;
+  }
+  .section-headline {
+	padding: 0 0 0.4em 0;
+	margin: 0 0 5vmin 0;
+	border-bottom: 1px solid #ddd;
+  }
+  .list-inline {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  .list-inline li {
+	display: inline-block;
+  }
+  .wp-block-button__link, .calltoaction, .fasc-button {
+	box-shadow: inset 0 -2px 0 0 #003d2f !important;
+	background-color: #00664f !important;
+	font-weight: 400;
+	font-family: 'Montserrat';
+	font-size: 19px;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.42;
+	letter-spacing: normal;
+	color: #fff !important;
+	padding: 12px 24px;
+	text-decoration: none;
+	clear: both;
+	margin: 20px 20px 10px 0;
+	display: inline-block;
+  }
+  .wp-block-button__link:hover, .calltoaction:hover, .fasc-button:hover {
+	cursor: pointer;
+	background: #00513f !important;
+  }
+  * {
+	box-sizing: border-box;
+  }
+  a {
+	color: #0072ce;
+  }
+  a:focus, div:focus, span:focus {
+	outline: 4px solid #ffc845;
+  }
+  .lbh-breadcrumbs {
+	margin-top: 40px;
+  }
+  .lbh-breadcrumbs .lbh-link-blue, .lbh-breadcrumbs .lbh-link-blue:link {
+	color: #0072ce;
+  }
+  .BackToTop, .fWohKN {
+	width: 100%;
+	float: left;
+	background: #84bd00;
+	height: 50px;
+	color: black;
+	height: 18px;
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #0072ce;
+  }
+  .hackneyHeaderBlock {
+	background-color: #000;
+	width: 100%;
+	height: 120px;
+	float: left;
+  }
+  .lbh-logo {
+	width: 200px;
+	margin-top: 40px;
+  }
+  .headerHackneyLines {
+	width: 100%;
+	float: left;
+	height: auto;
+	position: relative;
+  }
+  .headerDarkGreenLine {
+	background-color: #00664f;
+	width: 100%;
+	height: 4px;
+	float: left;
+	position: absolute;
+	top: 6px;
+  }
+  .headerMiddleGreenLine {
+	background-color: #00b341;
+	width: 100%;
+	height: 3px;
+	float: left;
+	position: absolute;
+	top: 13px;
+  }
+  .headerLightGreenLine {
+	background-color: #84bd00;
+	width: 100%;
+	height: 2px;
+	float: left;
+	position: absolute;
+	top: 19px;
+  }
+  .lbhContainer {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 18px;
+  }
+  @media (min-width: 768px) {
+	.lbhContainer {
+	  padding: 0 15px;
+	}
+  }
+  .lbhRow {
+	margin-right: -18px;
+	margin-left: -18px;
+  }
+  @media (min-width: 768px) {
+	.lbhRow {
+	  margin-right: -15px;
+	  margin-left: -15px;
+	}
+  }
+  .lbhColumnFull {
+	width: 100%;
+	float: left;
+	padding: 0 18px;
+	position: relative;
+	box-sizing: border-box;
+  }
+  @media (min-width: 991px) {
+	.lbhColumnFull {
+	  /* Target devices wider than 768px. */
+	  width: 100%;
+	  padding: 0 15px;
+	}
+  }
+  .lbhColumnTwoThirds {
+	width: 100%;
+	float: left;
+	padding: 0 18px;
+  }
+  @media (min-width: 991px) {
+	.lbhColumnTwoThirds {
+	  width: 66.6666%;
+	  padding: 0 15px;
+	}
+  }
+  .lbhColumnOneThird {
+	width: 100%;
+	float: left;
+	padding: 0 18px;
+  }
+  @media (min-width: 991px) {
+	.lbhColumnOneThird {
+	  width: 33.3333%;
+	  padding: 0 15px;
+	}
+  }
+  .lbhColumnOneFourth {
+	width: 100%;
+	float: left;
+	padding: 0 18px;
+  }
+  @media (min-width: 991px) {
+	.lbhColumnOneFourth {
+	  width: 25%;
+	  padding: 0 15px;
+	}
+  }
+  .lbhHide {
+	display: none;
+  }
+  .wp-block-button {
+	background: yellow;
+  }
+  .wp-block-button__link {
+	box-shadow: inset 0 -2px 0 0 #003d2f;
+	background-color: #00664f;
+	font-weight: 300;
+	font-family: Montserrat;
+	font-size: 19px;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.42;
+	letter-spacing: normal;
+	color: #fff;
+	padding: 10px 20px;
+  }
+  @keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  .wpFeaturedMsg {
+	padding: 24px 36px;
+	margin: 0;
+	background-color: rgba(164, 214, 94, 0.2);
+	border-left: 8px solid #84bd00;
+	width: 100%;
+	float: left;
+	box-sizing: border-box;
+	margin-bottom: 36px;
+  }
+  .wpFeaturedMsg h2 {
+	margin-top: 0;
+  }
+  .wpFeaturedMsg p {
+	color: black;
+  }
+  .wpFeaturedMsg p a {
+	color: #025ea6;
+  }
+  .wpFeaturedMsg p .wp-block-button__link, .wpFeaturedMsg p .calltoaction, .wpFeaturedMsg p .fasc-button {
+	color: white !important;
+  }
+  
+.lbhFooter{
+	width: 100%;
+	float: left;
+	background-color: black;
+	padding: 40px 0;
+	text-align: center;
+}
+.lbhFooter a{
+	color: white;
+	text-decoration: none;
+}
+
+/* lbh css end */
+/* header css start */
+.lbhHeaderBlock {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.95);
+	height: 90px;
+	position: relative;
+	margin: 0 0 0 0;
+  }
+  .lbhHeaderBlock .lbhContainer {
+	max-width: 960px;
+	margin: 0 auto;
+	cursor: pointer;
+  }
+  .lbhHeaderBlock .lbhContainer .lbhLHeaderLogoContainer {
+	float: left;
+	width: 50%;
+  }
+  @media (max-width: 768px) {
+	.lbhHeaderBlock .lbhContainer .lbhLHeaderLogoContainer {
+	  /* Target devices wider than 768px. */
+	  margin: 0 0 0 15px;
+	}
+  }
+  .lbhHeaderBlock .lbhContainer .lbhLHeaderLogoContainer .lbhHeaderLogo {
+	padding-top: 27px;
+	margin-top: auto;
+	width: 200px;
+  }
+  .lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks {
+	float: left;
+	width: 50%;
+	height: 30px;
+	position: relative;
+  }
+  .lbhHeaderMenuLinks ul{
+	list-style-type: none;
+	margin-left: 0;
+  }
+  .lbhHeaderMenuLinks ul li{
+	  float: right;
+  }
+  .lbhHeaderMenuLinks ul li a{
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	float: left;
+	font-weight: 600;
+}
+.lbhHeaderMenuLinks ul li a:hover{
+	border-bottom: 1px solid white;
+}
+  @media (max-width: 768px) {
+	.lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks {
+	  /* Target devices wider than 768px. */
+	  display: none;
+	}
+  }
+  .lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks .lbhHeaderSearch {
+	/* float: left; */
+	/* width: 250px; */
+	margin-top: 25px;
+	width: 300px;
+	height: 40px;
+	position: relative;
+	float: right;
+  }
+  .lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks .lbhHeaderSearch .lbhHeaderSearchInput {
+	width: 100%;
+	height: 30px;
+	margin-top: 24px;
+	border: solid 1px #00664f;
+	background-color: #fff;
+	padding: 5px;
+	float: left;
+	font-weight: 300;
+	font-family: Montserrat;
+	font-size: 19px;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.42;
+	letter-spacing: normal;
+	color: #000;
+  }
+  .lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks .lbhHeaderSearch .lbhHeaderSearchInput:focus {
+	border: solid 3px #ffbf47;
+  }
+  .lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks .lbhHeaderSearch .lbhHeaderSearchButton {
+	width: 39px;
+	height: 42px;
+	background-image: url("https://images.ctfassets.net/s2o0gwcffln0/5XlaPzI69uTLTggpQ2cXWS/8bddacd35ff9e8c49c4c2b5c7215ebea/lbh-search.png?h=250");
+	background-repeat: no-repeat;
+	background-position: center center;
+	color: #fff;
+	float: right;
+	text-align: center;
+  }
+  .lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks .lbhHeaderSearch .lbhHeaderSearchButton:hover {
+	cursor: pointer;
+  }
+  .lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks .lbhHeaderSearch .lbhHeaderSearchButton:focus {
+	border: solid 3px #ffbf47;
+  }
+  .lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks .lbhOneAccountLogin {
+	float: left;
+  }
+  .lbhHeaderBlock .lbhContainer .lbhHeaderMenuLinks .lbhOneAccountLogin a {
+	float: left;
+	padding-top: 32px;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.94;
+	letter-spacing: normal;
+	text-align: center;
+	color: #fff;
+	margin-right: 36px;
+  }
+  
+/* header css end */
