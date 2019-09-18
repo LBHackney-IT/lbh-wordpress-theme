@@ -37,7 +37,7 @@
 								<a href="https://hackney.gov.uk/">
 									<div class="lbhLHeaderLogoContainer">
 									<a href="<?php echo home_url(); ?>">
-										<img src="<?php the_field('header_logo', 'option'); ?>" alt="Hackney Council Logo" class="lbhHeaderLogo">
+										<img src="<?php the_field('header_logo', 'option'); ?>" alt="Hackney Council Logo" class="lbhHeaderLogo">&nbsp;<strong>Intranet</strong>
 									</a>
 									</div>
 								</a>
@@ -61,7 +61,6 @@
 			</header>
 			<!-- /header -->
 <!-- wrapper -->
-<div class="wrapper">
 
 	<!-- nav -->
 	<!-- <nav class="nav" role="navigation">

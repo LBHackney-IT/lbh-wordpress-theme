@@ -3,70 +3,104 @@
 	<main role="main">
 		<!-- section -->
 		<section>
-		<div class="lbhContainer">
-		<div class="lbhRow">
-			<div class="lbhColumnFull">
+			<div class="heroSection" blur="0" style="background-image:url(<?php the_field('hero_banner', 'option'); ?>)" alt="Hackney Town Hall">
+				<div class="opacLayer"></div>
+				<div class="lbhContainer" >
+					<div class="lbhRow">
+						<div class="lbhColumnTwoThirds">
+							<div class="copySectionOne">
+								<h1><?php the_field('hero_title', 'option'); ?></h1>
+								<div>
+									<?php the_field('hero_intro_text', 'option'); ?>
+								</div>
+							</div>
+						</div>
+						<div class="lbhColumnOneThird">
+							<div class="popularTasks">
+								<div>
+									<h3><?php the_field('popular_tasks_title', 'option'); ?></h3>
+										<ul>
+											<?php
 
-			<h1 id="content"><?php the_title(); ?></h1>
+												// check if the repeater field has rows of data
+												if( have_rows('popular_tasks', 'option') ):
 
-			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+													// loop through the rows of data
+													while ( have_rows('popular_tasks', 'option') ) : the_row();
+													
+														// display a sub field value
+														// the_sub_field('sub_field_name');
+														?>
+															<li><a href="<?php the_sub_field('cta_url'); ?>"><?php the_sub_field('cta_url_text'); ?></a></li>
+														<?php
 
-				<!-- article -->
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+													endwhile;
 
-					<?php //the_content(); ?>
-					
-					<?php
-						// check if the flexible content field has rows of data
-						if( have_rows('lbh_page_builder') ):
+												else :
+
+													// no rows found
+
+												endif;
+
+											?>
+										</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="findOutMoreSection">
+				<div class="lbhHomeContainer">
+					<div class="lbhRow">
+						<div class="lbhColumnFull">
+							<h2>Quick links</h2>
+						</div>
+					</div>
+					<div class="lbhRow">
+						<?php
+
+						// check if the repeater field has rows of data
+						if( have_rows('find_out_more_cards', 'option') ):
 
 							// loop through the rows of data
-							while ( have_rows('lbh_page_builder') ) : the_row();
+							while ( have_rows('find_out_more_cards', 'option') ) : the_row();
 
-								if( get_row_layout() == 'content' ):
+								// display a sub field value
+								// the_sub_field('sub_field_name');
+								?>
+									<div class="lbhColumnOneThird">
+										<div class="findOutMoreCard" style="background-image:'url(<?php the_sub_field('icon'); ?>)">
+											<h3><?php the_sub_field('title'); ?></h3>
+											<div class="content">
+												<p>
+													<?php the_sub_field('description'); ?>
+												</p>
+											</div>
+											<a href="<?php the_sub_field('cta_url'); ?>" >
+												<button class="calltoactionInverted">
+												<?php the_sub_field('cta_url_text'); ?>
+												</button>
+											</a>
+										</div>
+									</div>
 
-									the_sub_field('content');
-
-						//         elseif( get_row_layout() == 'download' ): 
-
-						//         	$file = get_sub_field('file');
-
-								endif;
+								<?php
 
 							endwhile;
 
 						else :
 
-							// no layouts found
+							// no rows found
 
 						endif;
-					?>
 
-					<?php comments_template( '', true ); // Remove if you don't want comments ?>
-
-					<br class="clear">
-
-					<?php edit_post_link(); ?>
-
-				</article>
-				<!-- /article -->
-
-			<?php endwhile; ?>
-
-			<?php else: ?>
-
-				<!-- article -->
-				<article>
-
-					<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-				</article>
-				<!-- /article -->
-
-			<?php endif; ?>
+						?>
+				
+					</div>
+				</div>
 			</div>
-			</div>
-		</div>
 		</section>
 		<!-- /section -->
 	</main>
