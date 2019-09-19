@@ -6,7 +6,7 @@
 			<div class="lbhContainer">
 				<div class="lbhRow">
 					<div class="lbhColumnFull">
-						<h1><?php _e( 'Archives', 'html5blank' ); ?></h1>
+						<h1><?php  single_term_title(); ?></h1>
 
 						<?php get_template_part('loop'); ?>
 

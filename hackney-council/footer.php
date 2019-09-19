@@ -25,6 +25,26 @@
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
+
+
+		</script>
+
+		<script>
+		// window.onload = function() {
+			// if (window.jQuery) {  
+			// 	// jQuery is loaded  
+			// 	alert("Yeah!");
+			// } else {
+			// 	// jQuery is not loaded
+			// 	alert("Doesn't Work");
+			// }
+		// }
+
+		</script>
+	
+		<script>
+			// var $ = jQuery;
+			
 		</script>
 
 	</body>

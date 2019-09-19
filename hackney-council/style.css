@@ -138,6 +138,7 @@ main{
     letter-spacing: normal;
     position: relative;
 	padding: 50px 0;
+	margin-top: 100px;
 }
 
 /*------------------------------------*\
@@ -1418,3 +1419,558 @@ input[type=search]
   
   /* end cards section */
   /*Front page css end */
+
+  /* Single page content start */
+
+.sectionWideAnnouncements {
+	background: rgba(206, 220, 0, 0.1);
+	width: 100%;
+	float: left;
+	padding: 0;
+	color: black;
+	border-top: 1px solid #84bd00;
+	border-bottom: 1px solid #84bd00;
+	padding: 24px 18px;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+	color: #000000;
+	-webkit-font-smoothing: antialiased;
+	width: 100%;
+	float: left;
+  }
+  @media (min-width: 768px) {
+	.sectionWideAnnouncements {
+	  padding: 24px 0;
+	}
+  }
+  .sectionWideAnnouncements h2, .sectionWideAnnouncements h3, .sectionWideAnnouncements h4 {
+	font-family: Montserrat;
+	font-size: 24px;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.25;
+	letter-spacing: normal;
+	color: #000000;
+	-webkit-font-smoothing: antialiased;
+	margin: 0 0 12px 0;
+	padding: 0;
+	width: 100%;
+	float: left;
+  }
+  .sectionWideAnnouncements p {
+	margin: 0;
+  }
+  .sectionWideAnnouncements p a {
+	color: #025ea6;
+  }
+  
+  .singlePage {
+	width: 100%;
+	float: left;
+	word-wrap: break-word;
+  }
+  .singlePage .readingTime {
+	color: #525a5b;
+	width: auto;
+	float: left;
+	padding: 6px 12px 6px 0;
+	font-size: 14px;
+	font-weight: 500;
+  }
+  .singlePage .pageContent {
+	margin-bottom: 24px;
+	float: left;
+	width: 100%;
+	font-family: Montserrat, "sans-serif";
+	font-size: 16px;
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.63;
+	letter-spacing: normal;
+  }
+  @media (min-width: 768px) {
+	.singlePage .pageContent {
+	  font-family: Montserrat;
+	  font-size: 19px;
+	  font-weight: 300;
+	  font-style: normal;
+	  font-stretch: normal;
+	  line-height: 1.58;
+	  letter-spacing: normal;
+	  color: #000000;
+	}
+  }
+  .singlePage .pageContent ul {
+	margin: 6px 0 24px 0;
+  }
+  .singlePage .pageContent img {
+	display: block;
+	width: 100% !important;
+	height: auto !important;
+  }
+  .singlePage .pageContent a code {
+	box-shadow: inset 0 -2px 0 0 #003d2f;
+	background-color: #00664f;
+	font-weight: 300;
+	font-family: Montserrat;
+	font-size: 19px;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.42;
+	letter-spacing: normal;
+	color: #ffffff;
+	padding: 10px 20px;
+  }
+  .singlePage .pageContent .wpContent {
+	width: 100%;
+	float: left;
+	margin-bottom: 36px;
+  }
+  .singlePage .pageContent .wpContent .calltoaction {
+	color: white;
+  }
+  .singlePage .pageContent .wpAccordions {
+	width: 100%;
+	float: left;
+	margin: 30px 0 30px 0;
+  }
+  .singlePage .pageContent .wpAccordions .accordion .accordionItem {
+	border-bottom: solid 2px #bfc1c3;
+	width: 100%;
+	float: left;
+  }
+  .singlePage .pageContent .wpAccordions .accordion .accordionItem:nth-child(1) {
+	border-top: solid 2px #bfc1c3;
+  }
+  .singlePage .pageContent .wpAccordions .accordion .accordionItem .accordionItemHeading .accordionItemButton {
+	padding: 20px;
+	font-family: Montserrat;
+	font-size: 19px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.16;
+	letter-spacing: normal;
+	cursor: pointer;
+	position: relative;
+	width: 100%;
+	float: left;
+  }
+  .singlePage .pageContent .wpAccordions .accordion .accordionItem .accordionItemHeading .accordionItemButton[aria-expanded=false]:after {
+	font-family: "Font Awesome 5 Free";
+	content: "";
+	position: absolute;
+	right: 20px;
+  }
+  .singlePage .pageContent .wpAccordions .accordion .accordionItem .accordionItemHeading .accordionItemButton[aria-expanded=true] {
+	background: #f8f8f8;
+	border-bottom: none;
+  }
+  .singlePage .pageContent .wpAccordions .accordion .accordionItem .accordionItemHeading .accordionItemButton[aria-expanded=true]:nth-child(1) {
+	border-top: none;
+  }
+  .singlePage .pageContent .wpAccordions .accordion .accordionItem .accordionItemHeading .accordionItemButton[aria-expanded=true]:after {
+	font-family: "Font Awesome 5 Free";
+	content: "";
+	position: absolute;
+	right: 20px;
+  }
+  .singlePage .pageContent .wpAccordions .accordion .accordionItem .accordionItemPanel {
+	padding: 20px;
+	font-family: Montserrat;
+	font-size: 19px;
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.58;
+	letter-spacing: normal;
+	width: 100%;
+	float: left;
+  }
+  .singlePage .pageContent .wpFeaturedMsg {
+	padding: 36px 24px;
+	margin: 0;
+	background-color: rgba(164, 214, 94, 0.2);
+	border-left: 8px solid #84bd00;
+	width: 100%;
+	float: left;
+	box-sizing: border-box;
+	margin-bottom: 36px;
+  }
+  .singlePage .pageContent .wpFeaturedMsg h2, .singlePage .pageContent .wpFeaturedMsg h3 {
+	margin-top: 0;
+	font-size: 24px;
+  }
+  .singlePage .pageContent .wpFeaturedMsg p {
+	color: black;
+  }
+  .singlePage .pageContent .wpFeaturedMsg p a {
+	color: #025ea6;
+  }
+  .singlePage .pageContent .wpFeaturedMsg p .wp-block-button__link,
+  .singlePage .pageContent .wpFeaturedMsg p .calltoaction,
+  .singlePage .pageContent .wpFeaturedMsg p .fasc-button {
+	color: white !important;
+  }
+  .singlePage .pageContent .wpAnchorLinks {
+	width: 100%;
+	float: left;
+	border-bottom: solid 2px #dee0e2;
+	padding-bottom: 36px;
+	margin-bottom: 36px;
+  }
+  .singlePage .pageContent .wpAnchorLinks ul {
+	list-style-type: none;
+	margin: 0;
+  }
+  .singlePage .pageContent .wpAnchorLinks ul li a {
+	text-decoration: none;
+	color: #0072CE;
+  }
+  .singlePage .pageContent .wpAnchorLinks ul li a:hover {
+	border-bottom: 1px solid #0085ca;
+	color: #0085ca;
+  }
+  .singlePage .pageContent .wpAnchorLinks ul li a:hover:before {
+	text-decoration: none;
+  }
+  .singlePage .pageContent .wpAnchorLinks ul li a:visited {
+	text-decoration: underline;
+	color: #803187;
+	border-bottom: 1px solid #803187;
+  }
+  .singlePage .pageContent .wpAnchorLinks ul li a:active {
+	border-bottom: 1px solid #2b8cc4;
+	color: #2b8cc4;
+  }
+  .singlePage .pageContent .wpAnchorLinks ul li a:before {
+	content: "— ";
+	margin-left: -26px;
+	padding-right: 6px;
+	color: #000000;
+  }
+  .singlePage .pageContent .wpIframes {
+	width: 100%;
+	float: left;
+	margin: 36px 0;
+  }
+  .singlePage .pageContent .wpIframes iframe {
+	width: 100% !important;
+  }
+  .singlePage .pageContent .imageBlockContainer {
+	width: 100%;
+	float: left;
+	margin: 36px 0;
+  }
+  .singlePage .pageContent .imageBlockContainer .wpSingleImage {
+	width: 100%;
+	float: left;
+	height: 640px;
+	background-color: #d8d8d8;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+  }
+  @media (min-width: 991px) {
+	.singlePage .pageContent .imageBlockContainer .wpSingleImage {
+	  width: 100%;
+	}
+  }
+  .singlePage .pageContent .imageBlockContainer .wpSingleImage span {
+	width: 100%;
+	float: left;
+	background: #f8f8f8;
+	position: absolute;
+	min-height: 70px;
+	bottom: 0;
+	padding: 12px;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+	overflow: hidden;
+  }
+  .singlePage .pageContent .imageBlockContainer .wpDoubleImageLeft {
+	width: 100%;
+	margin: 0 0 24px 0;
+	float: left;
+	height: 640px;
+	background-color: #ffffff;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+  }
+  @media (min-width: 991px) {
+	.singlePage .pageContent .imageBlockContainer .wpDoubleImageLeft {
+	  width: 49%;
+	  margin: 0 1% 0 0;
+	}
+  }
+  .singlePage .pageContent .imageBlockContainer .wpDoubleImageLeft span {
+	width: 100%;
+	float: left;
+	background: #ffffff;
+	position: absolute;
+	min-height: 70px;
+	bottom: 0;
+	padding: 12px;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+	overflow: hidden;
+  }
+  .singlePage .pageContent .imageBlockContainer .wpDoubleImageRight {
+	width: 100%;
+	margin: 0 0 24px 0;
+	float: left;
+	height: 640px;
+	background-color: #ffffff;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+  }
+  @media (min-width: 991px) {
+	.singlePage .pageContent .imageBlockContainer .wpDoubleImageRight {
+	  width: 49%;
+	  margin: 0 0 0 1%;
+	}
+  }
+  .singlePage .pageContent .imageBlockContainer .wpDoubleImageRight span {
+	width: 100%;
+	float: left;
+	background: #ffffff;
+	position: absolute;
+	min-height: 70px;
+	bottom: 0;
+	padding: 12px;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+	overflow: hidden;
+  }
+  .singlePage .pageContent .imageBlockContainer .wpTripleImageLeft {
+	width: 100%;
+	margin: 0 0 24px 0;
+	float: left;
+	height: 640px;
+	background-color: #d8d8d8;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+  }
+  @media (min-width: 991px) {
+	.singlePage .pageContent .imageBlockContainer .wpTripleImageLeft {
+	  width: 32%;
+	  margin: 0 2% 0 0;
+	}
+  }
+  .singlePage .pageContent .imageBlockContainer .wpTripleImageLeft span {
+	width: 100%;
+	float: left;
+	background: #f8f8f8;
+	position: absolute;
+	min-height: 70px;
+	bottom: 0;
+	padding: 12px;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+	overflow: hidden;
+  }
+  .singlePage .pageContent .imageBlockContainer .wpTripleImageMiddle {
+	width: 100%;
+	margin: 0 0 24px 0;
+	float: left;
+	height: 640px;
+	background-color: #d8d8d8;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+  }
+  @media (min-width: 991px) {
+	.singlePage .pageContent .imageBlockContainer .wpTripleImageMiddle {
+	  width: 32%;
+	  margin-left: 0%;
+	}
+  }
+  .singlePage .pageContent .imageBlockContainer .wpTripleImageMiddle span {
+	width: 100%;
+	float: left;
+	background: #f8f8f8;
+	position: absolute;
+	min-height: 70px;
+	bottom: 0;
+	padding: 12px;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+	overflow: hidden;
+  }
+  .singlePage .pageContent .imageBlockContainer .wpTripleImageRight {
+	width: 100%;
+	margin-bottom: 0 0 24px 0;
+	float: left;
+	height: 640px;
+	background-color: #d8d8d8;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+  }
+  @media (min-width: 991px) {
+	.singlePage .pageContent .imageBlockContainer .wpTripleImageRight {
+	  width: 32%;
+	  margin: 0 0 0 2%;
+	}
+  }
+  .singlePage .pageContent .imageBlockContainer .wpTripleImageRight span {
+	width: 100%;
+	float: left;
+	background: #f8f8f8;
+	position: absolute;
+	min-height: 70px;
+	bottom: 0;
+	padding: 12px;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+	overflow: hidden;
+  }
+  
+  .contactHr {
+	border-bottom: 5px solid #00664f;
+	width: calc(100% + 36px);
+	margin-left: -18px;
+  }
+  @media (min-width: 768px) {
+	.contactHr {
+	  width: 100%;
+	  margin: 0;
+	}
+  }
+  
+  .pageUpdated {
+	margin-top: 20px;
+	float: left;
+	font-size: 14px;
+	font-weight: 500;
+  }
+  /* Single page content end */
+  .accordion-container {
+	position: relative;
+	border: none;
+	border-top: none;
+	outline: 0;
+	cursor: pointer;
+	width: 100%;
+    float: left;
+	margin: 0 0 36px 0;
+	border-top: solid 2px #bfc1c3;
+  }
+  
+  .accordion-container .article-title {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 24px 12px;
+	font-size: 1.25em;
+	font-weight: normal;
+	color: #000;
+	background: #fff;
+	border-bottom: solid 2px #bfc1c3;
+	cursor: pointer;
+	font-family: Montserrat;
+	font-size: 19px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.16;
+	letter-spacing: normal;
+	color: #000000;
+  }
+  
+  .accordion-container .article-title:hover,
+  .accordion-container .article-title:active,
+  .accordion-container .content-entry.open .article-title {
+	background-color: #f8f8f8;
+	color: black;
+  }
+  
+  .accordion-container .article-title:hover i:before,
+  .accordion-container .article-title:hover i:active,
+  .accordion-container .content-entry.open i {
+	color: white;
+  }
+  
+  .article-title{
+	position: relative;
+  }
+  
+  .article-title:after {
+	content: "+ ";
+	position: absolute;
+	right: 25px;
+	top: 15%;
+	transition: all 0.2s ease-in-out;
+	display: block;
+	width: 8px;
+	height: 8px;
+	font-size: 1.5em;
+
+	/* border-top: solid 2px #fff;
+	border-right: solid 2px #fff;
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg); */
+  }
+  
+  .article-title.open:after {
+	/* -webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg); */
+	top: 15%;
+	content: "- ";
+	font-size: 1.5em;
+	
+  }
+  
+  .accordion-content {
+	display: none;
+	padding-left: 12px;
+	font-family: Montserrat;
+	font-size: 19px;
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.58;
+	letter-spacing: normal;
+	color: #000000;
+  }
+  
