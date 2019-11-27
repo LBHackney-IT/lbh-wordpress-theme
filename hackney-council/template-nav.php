@@ -18,7 +18,7 @@
 				?>
 			</ul>
 			<hr>
-		<?php html5blank_nav(); ?>
+		<?php //html5blank_nav(); ?>
 		</div>
 			</div>
 		</div>

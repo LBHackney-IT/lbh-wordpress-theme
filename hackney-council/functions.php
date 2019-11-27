@@ -118,7 +118,7 @@ function html5blank_styles()
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.1', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 }
 
@@ -342,11 +342,11 @@ function html5blankcomments($comment, $args, $depth)
 // Add Actions
 add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
-add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
+// add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
-add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
+// add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+// add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
 // Remove Actions
@@ -711,6 +711,7 @@ function add_custom_dashboard_widget() {
 add_action('wp_dashboard_setup', 'add_custom_dashboard_widget');
 
 // Set a default service on pages to fix build breaking when no service is set
+
 add_action( 'save_post', 'set_post_default_category', 10,3 );
  
 function set_post_default_category( $post_id, $post, $update ) {
@@ -718,17 +719,23 @@ function set_post_default_category( $post_id, $post, $update ) {
     if ( $update ){
         return;
     }
-     
-    // Only set for post_type = post!
-    if ( 'page' !== $post->post_type ) {
-        return;
-    }
-     
-    // Get the default term using the slug, its more portable!
+      // Get the default term using the slug, its more portable!
     $term = get_term_by( 'slug', 'pages', 'service' );
+	$cat = get_term_by( 'slug', 'uncategorised', 'category' );
+
+    // Only set for post_type = post!
+    if ( 'page' == $post->post_type ) {
+        	wp_set_post_terms( $post_id, $term->term_id, 'service', true );
+    }else if ( 'post' == $post->post_type ) {
+        	wp_set_post_terms( $post_id, $cat->term_id, 'category', true );
+    }else{
+		return;
+	}
+     
+   
  
-    wp_set_post_terms( $post_id, $term->term_id, 'service', true );
 }
+
 
 //Run update if page is lbhrobot for services but run every time for pages
   
@@ -768,4 +775,37 @@ function set_post_default_category( $post_id, $post, $update ) {
 */
 // End update if page is lbhrobot
 
+// login screen updates
+function smallenvelop_login_message( $message ) {
+    if ( empty($message) ){
+        return "<p><strong>Are you a Hackney Council or Hackney Learning Trust user? <br><br>Login to the intranet by entering your work email and password</strong></p><br><br>";
+    } else {
+        return $message;
+    }
+}
+
+add_filter( 'login_message', 'smallenvelop_login_message' );
+
+function my_custom_login_logo() {
+    echo '<style type="text/css">
+    h1 a {background-image:url(http://intranet.hackney.gov.uk/wp-content/uploads/lbh-intranet-logo.png)!important;  background-size: contain!important; width: auto!important; height: auto!important; margin: 30px auto!important }
+    </style>';
+}
+add_filter( 'login_head', 'my_custom_login_logo' );
+
+function changeBgColor() {
+    echo '
+    <style type="text/css">
+    body.login{ 
+        background-color: #672146!important;
+    }
+    #login strong{
+        color: white;
+    }
+    .login #backtoblog{
+        display: none;
+    }
+    </style>';
+}
+add_action('login_head', 'changeBgColor');
 ?>
