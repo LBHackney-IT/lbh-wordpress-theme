@@ -13,7 +13,7 @@
 									<a 
 									href="https://drive.google.com/"
 									style="
-										background-image:url('http://intranet.hackney.gov.uk/wp-content/uploads/drive.png');
+										background-image:url('https://intranet.hackney.gov.uk/wp-content/uploads/drive.png');
 										background-size: contain;
 										background-repeat: no-repeat;
 										background-position: center;
@@ -27,7 +27,7 @@
 									<a 
 									href="https://plus.google.com/"
 									style="
-										background-image:url('http://intranet.hackney.gov.uk/wp-content/uploads/official-google-plus-logo-900x900.jpg');
+										background-image:url('https://intranet.hackney.gov.uk/wp-content/uploads/official-google-plus-logo-900x900.jpg');
 										background-size: contain;
 										background-repeat: no-repeat;
 										background-position: center;
@@ -41,7 +41,7 @@
 									<a 
 									href="https://contacts.google.com/"
 									style="
-										background-image:url('http://intranet.hackney.gov.uk/wp-content/uploads/google-plus-profile-2.png');
+										background-image:url('https://intranet.hackney.gov.uk/wp-content/uploads/google-plus-profile-2.png');
 										background-size: contain;
 										background-repeat: no-repeat;
 										background-position: center;
@@ -55,7 +55,7 @@
 									<a 
 									href="https://mail.google.com/"
 									style="
-										background-image:url('http://intranet.hackney.gov.uk/wp-content/uploads/gmail.png');
+										background-image:url('https://intranet.hackney.gov.uk/wp-content/uploads/gmail.png');
 										background-size: contain;
 										background-repeat: no-repeat;
 										background-position: center;
@@ -116,20 +116,22 @@
 			</div>
 			<div class="headlinesSection">
 				<div class="lbhContainer">
-					<div class="lbhRow">
-						<div class="lbhColumnFull">
-							<h2>Highlights</h2>
+					<?php if (get_field('headlines_title', 'option')): ?>
+						<div class="lbhRow">
+							<div class="lbhColumnFull">
+								<h2><?php the_field('headlines_title', 'option'); ?></h2>
+							</div>
 						</div>
-					</div>
+					<?php endif; ?>
 					<div class="lbhRow">
 						<ul class="headlineCards">
 						<?php
 
 						// check if the repeater field has rows of data
-						if( have_rows('headline_cards', 'options') ):
+						if( have_rows('headline_cards', 'option') ):
 
 							// loop through the rows of data
-							while ( have_rows('headline_cards', 'options') ) : the_row();
+							while ( have_rows('headline_cards', 'option') ) : the_row();
 
 								?>
 										<li class="lbhColumnOneThird">
@@ -210,11 +212,13 @@
 			</div>
 			<div class="councilNewsSection">
 				<div class="lbhHomeContainer">
-					<div class="lbhRow">
-						<div class="lbhColumnFull">
-							<h2><?php the_field('news_section_title', 'option'); ?></h2>
+					<?php if (get_field('news_section_title', 'option')): ?>
+						<div class="lbhRow">
+							<div class="lbhColumnFull">
+								<h2><?php the_field('news_section_title', 'option'); ?></h2>
+							</div>
 						</div>
-					</div>
+					<?php endif; ?>
 					<div class="lbhRow">
 							<?php
 
@@ -257,7 +261,7 @@
 
 							?>
 						<div class="lbhColumnFull">
-							<a href="http://intranet.hackney.gov.uk/news">
+							<a href="https://intranet.hackney.gov.uk/news">
 								<button class="callToAction" >Read all news about Hackney Council</button>
 							</a>
 						</div>
@@ -266,11 +270,13 @@
 			</div>
 			<div class="findOutMoreSection">
 				<div class="lbhHomeContainer">
-					<div class="lbhRow">
-						<div class="lbhColumnFull">
-							<h2><?php the_field('find_out_more_title', 'option'); ?></h2>
+					<?php if (get_field('find_out_more_title', 'option')): ?>
+						<div class="lbhRow">
+							<div class="lbhColumnFull">
+								<h2><?php the_field('find_out_more_title', 'option'); ?></h2>
+							</div>
 						</div>
-					</div>
+					<?php endif; ?>
 					<div class="lbhRow">
 						<?php
 
@@ -326,7 +332,7 @@
 						<div class="lbhColumnOneThird">
 							<div class="facebook">
 								<div class="hackneyBlackLogo">
-									<img src="http://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
+									<img src="https://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
 									<div>@hackneycouncil</div>
 								</div>
 								<span>
@@ -335,14 +341,14 @@
 									<!-- <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhackneycouncil%2F&tabs=timeline&&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=250143628337727" width="720" height="500"  scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe> -->
 									<!-- <iframe width="560" height="530" src="https://www.plus.google.com/" frameborder="0"></iframe> -->
 									<a href="https://plus.google.com/communities/111335090618317296762" target="_blank">
-										<img src="http://intranet.hackney.gov.uk/wp-content/uploads/image-1.png" style="margin-top: 35px;"/>
+										<img src="https://intranet.hackney.gov.uk/wp-content/uploads/image-1.png" style="margin-top: 35px;"/>
 									</a>
 							</div>
 						</div>
 						<div class="lbhColumnOneThird">
 							<div class="youtube">
 								<div class="hackneyBlackLogo">
-									<img src="http://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
+									<img src="https://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
 									<div>hackneycouncil</div>
 								</div>
 								<span>
@@ -355,7 +361,7 @@
 						<div class="lbhColumnOneThird">
 							<div class="twitter">
 								<div class="hackneyBlackLogo">
-									<img src="http://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
+									<img src="https://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
 									<div>@hackneycouncil</div>
 								</div>
 								<span>

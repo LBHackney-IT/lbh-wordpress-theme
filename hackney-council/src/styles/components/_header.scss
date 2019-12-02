@@ -1,4 +1,21 @@
 .lbh-header {
+  &__logo--svg {
+    display: none;
+
+    .svg & {
+      display: block;
+    }
+  }
+
+  &__logo--png {
+    display: block;
+    margin-top: 0;
+
+    .svg & {
+      display: none;
+    }
+  }
+
   &__nav {
     display: flex;
     margin-top: 0;

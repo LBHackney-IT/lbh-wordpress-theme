@@ -6,7 +6,7 @@
 			<div class="lbhContainer">
 				<div class="lbhRow">
 					<div class="lbhColumnFull">
-					<h1 id="content">Search ....</h1>
+					<h1 id="content">Search</h1>
 						<?php get_template_part('searchform'); ?>
 					</div>
 				</div>
