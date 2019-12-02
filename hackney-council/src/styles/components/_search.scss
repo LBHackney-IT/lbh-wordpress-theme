@@ -1,0 +1,17 @@
+.lbh-search {
+  display: flex;
+
+  .lbh-input {
+    box-sizing: border-box;
+    height: 48px;
+    padding-left: 12px;
+  }
+
+  .lbh-button {
+    box-sizing: border-box;
+    width: auto;
+    height: 48px;
+    border-radius: 0 4px 4px 0;
+    box-shadow: none;
+  }
+}

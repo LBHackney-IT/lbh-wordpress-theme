@@ -1,0 +1,74 @@
+.lbh-content {
+  @include lbh-font;
+
+  h1,
+  .lbh-heading-h1 {
+    @include lbh-heading-h1;
+  }
+
+  h2,
+  .lbh-heading-h2 {
+    @include lbh-heading-h2;
+  }
+
+  h3,
+  .lbh-heading-h3 {
+    @include lbh-heading-h3;
+  }
+
+  h4,
+  .lbh-heading-h4 {
+    @include lbh-heading-h4;
+  }
+
+  h5,
+  .lbh-heading-h5 {
+    @include lbh-heading-h5;
+  }
+
+  h6,
+  .lbh-heading-h6 {
+    @include lbh-heading-h6;
+  }
+
+  p {
+    @include lbh-body-m;
+  }
+
+  ul,
+  ol {
+    @include lbh-list;
+  }
+
+  ul {
+    @include lbh-list--bullet;
+  }
+
+  ol {
+    @include lbh-list--number;
+  }
+
+  a {
+    @include lbh-link;
+  }
+}
+
+.post-edit-link {
+  @include lbh-link;
+  display: inline-block;
+}
+
+.lbh-date {
+  @include lbh-hint;
+  display: block;
+  margin-top: 12px;
+}
+
+.lbh-category {
+  @include lbh-hint;
+  margin-top: 0;
+
+  a {
+    @include lbh-link;
+  }
+}

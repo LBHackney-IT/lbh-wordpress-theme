@@ -1,21 +1,11 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
-			<div class="lbhContainer">
-				<div class="lbhRow">
-					<div class="lbhColumnFull">
-						<h1><?php _e( '', 'html5blank' ); single_cat_title(); ?></h1>
-
-						<?php get_template_part('loop'); ?>
-
-						<?php get_template_part('pagination'); ?>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /section -->
+	<main class="lbh-main-wrapper" role="main">
+		<div class="lbh-container">
+			<h1 class="lbh-heading-h1"><?php _e( '', 'html5blank' ); single_cat_title(); ?></h1>
+			<?php get_template_part('loop'); ?>
+			<?php get_template_part('pagination'); ?>
+		</div>
 	</main>
 
 <?php get_sidebar(); ?>

@@ -1,4 +1,14 @@
 .lbh-header {
+  min-width: 320px;
+
+  &--fixed + * {
+    margin-top: 9.5rem;
+
+    @include govuk-media-query($from: tablet) {
+      margin-top: 6.25rem;
+    }
+  }
+
   &__logo--svg {
     display: none;
 
@@ -18,7 +28,7 @@
 
   &__nav {
     display: flex;
-    margin-top: 0;
+    margin: 0 -2px;
     align-items: flex-start;
     justify-content: space-between;
 
@@ -28,20 +38,29 @@
   }
 
   &__nav-link {
-    margin: 0 0 0 30px;
-    padding: 12px 0 4px;
+    @include lbh-link;
+    margin: 0 0 0 24px;
+    padding: 12px 2px 4px;
     border-bottom: 1px solid transparent;
-    color: lbh-colour("lbh-white");
     font-weight: 600;
     text-decoration: none;
 
+    &,
+    &:link,
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+      color: lbh-colour("lbh-white");
+    }
+
     &:hover {
       border-bottom-color: lbh-colour("lbh-white");
-      color: lbh-colour("lbh-white");
     }
 
     &:focus {
       @include govuk-focused-text;
+      border-bottom-color: transparent;
     }
 
     &:first-child {
@@ -61,5 +80,9 @@
         display: block;
       }
     }
+  }
+
+  .lbh-skip-link:focus + & {
+    top: 40px;
   }
 }

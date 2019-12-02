@@ -1,23 +1,13 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
-
-			<!-- article -->
-			<article id="post-404">
-
-				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a>
-				</h2>
-
-			</article>
-			<!-- /article -->
-
-		</section>
-		<!-- /section -->
-	</main>
+<main class="lbh-main-wrapper" role="main">
+	<div class="lbh-container">
+		<article id="post-404">
+			<h1 class="lbh-heading-h1"><?php _e( 'Page not found', 'html5blank' ); ?></h1>
+			<p class="lbh-body-l"><a href="<?php echo home_url(); ?>" class="lbh-link"><?php _e( 'Return home?', 'html5blank' ); ?></a></p>
+		</article>
+	</div>
+</main>
 
 <?php get_sidebar(); ?>
 

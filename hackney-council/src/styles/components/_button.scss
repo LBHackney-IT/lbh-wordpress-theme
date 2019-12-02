@@ -1,0 +1,8 @@
+.lbh-button {
+  background: lbh-colour("lbh-e01");
+
+  &:not(.lbh-button--warning):not(.lbh-button--disabled):not([disabled]):hover,
+  &:hover {
+    background: lbh-colour("lbh-e02");
+  }
+}

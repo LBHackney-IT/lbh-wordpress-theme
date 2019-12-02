@@ -1,0 +1,13 @@
+.lbh-pagination {
+  a {
+    @include lbh-link;
+  }
+
+  .page-numbers {
+    padding: 6px 12px;
+
+    &:first-child {
+      margin-left: -12px;
+    }
+  }
+}

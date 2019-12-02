@@ -1,18 +1,10 @@
 <?php /* Template Name: Search Template */ get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section >
-			<div class="lbhContainer">
-				<div class="lbhRow">
-					<div class="lbhColumnFull">
-					<h1 id="content">Search</h1>
-						<?php get_template_part('searchform'); ?>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /section -->
-	</main>
+<main class="lbh-main-wrapper" role="main">
+	<div class="lbh-container">
+		<h1 class="lbh-heading-h1" id="content">Search</h1>
+		<?php get_template_part('searchform'); ?>
+	</div>
+</main>
 
 <?php get_footer(); ?>

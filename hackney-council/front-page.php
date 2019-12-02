@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+<main class="lbh-main-wrapper" role="main">
+	<section>
 			<div class="heroSection" blur="0" style="background-image:url(<?php the_field('hero_banner', 'option'); ?>)" alt="Hackney Town Hall">
 				<div class="whiteBand"></div>
 				<div class="ctaBar">
@@ -125,43 +124,27 @@
 					<?php endif; ?>
 					<div class="lbhRow">
 						<ul class="headlineCards">
-						<?php
-
-						// check if the repeater field has rows of data
-						if( have_rows('headline_cards', 'option') ):
-
-							// loop through the rows of data
-							while ( have_rows('headline_cards', 'option') ) : the_row();
-
-								?>
-										<li class="lbhColumnOneThird">
-											<a href="<?php the_sub_field('cta_url'); ?>" class="card">
-												<div class="cardImage"  style="background-image:url(<?php the_sub_field('image'); ?>)"></div>
-												<div class="cardTitle">
-													<?php the_sub_field('title'); ?>
-												</div>
-												<div class="cardExcerpt">
-													<?php the_sub_field('description'); ?>
-												</div>
-												<hr>
-												<div class="cardCta">
-													<?php the_sub_field('cta_url_text'); ?>
-													<i class="fas fa-arrow-right"></i>
-													<!-- <FontAwesomeIcon icon="faArrowRight} /> -->
-												</div>
-											</a>
-										</li>
-						<?php
-
-							endwhile;
-
-							else :
-
-							// no rows found
-
-							endif;
-
-						?>
+							<?php if( have_rows('headline_cards', 'option') ): ?>
+								<?php	while ( have_rows('headline_cards', 'option') ) : the_row(); ?>
+									<li class="lbhColumnOneThird">
+										<a href="<?php the_sub_field('cta_url'); ?>" class="card">
+											<div class="cardImage"  style="background-image:url(<?php the_sub_field('image'); ?>)"></div>
+											<div class="cardTitle">
+												<?php the_sub_field('title'); ?>
+											</div>
+											<div class="cardExcerpt">
+												<?php the_sub_field('description'); ?>
+											</div>
+											<hr>
+											<div class="cardCta">
+												<?php the_sub_field('cta_url_text'); ?>
+												<i class="fas fa-arrow-right"></i>
+												<!-- <FontAwesomeIcon icon="faArrowRight} /> -->
+											</div>
+										</a>
+									</li>
+								<?php endwhile; ?>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</div>

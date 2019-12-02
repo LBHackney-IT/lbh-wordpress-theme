@@ -1,0 +1,9 @@
+.lbh-footer {
+  margin-top: auto;
+  padding: 48px 0;
+  background: lbh-colour("lbh-e01");
+
+  &__copy {
+    color: lbh-colour("lbh-white");
+  }
+}
