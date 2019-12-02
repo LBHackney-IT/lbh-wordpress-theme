@@ -1,0 +1,30 @@
+{
+  "name": "hackney-wordpress-theme",
+  "version": "1.0.0",
+  "description": "A wordpress theme for Hackney Council, inspired by GDS",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "govuk-frontend": "^3.4.0",
+    "lbh-frontend": "^1.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.2",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-eol": "^0.2.0",
+    "gulp-filter": "^6.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-task-listing": "^1.1.0",
+    "gulp-uglify": "^3.0.2",
+    "vinyl-named-with-path": "^1.0.0",
+    "vinyl-paths": "^3.0.1",
+    "webpack-stream": "^5.2.1"
+  }
+}
