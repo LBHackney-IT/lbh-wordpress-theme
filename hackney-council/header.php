@@ -44,7 +44,7 @@
 								<div class="lbhHeaderMenuLinks">
 									<ul>
 										<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?>
-											<li>
+											<li class="lbhHeaderMenuLink--dashboard">
 												<a href="<?php echo home_url(); ?>/wp-admin">Dashboard</a>
 											</li>
 										<?php } ?>
