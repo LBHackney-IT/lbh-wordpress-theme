@@ -3,15 +3,15 @@
 
   .lbh-input {
     box-sizing: border-box;
-    height: 48px;
-    padding-left: 12px;
+    @include lbh-rem(height, 48);
+    @include lbh-rem(padding-left, 12);
   }
 
   .lbh-button {
     box-sizing: border-box;
     width: auto;
-    height: 48px;
-    border-radius: 0 4px 4px 0;
+    @include lbh-rem(height, 48);
+    @include lbh-rem(border-radius, 0, 4, 4, 0);
     box-shadow: none;
   }
 }

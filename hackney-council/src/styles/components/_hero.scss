@@ -1,0 +1,142 @@
+.lbh-hero {
+  position: relative;
+  @include lbh-rem(margin-top, -36);
+
+  @include govuk-media-query($from: tablet) {
+    @include lbh-rem(margin-top, -60);
+    @include lbh-rem(padding-bottom, 52);
+  }
+
+  &__wrapper {
+    @include lbh-rem(padding-bottom, 36);
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+
+    @include govuk-media-query($from: desktop) {
+      @include lbh-rem(height, 446);
+      padding-bottom: 0;
+    }
+
+    .lbh-container {
+      position: relative;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    background: lbh-colour("lbh-white");
+    @include lbh-rem(margin-top, 36);
+    @include lbh-rem(padding, 12, 0);
+
+    @include govuk-media-query($from: desktop) {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 0;
+      width: 100%;
+      margin-top: 0;
+      @include lbh-rem(padding, 24, 0);
+      transform: translateY(-50%);
+    }
+  }
+
+  &__copy {
+    @include govuk-media-query($from: desktop) {
+      @include lbh-rem(padding-right, 376);
+    }
+  }
+
+  &__box {
+    @include lbh-rem(margin-top, 12);
+    border-top: 2px solid lbh-colour("lbh-e03");
+    @include lbh-rem(border-radius, 4);
+    @include lbh-rem(padding, 24);
+    background: lbh-colour("lbh-e01");
+
+    @include govuk-media-query($from: desktop) {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      @include lbh-rem(width, 284);
+      margin-top: 0;
+      @include lbh-rem(padding, 36, 36, 24, 36);
+      transform: translateY(-50%);
+    }
+  }
+
+  &__box-title,
+  &__box-list {
+    color: lbh-colour("lbh-white");
+  }
+
+  &__box-link {
+    &,
+    &:link,
+    &:hover,
+    &:visited {
+      color: lbh-colour("lbh-white");
+    }
+
+    &:focus {
+      color: lbh-colour("lbh-black");
+    }
+  }
+
+  &__box-list {
+    @include lbh-rem(margin-top, 12);
+    margin-bottom: 0;
+  }
+
+  &__cta-bar {
+    display: none;
+
+    @include govuk-media-query($from: desktop) {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      @include lbh-rem(height, 52);
+      border-top: 2px solid lbh-colour("lbh-white");
+      border-bottom: 2px solid lbh-colour("lbh-white");
+      background: lbh-colour("lbh-e01");
+      box-shadow: 0 0 10px 0 lbh-colour("lbh-black");
+      text-align: right;
+    }
+  }
+
+  &__social {
+    word-spacing: -4px;
+  }
+
+  &__social-link {
+    box-sizing: border-box;
+    display: inline-block;
+    @include lbh-rem(width, 64px);
+    @include lbh-rem(height, 48px);
+    margin: 0;
+    border-right: 2px solid lbh-colour("lbh-white");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto 24px;
+
+    &:hover {
+      background-color: lbh-colour("lbh-e02");
+    }
+
+    &:focus {
+      @include govuk-focused-text;
+    }
+
+    &:first-child {
+      border-left: 2px solid lbh-colour("lbh-white");
+    }
+  }
+
+  &__social-text {
+    @include govuk-visually-hidden;
+  }
+}

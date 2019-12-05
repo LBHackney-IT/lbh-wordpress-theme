@@ -4,10 +4,10 @@
   }
 
   .page-numbers {
-    padding: 6px 12px;
+    @include lbh-rem(padding, 6, 12);
 
     &:first-child {
-      margin-left: -12px;
+      @include lbh-rem(margin-left, -12);
     }
   }
 }

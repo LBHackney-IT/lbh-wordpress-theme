@@ -1,6 +1,6 @@
 .lbh-footer {
   margin-top: auto;
-  padding: 48px 0;
+  @include lbh-rem(padding, 48, 0);
   background: lbh-colour("lbh-e01");
 
   &__copy {

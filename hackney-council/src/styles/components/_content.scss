@@ -61,7 +61,7 @@
 .lbh-date {
   @include lbh-hint;
   display: block;
-  margin-top: 12px;
+  @include lbh-rem(margin-top, 12);
 }
 
 .lbh-category {
@@ -71,4 +71,8 @@
   a {
     @include lbh-link;
   }
+}
+
+.lbh-iframe iframe {
+  width: 100%;
 }

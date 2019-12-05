@@ -33,7 +33,11 @@
 		<header class="lbh-header lbh-header--purple lbh-header--fixed">
 			<div class="lbh-header__main">
 				<div class="lbh-container lbh-header__wrapper lbh-header__wrapper--stacked">
-					<div class="lbh-header__title">
+					<?php if (is_home()) : ?>
+						<h1 class="lbh-header__title">
+					<?php else : ?>
+						<div class="lbh-header__title">
+					<?php endif; ?>
 						<a href="<?php echo home_url(); ?>" class="lbh-header__title-link">
 							<?php if (get_field('header_logo', 'option')): ?>
 								<span class="lbh-header__logo lbh-header__logo--svg">
@@ -50,7 +54,11 @@
 							</span>
 							<span class="lbh-header__service-name lbh-header__service-name--short">Intranet</span>
 						</a>
-					</div>
+					<?php if (is_home()) : ?>
+						</h1>
+					<?php else : ?>
+						</div>
+					<?php endif; ?>
 					<nav class="lbh-header__nav">
 						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/nav">A to Z</a>
 						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/news">News</a>

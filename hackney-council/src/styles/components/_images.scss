@@ -1,4 +1,58 @@
 img {
+  display: block;
   width: 100%;
   height: auto;
+}
+
+.lbh-image {
+  position: relative;
+  width: 100%;
+  padding-top: 150%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.lbh-image--landscape {
+  padding-top: 66.67%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.lbh-image__wrapper {
+  overflow: hidden;
+}
+
+.lbh-image--double {
+  @include govuk-media-query($from: tablet) {
+    width: 50%;
+    margin-top: 0;
+    padding-top: 75%;
+    float: left;
+  }
+}
+
+.lbh-image--triple {
+  @include govuk-media-query($from: tablet) {
+    width: 33.333%;
+    margin-top: 0;
+    padding-top: 50%;
+    float: left;
+  }
+}
+
+.lbh-image__caption {
+  @include lbh-body-s;
+  @include lbh-rem(padding, 12);
+  background: lbh-colour("lbh-grey-4");
 }

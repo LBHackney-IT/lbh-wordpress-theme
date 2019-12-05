@@ -2,7 +2,7 @@
   min-width: 320px;
 
   &--fixed + * {
-    margin-top: 9.5rem;
+    margin-top: 9rem;
 
     @include govuk-media-query($from: tablet) {
       margin-top: 6.25rem;
@@ -39,8 +39,8 @@
 
   &__nav-link {
     @include lbh-link;
-    margin: 0 0 0 24px;
-    padding: 12px 2px 4px;
+    @include lbh-rem(margin, 0, 0, 0, 24);
+    @include lbh-rem(padding, 12, 2, 4);
     border-bottom: 1px solid transparent;
     font-weight: 600;
     text-decoration: none;
@@ -69,7 +69,7 @@
 
     @include govuk-media-query($from: tablet) {
       &:first-child {
-        margin-left: 30px;
+        @include lbh-rem(margin-left, 30);
       }
     }
 
@@ -83,6 +83,6 @@
   }
 
   .lbh-skip-link:focus + & {
-    top: 40px;
+    @include lbh-rem(top, 40);
   }
 }

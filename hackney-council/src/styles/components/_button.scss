@@ -1,8 +1,15 @@
 .lbh-button {
   background: lbh-colour("lbh-e01");
 
-  &:not(.lbh-button--warning):not(.lbh-button--disabled):not([disabled]):hover,
+  &:not(&--warning):not(&--disabled):not([disabled]):hover,
   &:hover {
     background: lbh-colour("lbh-e02");
+  }
+
+  &--secondary,
+  &--secondary:link,
+  &--secondary:visited {
+    border-color: lbh-colour("lbh-e01");
+    color: lbh-colour("lbh-e01");
   }
 }
