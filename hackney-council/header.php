@@ -71,19 +71,23 @@
 			</div>
 		</header>
 		<!-- /header -->
-		<?php if(!is_front_page() && get_field('show_sitewide_msg', 'option')) : ?>
-			<section class="lbh-announcement lbh-announcement--site">
-				<div class="lbh-container">
-					<?php if (get_field('sitewide_message_title', 'option')) : ?>
-						<h3 class="lbh-announcement__title"><?php the_field('sitewide_message_title', 'option'); ?></h3>
-					<?php endif; ?>
-					<div class="lbh-announcement__content"><?php the_field('sitewide_message', 'option'); ?></div>
-				</div>
-			</section>
-		<?php endif; ?>
-		<?php if (is_page() && !is_front_page()) : ?>
-			<?php 
-				$terms = get_the_terms( $post->ID, 'service' );
+		<?php if(!is_front_page()) : ?>
+			<!-- sitewide announcement -->
+			<?php if(get_field('show_sitewide_msg', 'option')) : ?>
+				<section class="lbh-announcement lbh-announcement--site">
+					<div class="lbh-container">
+						<?php if (get_field('sitewide_message_title', 'option')) : ?>
+							<h3 class="lbh-announcement__title"><?php the_field('sitewide_message_title', 'option'); ?></h3>
+						<?php endif; ?>
+						<div class="lbh-announcement__content"><?php the_field('sitewide_message', 'option'); ?></div>
+					</div>
+				</section>
+			<?php endif; ?>
+			
+			<?php if (is_page()) : ?>
+				<!-- sectionwide announcements -->
+				<?php global $post; ?>
+				<?php  $terms = get_the_terms( $post->ID, 'service' );
 				if ($terms) {
 					$announcement_sections = [];
 					// check if the repeater field has rows of data
@@ -104,9 +108,43 @@
 										<div class="lbh-announcement__content"><?php echo $section->content; ?></div>
 									</div>
 								</section>
-							<?php }
+						<?php }
 						}
 					} 
-				} 
-			?>
+				} ?>
+				
+				<!-- breadcrumbs -->
+				<?php $breadcrumbs = []; ?>
+				<?php $term = get_the_terms($post->ID, 'service')[0]; ?>
+				<?php if ($term->name !== 'Pages'): ?>
+					<?php array_unshift($breadcrumbs, $term); ?>
+					<?php while(!empty($term->parent)): ?>
+						<?php $term = get_term_by('id', $term->parent, 'service'); ?>
+						<?php array_unshift($breadcrumbs, $term); ?>
+					<?php endwhile; ?>
+					<div class="govuk-breadcrumbs lbh-breadcrumbs lbh-container">
+						<ol class="govuk-breadcrumbs__list">
+							<li class="govuk-breadcrumbs__list-item">
+								<a class="govuk-breadcrumbs__link" href="<?php home_url(); ?>">Home</a>
+							</li>
+							<?php foreach($breadcrumbs as $breadcrumb) { ?>
+								<li class="govuk-breadcrumbs__list-item">
+									<a class="govuk-breadcrumbs__link" href="<?php echo get_term_link($breadcrumb); ?>"><?php echo $breadcrumb->name; ?></a>
+								</li>
+							<?php } ?>
+						</ol>
+					</div>
+				<?php endif; ?>
+			<?php elseif (is_single()): ?>
+				<div class="govuk-breadcrumbs lbh-breadcrumbs lbh-container">
+					<ol class="govuk-breadcrumbs__list">
+						<li class="govuk-breadcrumbs__list-item">
+							<a class="govuk-breadcrumbs__link" href="<?php home_url(); ?>">Home</a>
+						</li>
+						<li class="govuk-breadcrumbs__list-item">
+							<a class="govuk-breadcrumbs__link" href="<?php echo get_post_type_archive_link('post'); ?>">News</a>
+						</li>
+					</ol>
+				</div>
+			<?php endif; ?>
 		<?php endif; ?>
