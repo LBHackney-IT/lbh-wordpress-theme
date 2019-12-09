@@ -1,11 +1,11 @@
 <section class="lbh-section">
   <div class="lbh-container">
-    <?php if (get_field('news_section_title', 'option')): ?>
-      <h2 class="lbh-heading-h1 lbh-section__title"><?php the_field('news_section_title', 'option'); ?></h2>
+    <?php if (get_field('news_section_title')): ?>
+      <h2 class="lbh-heading-h1 lbh-section__title"><?php the_field('news_section_title'); ?></h2>
     <?php endif; ?>
-    <?php if( have_rows('news_blocks', 'option') ): ?>
+    <?php if( have_rows('news_listings') ): ?>
       <div class="lbh-section__list">
-        <?php	while ( have_rows('news_blocks', 'option') ) : the_row(); ?>
+        <?php	while ( have_rows('news_listings') ) : the_row(); ?>
           <article class="lbh-section__listing lbh-news">
             <a href="<?php the_sub_field('cta_url'); ?>" class="lbh-article__link">
               <div class="lbh-news__front">
@@ -20,7 +20,9 @@
               </div>
               <div class="lbh-news__back">
                 <h3 class="lbh-heading-h5 lbh-article__title"><?php the_sub_field('title'); ?></h3>
-                <p class="lbh-body-s lbh-article__excerpt"><?php the_sub_field('description'); ?></p>
+                <?php if (get_sub_field('description')) : ?>
+                  <p class="lbh-body-s lbh-article__excerpt"><?php the_sub_field('description'); ?></p>
+                <?php endif; ?>
                 <div class="lbh-article__cta">
                   <i class="fas fa-calendar-alt"></i>
                   <span class="lbh-article__cta-text"><?php the_sub_field('cta_url_text'); ?></span>

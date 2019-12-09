@@ -37,8 +37,9 @@ if (function_exists('add_theme_support'))
     // These are used
     add_image_size('full-width', 1920, '', true); // Full width - 960 * 2 for retina
     add_image_size('other-width', 1220, '', true); // Half width / Third / Quarter - biggest when full width on mobile, 610 * 2 for retina
-    add_image_size('promo-icon', 1536, '', true); // Promo component icon
+    add_image_size('promo-image', 1536, '', true); // Promo component image
     add_image_size('header-logo', 412, '', true);
+    add_image_size('block-icon', 216, '', true);
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
