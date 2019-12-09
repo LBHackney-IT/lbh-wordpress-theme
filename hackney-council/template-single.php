@@ -1,33 +1,3 @@
-<?php if (is_page() && !is_front_page()) : ?>
-  <?php 
-    $announcement_sections = [];
-    // check if the repeater field has rows of data
-    if( have_rows('sectionwide_announcements', 'option') ):
-      // loop through the rows of data
-      while ( have_rows('sectionwide_announcements', 'option') ) : the_row();
-        $message = new stdClass();
-        $message->id = get_sub_field('sections', 'option');
-        $message->content = get_sub_field('announcement', 'option');
-        array_push($announcement_sections, $message);
-      endwhile;
-    endif;
-
-    $terms = get_the_terms( $post->ID, 'service' );
-    if ($terms) {
-      foreach($terms as $term) {
-        foreach ($announcement_sections as $section) { 
-          if (in_array($term->term_id, $section->id)) { ?>
-            <section class="lbh-announcement ">
-              <div class="lbh-container">
-                <div class="lbh-announcement__content"><?php echo $section->content; ?></div>
-              </div>
-            </section>
-          <?php }
-        }
-      } 
-    } 
-  ?>
-<?php endif; ?>
 <main class="lbh-main-wrapper" role="main" >
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   	<?php if (have_posts()): ?>
