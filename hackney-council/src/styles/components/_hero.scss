@@ -49,10 +49,15 @@
 
   &__box {
     @include lbh-rem(margin-top, 12);
-    border-top: 2px solid lbh-colour("lbh-e03");
+    border-top: 2px solid lbh-colour("lbh-a03");
     @include lbh-rem(border-radius, 4);
     @include lbh-rem(padding, 24);
-    background: lbh-colour("lbh-e01");
+    background: lbh-colour("lbh-a01");
+
+    .body--purple & {
+      border-top: 2px solid lbh-colour("lbh-e03");
+      background: lbh-colour("lbh-e01");
+    }
 
     @include govuk-media-query($from: desktop) {
       position: absolute;
@@ -71,6 +76,16 @@
   }
 
   &__box-link {
+    &,
+    &:link,
+    &:visited {
+      text-decoration: none;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
     &,
     &:link,
     &:hover,
@@ -102,9 +117,13 @@
       @include lbh-rem(height, 52);
       border-top: 2px solid lbh-colour("lbh-white");
       border-bottom: 2px solid lbh-colour("lbh-white");
-      background: lbh-colour("lbh-e01");
+      background: lbh-colour("lbh-a04");
       box-shadow: 0 0 10px 0 lbh-colour("lbh-black");
       text-align: right;
+
+      .body--purple & {
+        background: lbh-colour("lbh-e01");
+      }
     }
   }
 
@@ -124,6 +143,10 @@
     background-size: auto 24px;
 
     &:hover {
+      background-color: lbh-colour("lbh-a03");
+    }
+
+    .body--purple &:hover {
       background-color: lbh-colour("lbh-e02");
     }
 

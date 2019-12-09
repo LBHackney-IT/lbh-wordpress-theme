@@ -26,11 +26,11 @@
 </script>
 
 	</head>
-	<body <?php body_class(); ?>>
+	<body <?php body_class('body--' . get_field('colour_scheme', 'option')); ?>>
 		<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 		<a class="govuk-skip-link lbh-skip-link" href="#main-content">Skip to main content</a>
 		<!-- header -->
-		<header class="lbh-header lbh-header--purple lbh-header--fixed">
+		<header class="lbh-header lbh-header--<?php echo get_field('colour_scheme', 'option'); ?> lbh-header--fixed">
 			<div class="lbh-header__main">
 				<div class="lbh-container lbh-header__wrapper lbh-header__wrapper--stacked">
 					<?php if (is_home()) : ?>
