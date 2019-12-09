@@ -1,3 +1,5 @@
-.lbh-page-announcement .lbh-content h2 {
-  @include lbh-heading-h3;
+.lbh-page-announcement {
+  .lbh-content h2 {
+    @include lbh-heading-h3;
+  }
 }

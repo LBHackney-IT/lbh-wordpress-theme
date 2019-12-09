@@ -71,3 +71,13 @@
 			</div>
 		</header>
 		<!-- /header -->
+		<?php if(!is_front_page() && get_field('show_sitewide_msg', 'option')) : ?>
+			<section class="lbh-announcement lbh-announcement--site">
+				<div class="lbh-container">
+					<?php if (get_field('sitewide_message_title', 'option')) : ?>
+						<h3 class="lbh-announcement__title"><?php the_field('sitewide_message_title', 'option'); ?></h3>
+					<?php endif; ?>
+					<div class="lbh-announcement__content"><?php the_field('sitewide_message', 'option'); ?></div>
+				</div>
+			</section>
+		<?php endif; ?>
