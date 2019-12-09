@@ -5,6 +5,27 @@ img {
 }
 
 .lbh-image {
+  display: flex;
+  width: 100%;
+  margin-top: 1.5em;
+  flex-direction: column;
+}
+
+.lbh-image--double {
+  @include govuk-media-query($from: tablet) {
+    width: 50%;
+    float: left;
+  }
+}
+
+.lbh-image--triple {
+  @include govuk-media-query($from: tablet) {
+    width: 33.333%;
+    float: left;
+  }
+}
+
+.lbh-image__wrapper {
   position: relative;
   width: 100%;
   padding-top: 150%;
@@ -18,41 +39,30 @@ img {
     min-height: 100%;
     transform: translate(-50%, -50%);
   }
-}
 
-.lbh-image--landscape {
-  padding-top: 66.67%;
+  .lbh-image--landscape & {
+    padding-top: 66.67%;
 
-  img {
-    width: 100%;
-    height: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
-.lbh-image__wrapper {
+.lbh-image__section {
+  margin-top: 1.5em;
   overflow: hidden;
-}
 
-.lbh-image--double {
   @include govuk-media-query($from: tablet) {
-    width: 50%;
-    margin-top: 0;
-    padding-top: 75%;
-    float: left;
-  }
-}
-
-.lbh-image--triple {
-  @include govuk-media-query($from: tablet) {
-    width: 33.333%;
-    margin-top: 0;
-    padding-top: 50%;
-    float: left;
+    display: flex;
   }
 }
 
 .lbh-image__caption {
   @include lbh-body-s;
+  margin-top: 0;
   @include lbh-rem(padding, 12);
   background: lbh-colour("lbh-grey-4");
+  flex-grow: 1;
 }

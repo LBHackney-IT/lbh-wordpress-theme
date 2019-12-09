@@ -20,7 +20,7 @@
               <?php if( get_row_layout() == 'content' ): ?>
                 <?php get_template_part('component-content'); ?>
               <?php elseif( get_row_layout() == 'featured_message' ): ?>
-                <?php get_template_part('component-message'); ?>
+                <?php get_template_part('component-page-announcement'); ?>
               <?php elseif( get_row_layout() == 'accordion' ): ?>
                 <?php // $accordion_counter helps us to make sure that accordion ids are unique ?>
                 <?php $accordion_counter++; ?>

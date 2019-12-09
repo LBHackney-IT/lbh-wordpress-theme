@@ -8,7 +8,7 @@
         <?php	while ( have_rows('headline_cards', 'option') ) : the_row(); ?>
           <article class="lbh-article lbh-section__listing">
             <a href="<?php the_sub_field('cta_url'); ?>" class="lbh-article__link">
-              <figure class="lbh-article__image"><?php echo wp_get_attachment_image(get_sub_field('image')); ?></figure>
+              <figure class="lbh-article__image"><?php echo wp_get_attachment_image(get_sub_field('image'), 'other-width'); ?></figure>
               <h3 class="lbh-heading-h5 lbh-article__title"><?php the_sub_field('title'); ?></h3>
               <p class="lbh-body-m lbh-article__excerpt"><?php the_sub_field('description'); ?></p>
               <div class="lbh-article__cta">

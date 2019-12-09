@@ -41,12 +41,12 @@
 						<a href="<?php echo home_url(); ?>" class="lbh-header__title-link">
 							<?php if (get_field('header_logo', 'option')): ?>
 								<span class="lbh-header__logo lbh-header__logo--svg">
-									<?php echo wp_get_attachment_image(get_field('header_logo', 'option'), 'header_logo'); ?>
+									<?php echo wp_get_attachment_image(get_field('header_logo', 'option'), 'header-logo'); ?>
 								</span>
 							<?php endif; ?>
 							<?php if (get_field('header_logo_fallback', 'option')): ?>
 								<span class="lbh-header__logo lbh-header__logo--png">
-									<?php echo wp_get_attachment_image(get_field('header_logo_fallback', 'option'), 'header_logo'); ?>
+									<?php echo wp_get_attachment_image(get_field('header_logo_fallback', 'option'), 'header-logo'); ?>
 								</span>
 							<?php endif; ?>
 							<span class="lbh-header__logo-text">

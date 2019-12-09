@@ -5,7 +5,7 @@
         <?php while ( have_rows('mayor_intro', 'options') ) : the_row(); ?>
           <div class="lbh-promo__half lbh-section__listing">
             <figure class="lbh-promo__image">
-              <?php echo wp_get_attachment_image(get_sub_field('icon')); ?>
+              <?php echo wp_get_attachment_image(get_sub_field('icon'), 'promo-image'); ?>
             </figure>
           </div>
 					<div class="lbh-promo__half lbh-section__listing">

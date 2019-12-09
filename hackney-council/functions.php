@@ -27,10 +27,18 @@ if (function_exists('add_theme_support'))
 
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
+
+    // The following aren't used but I've left in for content in the CMS that already has these sizes applied
     add_image_size('large', 700, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+
+    // These are used
+    add_image_size('full-width', 1920, '', true); // Full width - 960 * 2 for retina
+    add_image_size('other-width', 1220, '', true); // Half width / Third / Quarter - biggest when full width on mobile, 610 * 2 for retina
+    add_image_size('promo-icon', 1536, '', true); // Promo component icon
+    add_image_size('header-logo', 412, '', true);
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
