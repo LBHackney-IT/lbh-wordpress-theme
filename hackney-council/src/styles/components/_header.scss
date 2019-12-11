@@ -9,6 +9,14 @@
     }
   }
 
+  &--fixed + .lbh-breadcrumbs {
+    @include lbh-rem(margin-top, 162);
+
+    @include govuk-media-query($from: tablet) {
+      @include lbh-rem(margin-top, 118);
+    }
+  }
+
   &__logo img {
     margin-top: 0;
   }
