@@ -59,14 +59,27 @@
 					<?php else : ?>
 						</div>
 					<?php endif; ?>
-					<nav class="lbh-header__nav">
-						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/nav">A to Z</a>
-						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/news">News</a>
-						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/search">Search</a>
-						<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?>
-							<a class="lbh-header__nav-link lbh-header__nav-link--dashboard" href="<?php echo home_url(); ?>/wp-admin">Dashboard</a>
-						<?php } ?>
-					</nav>
+					<div class="lbh-header__links">
+            <a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/search">Search</a>
+            <button class="lbh-header__menu-link">
+              <span class="lbh-header__menu-link-text">Menu</span>
+              <svg width="17px" height="15px" viewBox="0 0 17 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<title>Menu icon</title>
+								<g stroke="none" stroke-width="1" fill="#FFFFFF" fill-rule="nonzero">
+										<path d="M0.607142857,2.75510204 L16.3928571,2.75510204 C16.7281897,2.75510204 17,2.48100765 17,2.14285714 L17,0.612244898 C17,0.274094388 16.7281897,0 16.3928571,0 L0.607142857,0 C0.271810268,0 0,0.274094388 0,0.612244898 L0,2.14285714 C0,2.48100765 0.271810268,2.75510204 0.607142857,2.75510204 Z M0.607142857,8.87755102 L16.3928571,8.87755102 C16.7281897,8.87755102 17,8.60345663 17,8.26530612 L17,6.73469388 C17,6.39654337 16.7281897,6.12244898 16.3928571,6.12244898 L0.607142857,6.12244898 C0.271810268,6.12244898 0,6.39654337 0,6.73469388 L0,8.26530612 C0,8.60345663 0.271810268,8.87755102 0.607142857,8.87755102 Z M0.607142857,15 L16.3928571,15 C16.7281897,15 17,14.7259056 17,14.3877551 L17,12.8571429 C17,12.5189923 16.7281897,12.244898 16.3928571,12.244898 L0.607142857,12.244898 C0.271810268,12.244898 0,12.5189923 0,12.8571429 L0,14.3877551 C0,14.7259056 0.271810268,15 0.607142857,15 Z"></path>
+								</g>
+								<!-- Fallback PNG image for older browsers.
+								The <image> element is a valid SVG element. In SVG, you would specify
+								the URL of the image file with the xlink:href – as we don't reference an
+								image it has no effect. It's important to include the empty xlink:href
+								attribute as this prevents versions of IE which support SVG from
+								downloading the fallback image when they don't need to.
+								In other browsers <image> is synonymous for the <img> tag and will be
+								interpreted as such, displaying the fallback image. -->
+								<image src="<?php echo get_template_directory_uri() . '/img/icon-burger.png'; ?>" xlink:href="" class="govuk-header__logotype-crown-fallback-image" width="17" height="15"></image>
+							</svg>
+            </button>
+          </div>
 				</div>
 			</div>
 		</header>

@@ -38,60 +38,14 @@
     }
   }
 
-  &__nav {
-    display: flex;
-    margin: 0 -2px;
-    align-items: flex-start;
-    justify-content: space-between;
-
-    @include govuk-media-query($from: desktop) {
-      justify-content: flex-end;
-    }
-  }
-
-  &__nav-link {
-    @include lbh-link;
-    @include lbh-rem(margin, 0, 0, 0, 24);
-    @include lbh-rem(padding, 12, 2, 4);
-    border-bottom: 1px solid transparent;
-    font-weight: 600;
-    text-decoration: none;
-
-    &,
-    &:link,
-    &:hover,
-    &:visited,
-    &:active,
-    &:focus {
-      color: lbh-colour("lbh-white");
-    }
-
-    &:hover {
-      border-bottom-color: lbh-colour("lbh-white");
-    }
-
-    &:focus {
-      @include govuk-focused-text;
-      border-bottom-color: transparent;
-    }
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    @include govuk-media-query($from: tablet) {
-      &:first-child {
-        @include lbh-rem(margin-left, 30);
-      }
-    }
-
-    &--dashboard {
-      display: none;
-
-      @include govuk-media-query($from: tablet) {
-        display: block;
-      }
-    }
+  &__menu-link {
+    @include lbh-body-m;
+    @include lbh-rem(margin-top, 8px);
+    @include lbh-rem(padding, 4px, 0);
+    border: 0;
+    color: lbh-colour("lbh-white");
+    background: none;
+    -webkit-appearance: none;
   }
 
   .lbh-skip-link:focus + & {
