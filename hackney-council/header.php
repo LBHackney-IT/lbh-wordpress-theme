@@ -125,7 +125,7 @@
 					<div class="govuk-breadcrumbs lbh-breadcrumbs lbh-container">
 						<ol class="govuk-breadcrumbs__list">
 							<li class="govuk-breadcrumbs__list-item">
-								<a class="govuk-breadcrumbs__link" href="<?php home_url(); ?>">Home</a>
+								<a class="govuk-breadcrumbs__link" href="<?php echo home_url(); ?>">Home</a>
 							</li>
 							<?php foreach($breadcrumbs as $breadcrumb) { ?>
 								<li class="govuk-breadcrumbs__list-item">
@@ -139,10 +139,18 @@
 				<div class="govuk-breadcrumbs lbh-breadcrumbs lbh-container">
 					<ol class="govuk-breadcrumbs__list">
 						<li class="govuk-breadcrumbs__list-item">
-							<a class="govuk-breadcrumbs__link" href="<?php home_url(); ?>">Home</a>
+							<a class="govuk-breadcrumbs__link" href="<?php echo home_url(); ?>">Home</a>
 						</li>
 						<li class="govuk-breadcrumbs__list-item">
 							<a class="govuk-breadcrumbs__link" href="<?php echo get_post_type_archive_link('post'); ?>">News</a>
+						</li>
+					</ol>
+				</div>
+			<?php elseif (is_archive()): ?>
+				<div class="govuk-breadcrumbs lbh-breadcrumbs lbh-container">
+					<ol class="govuk-breadcrumbs__list">
+						<li class="govuk-breadcrumbs__list-item">
+							<a class="govuk-breadcrumbs__link" href="<?php echo home_url(); ?>">Home</a>
 						</li>
 					</ol>
 				</div>
