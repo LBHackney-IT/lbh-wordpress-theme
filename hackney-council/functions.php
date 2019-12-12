@@ -805,4 +805,49 @@ function changeBgColor() {
     </style>';
 }
 add_action('login_head', 'changeBgColor');
+
+function render_nav_term($term, $level) { 
+    if ($level < 4) {
+        $output = "<li class='lbh-nav__item lbh-nav__item--service'><a href='" . get_term_link($term) . "' class='lbh-nav__link--service'>" . $term->name . "</a>";
+        $child_terms = get_terms([
+            'taxonomy' => 'service',
+            'parent' => $term->term_id,
+            'hide_empty' => false
+        ]);
+        $args = array(
+            'post_type' => 'page',
+            'orderby' => 'title',
+            'order' => 'ASC',
+            'posts_per_page' => -1,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'service',
+                    'field'    => 'term_id',
+                    'include_children' => false,
+                    'terms'    => $term->term_id
+                ),
+            )
+        );
+        $query = new WP_Query( $args ); 
+        $posts = $query->posts;
+        if ($child_terms || $posts) : 
+            $output .= "<ul class='lbh-nav__list lbh-nav__list--loading lbh-nav__list--level-" . ($level + 1) . "'  data-level='" . ($level + 1) ."' tabindex='-1'><h2 class='lbh-heading-h5 lbh-nav__list-title'>" . $term->name . "</h2>";
+                if ($child_terms): 
+                    foreach($child_terms as $term):
+                        $output .= render_nav_term($term, $level + 1);
+                    endforeach;
+                endif;
+                if ($posts):
+                    foreach($posts as $post):
+                        $output .= "<li class='lbh-nav__item lbh-nav__item--page'><a href='" . get_the_permalink($post->ID) . "'>" . $post->post_title . "</a></li>";
+                    endforeach;
+                endif;
+            $output .= "</ul>";
+        endif;
+        $output .= "</li>";
+        return $output;
+    } else {
+        return '';
+    }
+}
 ?>
