@@ -32,7 +32,7 @@
 		<!-- header -->
 		<header class="lbh-header lbh-header--<?php echo get_field('colour_scheme', 'option'); ?> lbh-header--fixed">
 			<div class="lbh-header__main">
-				<div class="lbh-container lbh-header__wrapper lbh-header__wrapper--stacked">
+				<div class="lbh-container lbh-header__wrapper">
 					<?php if (is_home()) : ?>
 						<h1 class="lbh-header__title">
 					<?php else : ?>
@@ -60,12 +60,26 @@
 						</div>
 					<?php endif; ?>
 					<div class="lbh-header__links">
-            <a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/search">Search</a>
             <button class="lbh-header__menu-link">
-              <span class="lbh-header__menu-link-text">Menu</span>
-              <svg width="17px" height="15px" viewBox="0 0 17 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<span class="lbh-header__menu-link-text">Menu</span>
+							<svg width="40px" height="25px" viewBox="0 0 40 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="lbh-header__menu-link-icon lbh-header__menu-link-icon--mobile">
 								<title>Menu icon</title>
-								<g stroke="none" stroke-width="1" fill="#FFFFFF" fill-rule="nonzero">
+								<g stroke="none" stroke-width="1" transform="translate(5.000000, 0.000000)" fill-rule="nonzero">
+									<path d="M1.05559465,3.67346939 L28.5010556,3.67346939 C29.0840737,3.67346939 29.5566502,3.3080102 29.5566502,2.85714286 L29.5566502,0.816326531 C29.5566502,0.365459184 29.0840737,0 28.5010556,0 L1.05559465,0 C0.472576531,0 0,0.365459184 0,0.816326531 L0,2.85714286 C0,3.3080102 0.472576531,3.67346939 1.05559465,3.67346939 Z M1.05559465,11.8367347 L28.5010556,11.8367347 C29.0840737,11.8367347 29.5566502,11.4712755 29.5566502,11.0204082 L29.5566502,8.97959184 C29.5566502,8.52872449 29.0840737,8.16326531 28.5010556,8.16326531 L1.05559465,8.16326531 C0.472576531,8.16326531 0,8.52872449 0,8.97959184 L0,11.0204082 C0,11.4712755 0.472576531,11.8367347 1.05559465,11.8367347 Z M1.05559465,20 L28.5010556,20 C29.0840737,20 29.5566502,19.6345408 29.5566502,19.1836735 L29.5566502,17.1428571 C29.5566502,16.6919898 29.0840737,16.3265306 28.5010556,16.3265306 L1.05559465,16.3265306 C0.472576531,16.3265306 0,16.6919898 0,17.1428571 L0,19.1836735 C0,19.6345408 0.472576531,20 1.05559465,20 Z"></path>
+								</g>
+								<!-- Fallback PNG image for older browsers.
+								The <image> element is a valid SVG element. In SVG, you would specify
+								the URL of the image file with the xlink:href – as we don't reference an
+								image it has no effect. It's important to include the empty xlink:href
+								attribute as this prevents versions of IE which support SVG from
+								downloading the fallback image when they don't need to.
+								In other browsers <image> is synonymous for the <img> tag and will be
+								interpreted as such, displaying the fallback image. -->
+								<image src="<?php echo get_template_directory_uri() . '/img/icon-burger-mobile.png'; ?>" xlink:href="" width="30" height="20"></image>
+							</svg>
+              <svg width="17px" height="15px" viewBox="0 0 17 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="lbh-header__menu-link-icon lbh-header__menu-link-icon--desktop">
+								<title>Menu icon</title>
+								<g stroke="none" stroke-width="1" fill-rule="nonzero">
 										<path d="M0.607142857,2.75510204 L16.3928571,2.75510204 C16.7281897,2.75510204 17,2.48100765 17,2.14285714 L17,0.612244898 C17,0.274094388 16.7281897,0 16.3928571,0 L0.607142857,0 C0.271810268,0 0,0.274094388 0,0.612244898 L0,2.14285714 C0,2.48100765 0.271810268,2.75510204 0.607142857,2.75510204 Z M0.607142857,8.87755102 L16.3928571,8.87755102 C16.7281897,8.87755102 17,8.60345663 17,8.26530612 L17,6.73469388 C17,6.39654337 16.7281897,6.12244898 16.3928571,6.12244898 L0.607142857,6.12244898 C0.271810268,6.12244898 0,6.39654337 0,6.73469388 L0,8.26530612 C0,8.60345663 0.271810268,8.87755102 0.607142857,8.87755102 Z M0.607142857,15 L16.3928571,15 C16.7281897,15 17,14.7259056 17,14.3877551 L17,12.8571429 C17,12.5189923 16.7281897,12.244898 16.3928571,12.244898 L0.607142857,12.244898 C0.271810268,12.244898 0,12.5189923 0,12.8571429 L0,14.3877551 C0,14.7259056 0.271810268,15 0.607142857,15 Z"></path>
 								</g>
 								<!-- Fallback PNG image for older browsers.
@@ -76,9 +90,27 @@
 								downloading the fallback image when they don't need to.
 								In other browsers <image> is synonymous for the <img> tag and will be
 								interpreted as such, displaying the fallback image. -->
-								<image src="<?php echo get_template_directory_uri() . '/img/icon-burger.png'; ?>" xlink:href="" class="govuk-header__logotype-crown-fallback-image" width="17" height="15"></image>
+								<image src="<?php echo get_template_directory_uri() . '/img/icon-burger.png'; ?>" xlink:href="" width="17" height="15"></image>
 							</svg>
-            </button>
+						</button>
+						<a class="lbh-header__nav-link lbh-header__search" href="<?php echo home_url(); ?>/search">
+							<span class="lbh-header__search-text">Search</span>
+							<svg class="lbh-header__search-icon" width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<title>Search</title>
+								<g transform="translate(-8.000000, -7.000000)" stroke="none" stroke-width="1" fill-rule="nonzero">
+										<path d="M11.0137037,10.0137037 C15.0319752,5.99543211 21.5616665,5.99543211 25.579938,10.0137037 C29.2214966,13.6552623 29.5982096,19.1803856 26.8356479,23.1986572 L32.4863423,28.8493516 C34.1187651,30.4817744 31.4817744,33.1187651 29.8493516,31.4863423 L24.1986572,25.8356479 C20.1803856,28.5982096 14.6552623,28.2214966 11.0137037,24.579938 C6.99543211,20.5616665 6.99543211,14.0319752 11.0137037,10.0137037 Z M13.2739814,12.2739814 C10.5114197,15.0365431 10.5114197,19.5570986 13.2739814,22.3196603 C16.0365431,25.082222 20.5570986,25.082222 23.3196603,22.3196603 C26.082222,19.5570986 26.082222,15.0365431 23.3196603,12.2739814 C20.5570986,9.51141972 16.0365431,9.51141972 13.2739814,12.2739814 Z"></path>
+								</g>
+								<!-- Fallback PNG image for older browsers.
+								The <image> element is a valid SVG element. In SVG, you would specify
+								the URL of the image file with the xlink:href – as we don't reference an
+								image it has no effect. It's important to include the empty xlink:href
+								attribute as this prevents versions of IE which support SVG from
+								downloading the fallback image when they don't need to.
+								In other browsers <image> is synonymous for the <img> tag and will be
+								interpreted as such, displaying the fallback image. -->
+								<image src="<?php echo get_template_directory_uri() . '/img/icon-search.png'; ?>" xlink:href="" width="25" height="25"></image>
+							</svg>
+						</a>
           </div>
 				</div>
 			</div>
