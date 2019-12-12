@@ -806,9 +806,21 @@ function changeBgColor() {
 }
 add_action('login_head', 'changeBgColor');
 
-function render_nav_term($term, $level) { 
+function get_term_hierarchy($term) {
+    $hierarchy_array = [];
+    array_unshift($hierarchy_array, $term);
+    while(!empty($term->parent)):
+        $term = get_term_by('id', $term->parent, 'service');
+        array_unshift($hierarchy_array, $term);
+    endwhile;
+    return $hierarchy_array;
+}
+
+function render_nav_term($term, $level, $hierarchy) { 
     if ($level < 4) {
-        $output = "<li class='lbh-nav__item lbh-nav__item--service'><a href='" . get_term_link($term) . "' class='lbh-nav__link--service'>" . $term->name . "</a>";
+        $output = "<li class='lbh-nav__item lbh-nav__item--service";
+        $output .= !empty($hierarchy) && $hierarchy[($level - 1)]->term_id === $term->term_id ? " lbh-nav__item--selected" : "";
+        $output .= "'><a href='" . get_term_link($term) . "' class='lbh-nav__link--service'>" . $term->name . "</a>";
         $child_terms = get_terms([
             'taxonomy' => 'service',
             'parent' => $term->term_id,
@@ -834,7 +846,7 @@ function render_nav_term($term, $level) {
             $output .= "<ul class='lbh-nav__list lbh-nav__list--loading lbh-nav__list--level-" . ($level + 1) . "'  data-level='" . ($level + 1) ."' tabindex='-1'><h2 class='lbh-heading-h5 lbh-nav__list-title'>" . $term->name . "</h2>";
                 if ($child_terms): 
                     foreach($child_terms as $term):
-                        $output .= render_nav_term($term, $level + 1);
+                        $output .= render_nav_term($term, $level + 1, $hierarchy);
                     endforeach;
                 endif;
                 if ($posts):

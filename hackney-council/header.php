@@ -159,6 +159,17 @@
 			'parent' => 0,
 			'hide_empty' => true,
 		]); ?>
+
+		<?php
+			$hierarchy = [];
+			if(is_page()) {
+				global $post;
+				$service = get_the_terms( $post->ID, 'service')[0];
+				if ($service->name !== 'Pages') {
+					$hierarchy = get_term_hierarchy($service);
+				}
+			}
+		?>
 		<?php if($terms): ?>
 			<nav class="lbh-nav" data-module="lbh-nav">
 				<div class="lbh-container">
@@ -171,7 +182,7 @@
 						<h2 class="lbh-heading-h5 lbh-nav__list-title">Services</h2>
 						<?php foreach($terms as $term) :?>
 							<?php if($term->name !== 'Pages'): ?>
-								<?php echo render_nav_term($term, 1); ?>
+								<?php echo render_nav_term($term, 1, $hierarchy); ?>
 							<?php endif; ?>
 						<?php endforeach; ?>	
 					</ul></div>
@@ -226,11 +237,7 @@
 				<?php $breadcrumbs = []; ?>
 				<?php $term = get_the_terms($post->ID, 'service')[0]; ?>
 				<?php if ($term->name !== 'Pages'): ?>
-					<?php array_unshift($breadcrumbs, $term); ?>
-					<?php while(!empty($term->parent)): ?>
-						<?php $term = get_term_by('id', $term->parent, 'service'); ?>
-						<?php array_unshift($breadcrumbs, $term); ?>
-					<?php endwhile; ?>
+					<?php $breadcrumbs = get_term_hierarchy($term); ?>
 					<div class="govuk-breadcrumbs lbh-breadcrumbs lbh-container">
 						<ol class="govuk-breadcrumbs__list">
 							<li class="govuk-breadcrumbs__list-item">

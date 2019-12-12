@@ -69,7 +69,10 @@ Nav.prototype.removeLists = function(level) {
     this.$navContainer.lastChild.classList.add('lbh-nav__list--loading')
     var newActiveList = this.$navContainer.childNodes[this.$navContainer.childNodes.length - 2]
     newActiveList.classList.remove('lbh-nav__list--previous')
-    newActiveList.querySelector('.lbh-nav__item--selected').classList.remove('lbh-nav__item--selected')
+    var $selected = newActiveList.querySelector('.lbh-nav__item--selected')
+    if ($selected !== null) {
+      $selected.classList.remove('lbh-nav__item--selected')
+    }
     this.$navContainer.removeChild(this.$navContainer.lastChild)
     this.$breadcrumb.removeChild(this.$breadcrumb.lastChild)
   }
@@ -92,23 +95,27 @@ Nav.prototype.showServiceNav = function(e) {
   if (e.keyCode === 13 || e.type === 'click') {
     e.preventDefault()
     var parent = e.currentTarget.parentElement
-    var siblings = getSiblings(parent)
-    for (var i = 0; i < siblings.length; i++) {
-      siblings[i].classList.remove('lbh-nav__item--selected')
-    }
-    parent.classList.add('lbh-nav__item--selected')
-    var list = parent.querySelector('.lbh-nav__list').cloneNode(true)
-    list.classList.add('lbh-nav__list--visible')
-    var level = parseInt(list.getAttribute('data-level'), 10) - 1
-    this.removeLists(level)
-    this.$navContainer.appendChild(list)
-    this.addBreadcrumb(list)
-    list.focus()
-    this.$navContainer.childNodes[this.$navContainer.childNodes.length - 2].classList.add('lbh-nav__list--previous')
-    list.classList.remove('lbh-nav__list--loading')
-    this.unbindServiceLinks()
-    this.bindServiceLinks()
+    this.showServiceNavItem(parent)
   }
+}
+
+Nav.prototype.showServiceNavItem = function(parent) {
+  var siblings = getSiblings(parent)
+  for (var i = 0; i < siblings.length; i++) {
+    siblings[i].classList.remove('lbh-nav__item--selected')
+  }
+  var list = parent.querySelector('.lbh-nav__list').cloneNode(true)
+  list.classList.add('lbh-nav__list--visible')
+  var level = parseInt(list.getAttribute('data-level'), 10) - 1
+  this.removeLists(level)
+  parent.classList.add('lbh-nav__item--selected')
+  this.$navContainer.appendChild(list)
+  this.addBreadcrumb(list)
+  list.focus()
+  this.$navContainer.childNodes[this.$navContainer.childNodes.length - 2].classList.add('lbh-nav__list--previous')
+  list.classList.remove('lbh-nav__list--loading')
+  this.unbindServiceLinks()
+  this.bindServiceLinks()
 }
 
 Nav.prototype.init = function () {
@@ -120,6 +127,21 @@ Nav.prototype.init = function () {
   this.bindServiceLinks()
   this.bindBreadcrumbButtons()
   this.bindNavButton()
+
+  var $level1Selected = this.$navContainer.querySelector('.lbh-nav__list--level-1 > .lbh-nav__item--selected');
+  if ($level1Selected !== null) {
+    this.showServiceNavItem($level1Selected)
+
+    var $level2Selected = this.$navContainer.querySelector('.lbh-nav__list--level-2 > .lbh-nav__item--selected');
+    if ($level2Selected !== null) {
+      this.showServiceNavItem($level2Selected)
+
+      var $level3Selected = this.$navContainer.querySelector('.lbh-nav__list--level-3 > .lbh-nav__item--selected');
+      if ($level3Selected !== null) {
+        this.showServiceNavItem($level3Selected)
+      }
+    }
+  }
 }
 
 function getChildren(n, skipMe){
