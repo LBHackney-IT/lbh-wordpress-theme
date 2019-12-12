@@ -851,7 +851,9 @@ function render_nav_term($term, $level, $hierarchy) {
                 endif;
                 if ($posts):
                     foreach($posts as $post):
-                        $output .= "<li class='lbh-nav__item lbh-nav__item--page'><a href='" . get_the_permalink($post->ID) . "'>" . $post->post_title . "</a></li>";
+                        $permalink = get_the_permalink($post->ID);
+                        $page_class = $permalink === get_permalink() ? " lbh-nav__item--selected" : "";
+                        $output .= "<li class='lbh-nav__item lbh-nav__item--page" . $page_class . "'><a href='" . $permalink . "'>" . $post->post_title . "</a></li>";
                     endforeach;
                 endif;
             $output .= "</ul>";
