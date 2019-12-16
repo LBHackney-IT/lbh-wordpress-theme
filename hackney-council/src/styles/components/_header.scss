@@ -10,6 +10,10 @@
     }
   }
 
+  .body--purple &__service-name {
+    color: lbh-colour("lbh-h04");
+  }
+
   &--fixed + .lbh-breadcrumbs {
     @include lbh-rem(margin-top, 162);
 

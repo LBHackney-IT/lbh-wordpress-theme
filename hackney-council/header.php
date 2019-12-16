@@ -38,22 +38,22 @@
 					<?php else : ?>
 						<div class="lbh-header__title">
 					<?php endif; ?>
-						<a href="<?php echo home_url(); ?>" class="lbh-header__title-link">
-							<?php if (get_field('header_logo', 'option')): ?>
-								<span class="lbh-header__logo lbh-header__logo--svg">
-									<?php echo wp_get_attachment_image(get_field('header_logo', 'option'), 'header-logo'); ?>
-								</span>
-							<?php endif; ?>
-							<?php if (get_field('header_logo_fallback', 'option')): ?>
-								<span class="lbh-header__logo lbh-header__logo--png">
-									<?php echo wp_get_attachment_image(get_field('header_logo_fallback', 'option'), 'header-logo'); ?>
-								</span>
-							<?php endif; ?>
-							<span class="lbh-header__logo-text">
-								Hackney
+					<a href="<?php echo home_url(); ?>" class="lbh-header__title-link">
+						<?php if (get_field('header_logo', 'option')): ?>
+							<span class="lbh-header__logo lbh-header__logo--svg">
+								<?php echo wp_get_attachment_image(get_field('header_logo', 'option'), 'header-logo'); ?>
 							</span>
-							<span class="lbh-header__service-name lbh-header__service-name--short">Intranet</span>
-						</a>
+						<?php endif; ?>
+						<?php if (get_field('header_logo_fallback', 'option')): ?>
+							<span class="lbh-header__logo lbh-header__logo--png">
+								<?php echo wp_get_attachment_image(get_field('header_logo_fallback', 'option'), 'header-logo'); ?>
+							</span>
+						<?php endif; ?>
+						<span class="lbh-header__logo-text">
+							Hackney
+						</span>
+						<span class="lbh-header__service-name lbh-header__service-name--short">Intranet</span>
+					</a>
 					<?php if (is_home()) : ?>
 						</h1>
 					<?php else : ?>

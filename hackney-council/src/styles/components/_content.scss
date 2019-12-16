@@ -107,15 +107,27 @@
     @extend .govuk-button;
     @extend .lbh-button;
     margin-top: 0;
-    background: lbh-colour("lbh-e01") !important;
+    background: lbh-colour("lbh-a01") !important;
+
+    .body--purple & {
+      background: lbh-colour("lbh-e01") !important;
+    }
 
     &:hover {
-      background: lbh-colour("lbh-e02") !important;
+      background: lbh-colour("lbh-a02") !important;
+
+      .body--purple & {
+        background: lbh-colour("lbh-e02") !important;
+      }
     }
 
     &:focus {
       color: $govuk-focus-text-colour !important;
       background-color: $govuk-focus-colour !important;
+
+      .body--purple & {
+        background-color: $govuk-focus-colour !important;
+      }
     }
   }
   // sass-lint:enable placeholder-in-extend
