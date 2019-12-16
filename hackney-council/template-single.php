@@ -5,7 +5,9 @@
       <main class="lbh-main-wrapper" role="main" >
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <?php include( locate_template( 'component-hero.php', false, false ) ); ?>
-          <div class="lbh-container">
+          <?php if(!is_front_page()) : ?>
+            <div class="lbh-container">
+          <?php endif; ?>
     <?php else :?>
       <?php get_template_part('component-announcement'); ?>
       <?php get_template_part('component-breadcrumb'); ?>

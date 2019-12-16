@@ -2,7 +2,7 @@
   min-width: 320px;
 
   &--fixed + *,
-  &--fixed + .lbh-nav + * {
+  .js-enabled &--fixed + .lbh-nav + * {
     @include lbh-rem(margin-top, 108);
 
     @include govuk-media-query($from: tablet) {
@@ -60,6 +60,7 @@
 
     @include govuk-media-query($from: tablet) {
       display: block;
+      @include lbh-rem(min-width, 86);
       @include lbh-rem(height, 38);
       @include lbh-rem(padding, 4, 0);
     }
