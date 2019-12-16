@@ -64,6 +64,10 @@
     }
   }
 
+  &__list-item + &__list-item {
+    margin-top: 1em;
+  }
+
   &__link {
     font-family: $lbh-font-family;
     @include lbh-rem(font-size, 16);
