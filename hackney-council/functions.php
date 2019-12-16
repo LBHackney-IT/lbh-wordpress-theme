@@ -820,7 +820,19 @@ function render_nav_term($term, $level, $hierarchy) {
     if ($level < 4) {
         $output = "<li class='lbh-nav__item lbh-nav__item--service";
         $output .= !empty($hierarchy) && $hierarchy[($level - 1)]->term_id === $term->term_id ? " lbh-nav__item--selected" : "";
-        $output .= "'><a href='" . get_term_link($term) . "' class='lbh-nav__link--service'>" . $term->name . "</a>";
+        $output .= "'><a href='" . get_term_link($term) . "' class='lbh-nav__link--service'>" . $term->name . "<svg class='lbh-nav__service-icon' width='5px' height='6px' viewBox='0 0 5 6' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+        <title>Right arrow</title>
+        <g stroke='none' stroke-width='1' fill-rule='nonzero' transform='translate(0.625000, 0.166667)'>
+            <path d='M0,5.47656805 L0,0.401143984 C0,0.049704142 0.478025148,-0.126291913 0.757588757,0.122209073 L3.61251479,2.6599211 C3.78581361,2.8139645 3.78581361,3.06374753 3.61251479,3.21779093 L0.757588757,5.75550296 C0.478025148,6.00402367 0,5.82800789 0,5.47656805 Z'></path>
+        </g><!-- Fallback PNG image for older browsers.
+        The <image> element is a valid SVG element. In SVG, you would specify
+        the URL of the image file with the xlink:href – as we don't reference an
+        image it has no effect. It's important to include the empty xlink:href
+        attribute as this prevents versions of IE which support SVG from
+        downloading the fallback image when they don't need to.
+        In other browsers <image> is synonymous for the <img> tag and will be
+        interpreted as such, displaying the fallback image. -->
+        <image src='" . get_template_directory_uri() . "/img/icon-search.png' xlink:href='' width='5' height='6'></image></svg></a>";
         $child_terms = get_terms([
             'taxonomy' => 'service',
             'parent' => $term->term_id,

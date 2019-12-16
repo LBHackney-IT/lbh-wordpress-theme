@@ -1,6 +1,10 @@
 .lbh-content {
   @include lbh-font;
 
+  @include govuk-media-query($until: tablet) {
+    word-break: break-word;
+  }
+
   h1,
   .lbh-heading-h1 {
     @include lbh-heading-h1;

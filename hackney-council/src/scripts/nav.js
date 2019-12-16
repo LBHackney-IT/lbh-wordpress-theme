@@ -128,6 +128,15 @@ Nav.prototype.init = function () {
   this.bindBreadcrumbButtons()
   this.bindNavButton()
 
+  var levels = ['level-1', 'level-2', 'level-3']
+  for (var i = 0; i < levels.length; i++) {
+    var selected = this.$navContainer.querySelector(".lbh-nav__list--" + levels[i] + " > .lbh-nav__item--selected")
+    if (selected !== null) {
+      this.showServiceNavItem(selected)
+    } else {
+      break
+    }
+  })
   var $level1Selected = this.$navContainer.querySelector('.lbh-nav__list--level-1 > .lbh-nav__item--selected');
   if ($level1Selected !== null) {
     this.showServiceNavItem($level1Selected)
