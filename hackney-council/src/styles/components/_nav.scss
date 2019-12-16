@@ -162,6 +162,8 @@
 
     @include govuk-media-query($from: desktop) {
       @include lbh-rem(padding, 0, 24);
+      margin-right: 0;
+      margin-left: 0;
     }
   }
 

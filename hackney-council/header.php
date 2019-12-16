@@ -60,6 +60,8 @@
 						</div>
 					<?php endif; ?>
 					<div class="lbh-header__links">
+						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/wp-admin">Dashboard</a>
+						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/news">News</a>
             <button class="lbh-header__menu-link" data-module="lbh-nav-button">
 							<span class="lbh-header__menu-link--menu">
 								<span class="lbh-header__menu-link-text">Menu</span>

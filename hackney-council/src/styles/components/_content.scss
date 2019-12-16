@@ -70,6 +70,27 @@
     @extend .govuk-table__cell;
   }
   // sass-lint:enable placeholder-in-extend
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .image__third {
+    @include govuk-media-query($from: tablet) {
+      width: 50%;
+    }
+
+    @include govuk-media-query($from: desktop) {
+      width: 33.333%;
+    }
+  }
+
+  .image__half {
+    @include govuk-media-query($from: tablet) {
+      width: 50%;
+    }
+  }
 }
 
 .post-edit-link {

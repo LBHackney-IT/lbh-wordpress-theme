@@ -41,8 +41,7 @@
 
   &__menu-link {
     box-sizing: border-box;
-    @include lbh-rem(margin-top, 8px);
-    @include lbh-rem(margin-right, 12px);
+    @include lbh-rem(margin-top, 8);
     padding-right: 0;
     padding-left: 0;
     border: 1px solid transparent;
@@ -62,8 +61,7 @@
     @include govuk-media-query($from: tablet) {
       display: block;
       @include lbh-rem(height, 38);
-      @include lbh-rem(margin-right, 24px);
-      @include lbh-rem(padding, 4px, 0);
+      @include lbh-rem(padding, 4, 0);
     }
   }
 
@@ -113,6 +111,19 @@
     }
   }
 
+  &__nav-link {
+    display: none;
+
+    @include govuk-media-query($from: tablet) {
+      display: block;
+      border: 1px solid transparent;
+    }
+
+    &:hover {
+      border-bottom: 1px solid lbh-colour("lbh-white");
+    }
+  }
+
   &__links &__nav-link,
   &__menu-link-text {
     font-weight: $lbh-font-weight-medium;
@@ -127,12 +138,14 @@
     }
   }
 
-  & &__search {
-    padding: 0;
+  &__links a + button,
+  &__links button + a {
+    @include lbh-rem(margin-left, 18);
+  }
 
-    &:hover {
-      border-bottom: 1px solid lbh-colour("lbh-white");
-    }
+  & &__search {
+    display: block;
+    padding: 0;
 
     @include govuk-media-query($from: tablet) {
       box-sizing: border-box;
@@ -147,8 +160,8 @@
 
   &__search-icon {
     box-sizing: border-box;
-    @include lbh-rem(width, 32px);
-    @include lbh-rem(height, 32px);
+    @include lbh-rem(width, 32);
+    @include lbh-rem(height, 32);
     margin: 0;
     padding: 0;
     fill: lbh-colour("lbh-white");
@@ -158,9 +171,9 @@
     }
 
     @include govuk-media-query($from: tablet) {
-      @include lbh-rem(width, 30px);
-      @include lbh-rem(height, 30px);
-      @include lbh-rem(padding, 4px);
+      @include lbh-rem(width, 30);
+      @include lbh-rem(height, 30);
+      @include lbh-rem(padding, 4);
     }
   }
 
@@ -168,13 +181,13 @@
     margin-top: 0;
 
     @include govuk-media-query($from: tablet) {
-      @include lbh-rem(margin-left, 12px);
+      @include lbh-rem(margin-left, 8);
     }
   }
 
   &__menu-link-icon--mobile {
-    @include lbh-rem(width, 40px);
-    @include lbh-rem(height, 25px);
+    @include lbh-rem(width, 40);
+    @include lbh-rem(height, 25);
 
     @include govuk-media-query($from: tablet) {
       display: none;
@@ -186,8 +199,8 @@
 
     @include govuk-media-query($from: tablet) {
       display: inline-block;
-      @include lbh-rem(width, 17px);
-      @include lbh-rem(height, 15px);
+      @include lbh-rem(width, 17);
+      @include lbh-rem(height, 15);
     }
   }
 

@@ -136,20 +136,6 @@ Nav.prototype.init = function () {
     } else {
       break
     }
-  })
-  var $level1Selected = this.$navContainer.querySelector('.lbh-nav__list--level-1 > .lbh-nav__item--selected');
-  if ($level1Selected !== null) {
-    this.showServiceNavItem($level1Selected)
-
-    var $level2Selected = this.$navContainer.querySelector('.lbh-nav__list--level-2 > .lbh-nav__item--selected');
-    if ($level2Selected !== null) {
-      this.showServiceNavItem($level2Selected)
-
-      var $level3Selected = this.$navContainer.querySelector('.lbh-nav__list--level-3 > .lbh-nav__item--selected');
-      if ($level3Selected !== null) {
-        this.showServiceNavItem($level3Selected)
-      }
-    }
   }
 }
 
