@@ -76,6 +76,16 @@
     height: auto;
   }
 
+  .alignright {
+    @include lbh-rem(margin, 6, 0, 24, 24);
+    float: right;
+  }
+
+  .alignleft {
+    @include lbh-rem(margin, 6, 24, 24, 0);
+    float: left;
+  }
+
   .image__third {
     @include govuk-media-query($from: tablet) {
       width: 50%;

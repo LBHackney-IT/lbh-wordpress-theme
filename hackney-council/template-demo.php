@@ -1,5 +1,6 @@
 <?php /* Template Name: Demo Page Template */ get_header(); ?>
-
+<?php get_template_part('component-announcement'); ?>
+<?php get_template_part('component-breadcrumb'); ?>
 <main class="lbh-main-wrapper" role="main">
 	<div class="lbh-container">
 		<h1 class="lbh-heading-h1"><?php the_title(); ?></h1>
