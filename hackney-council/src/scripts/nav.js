@@ -5,6 +5,7 @@ function Nav ($module) {
   this.$breadcrumb = this.$nav.querySelector('.govuk-breadcrumbs__list')
   this.$navButton = document.querySelector('[data-module="lbh-nav-button"')
   this.$breadcrumbLinks = this.$breadcrumb.querySelectorAll('.govuk-breadcrumbs__link')
+  this.isOpen = false;
 }
 
 Nav.prototype.bindServiceLinks = function () {
@@ -26,16 +27,27 @@ Nav.prototype.unbindServiceLinks = function () {
 Nav.prototype.bindNavButton = function(e) {
   this.$navButton.addEventListener('click', this.toggleNav.bind(this), false)
   this.$navButton.addEventListener('keydown', this.toggleNav.bind(this), false)
+  document.addEventListener('click', function(e) {
+    if (this.isOpen === true && e.target !== this.$nav && !this.$nav.contains(e.target) && e.target !== this.$navButton && !this.$navButton.contains(e.target)) {
+      this.closeNav()
+    }  
+  }.bind(this));
+}
+
+Nav.prototype.closeNav = function() {
+  this.$nav.classList.remove('lbh-nav--open')
+  this.$navButton.classList.remove('lbh-header__menu-link--open')
+  this.isOpen = false
 }
 
 Nav.prototype.toggleNav = function(e) {
   if (e.keyCode === 13 || e.type === 'click') {
     if (this.$nav.classList.contains('lbh-nav--open')) {
-      this.$nav.classList.remove('lbh-nav--open')
-      this.$navButton.classList.remove('lbh-header__menu-link--open')
+      this.closeNav()
     } else {
       this.$nav.classList.add('lbh-nav--open')
       this.$navButton.classList.add('lbh-header__menu-link--open')
+      this.isOpen = true
     }
   }
 }
