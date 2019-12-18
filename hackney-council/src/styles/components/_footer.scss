@@ -82,20 +82,93 @@
 
   &__links-social {
     overflow: hidden;
+    @include lbh-rem(margin-right, -6);
+    @include lbh-rem(margin-left, -6);
 
     .flexbox & {
       display: flex;
-      justify-content: stretch;
+      justify-content: space-between;
+
+      @include govuk-media-query($from: desktop) {
+        justify-content: flex-start;
+      }
     }
   }
 
   &__social-item {
+    @include lbh-rem(margin, 0, 6);
     float: left;
-    @include lbh-rem(margin-right, 12);
 
     .flexbox & {
-      margin: 0;
       float: none;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    position: relative;
+    @include lbh-rem(width, 32);
+    @include lbh-rem(height, 32);
+
+    &:hover {
+      border-bottom: 1px solid lbh-colour("lbh-white");
+    }
+
+    &:focus {
+      @include govuk-focused-text;
+    }
+  }
+
+  &__social-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: lbh-colour("lbh-white");
+
+    .lbh-footer__social-link:focus & {
+      fill: lbh-colour("lbh-black");
+    }
+
+    &--twitter {
+      @include lbh-rem(width, 27);
+      @include lbh-rem(height, 22);
+
+      @include govuk-media-query($from: desktop) {
+        @include lbh-rem(width, 20);
+        @include lbh-rem(height, 17);
+      }
+    }
+
+    &--facebook {
+      @include lbh-rem(width, 15);
+      @include lbh-rem(height, 27);
+
+      @include govuk-media-query($from: desktop) {
+        @include lbh-rem(width, 11);
+        @include lbh-rem(height, 20);
+      }
+    }
+
+    &--youtube {
+      @include lbh-rem(width, 33);
+      @include lbh-rem(height, 23);
+
+      @include govuk-media-query($from: desktop) {
+        @include lbh-rem(width, 26);
+        @include lbh-rem(height, 18);
+      }
+    }
+
+    &--instagram {
+      @include lbh-rem(width, 27);
+      @include lbh-rem(height, 27);
+
+      @include govuk-media-query($from: desktop) {
+        @include lbh-rem(width, 20);
+        @include lbh-rem(height, 20);
+      }
     }
   }
 
