@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main class="lbh-main-wrapper" role="main" >
+    <!-- This is a horrible hack to make the anchor link to the right place (because of the fixed header) 
+    but it's what the TinyMCE plugin is doing for anchors across the rest of the site anyway -->
+    <a id="main-content"></a>
 		<!-- section -->
 		<section>
 
