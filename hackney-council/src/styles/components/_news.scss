@@ -46,6 +46,7 @@
 
     .lbh-article__excerpt {
       overflow: hidden;
+      @include lbh-rem(margin-bottom, 12);
     }
   }
 
