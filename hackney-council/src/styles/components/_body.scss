@@ -21,3 +21,7 @@ body {
   right: 0;
   left: 0;
 }
+
+a:empty + article {
+  margin-top: 0;
+}
