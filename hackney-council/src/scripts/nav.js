@@ -116,16 +116,19 @@ Nav.prototype.showServiceNavItem = function(parent) {
   for (var i = 0; i < siblings.length; i++) {
     siblings[i].classList.remove('lbh-nav__item--selected')
   }
-  var list = parent.querySelector('.lbh-nav__list').cloneNode(true)
-  list.classList.add('lbh-nav__list--visible')
-  var level = parseInt(list.getAttribute('data-level'), 10) - 1
-  this.removeLists(level)
-  parent.classList.add('lbh-nav__item--selected')
-  this.$navContainer.appendChild(list)
-  this.addBreadcrumb(list)
-  list.focus()
-  this.$navContainer.childNodes[this.$navContainer.childNodes.length - 2].classList.add('lbh-nav__list--previous')
-  list.classList.remove('lbh-nav__list--loading')
+  if (parent.querySelector('.lbh-nav__list') !== null) {
+    var list = parent.querySelector('.lbh-nav__list').cloneNode(true)
+    list.classList.add('lbh-nav__list--visible')
+    var level = parseInt(list.getAttribute('data-level'), 10) - 1
+    this.removeLists(level)
+    parent.classList.add('lbh-nav__item--selected')
+    this.$navContainer.appendChild(list)
+    this.addBreadcrumb(list)
+    list.focus()
+    this.$navContainer.childNodes[this.$navContainer.childNodes.length - 2].classList.add('lbh-nav__list--previous')
+    list.classList.remove('lbh-nav__list--loading')
+  }
+  // unbind and rebind service links to make sure that any new links are included 
   this.unbindServiceLinks()
   this.bindServiceLinks()
 }
@@ -140,6 +143,7 @@ Nav.prototype.init = function () {
   this.bindBreadcrumbButtons()
   this.bindNavButton()
 
+  // Select current page in nav on page load (and populate nav accordingly)
   var levels = ['level-1', 'level-2', 'level-3']
   for (var i = 0; i < levels.length; i++) {
     var selected = this.$navContainer.querySelector(".lbh-nav__list--" + levels[i] + " > .lbh-nav__item--selected")
