@@ -85,7 +85,7 @@
             <?php endwhile; ?>
           <?php endif; ?>
           <?php if(!is_front_page()) : ?>
-            <?php if (get_post_type == 'post') : ?>
+            <?php if (get_post_type() == 'post') : ?>
               <?php comments_template( '', true ); ?>
             <?php endif; ?>
             <?php edit_post_link(); ?>
