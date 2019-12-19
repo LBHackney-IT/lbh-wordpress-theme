@@ -1,0 +1,5 @@
+.lbh-content a:empty,
+main > a:first-child:empty {
+  position: relative;
+  @include lbh-rem(top, -120);
+}

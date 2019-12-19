@@ -3,6 +3,9 @@
     <?php $hero = get_field('hero'); ?>
     <?php if($hero['show_hero']): ?>
       <main class="lbh-main-wrapper" role="main" >
+        <!-- This is a horrible hack to make the anchor link to the right place (because of the fixed header) 
+        but it's what the TinyMCE plugin is doing for anchors across the rest of the site anyway -->
+        <a id="main-content"></a>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <?php include( locate_template( 'component-hero.php', false, false ) ); ?>
           <?php if(!is_front_page()) : ?>
@@ -13,6 +16,9 @@
       <?php get_template_part('component-announcement'); ?>
       <?php get_template_part('component-breadcrumb'); ?>
       <main class="lbh-main-wrapper" role="main" >
+        <!-- This is a horrible hack to make the anchor link to the right place (because of the fixed header) 
+        but it's what the TinyMCE plugin is doing for anchors across the rest of the site anyway -->
+        <a id="main-content"></a>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <div class="lbh-container">
             <h1 class="lbh-heading-h1" id="content"><?php the_title(); ?></h1>
@@ -85,7 +91,7 @@
             <?php endwhile; ?>
           <?php endif; ?>
           <?php if(!is_front_page()) : ?>
-            <?php if (get_post_type == 'post') : ?>
+            <?php if (get_post_type() == 'post') : ?>
               <?php comments_template( '', true ); ?>
             <?php endif; ?>
             <?php edit_post_link(); ?>
@@ -99,6 +105,9 @@
   <?php endwhile; ?>
 <?php else: ?>
   <main class="lbh-main-wrapper" role="main" >
+    <!-- This is a horrible hack to make the anchor link to the right place (because of the fixed header) 
+    but it's what the TinyMCE plugin is doing for anchors across the rest of the site anyway -->
+    <a id="main-content"></a>
     <article>
       <div class="lbh-container">
         <h2 class="lbh-heading-h2"><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>

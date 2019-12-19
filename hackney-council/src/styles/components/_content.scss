@@ -156,3 +156,9 @@
 .lbh-iframe iframe {
   width: 100%;
 }
+
+.fa-external-link {
+  color: lbh-colour("lbh-link");
+  @include lbh-rem(margin-right, 6);
+  @include lbh-rem(font-size, 12);
+}
