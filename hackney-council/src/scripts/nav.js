@@ -5,7 +5,7 @@ function Nav ($module) {
   this.$breadcrumb = this.$nav.querySelector('.govuk-breadcrumbs__list')
   this.$navButton = document.querySelector('[data-module="lbh-nav-button"')
   this.$breadcrumbLinks = this.$breadcrumb.querySelectorAll('.govuk-breadcrumbs__link')
-  this.isOpen = false;
+  this.isOpen = false
 }
 
 Nav.prototype.bindServiceLinks = function () {
@@ -40,8 +40,8 @@ Nav.prototype.bindTabbing = function(e) {
     }
   }.bind(this))
 
-  this.$nav.addEventListener('focusout', function() {
-    if (this.isOpen) {
+  this.$nav.addEventListener('focusout', function(e) {
+    if (this.isOpen && e.relatedTarget !== this.$navButton) {
       this.closeNav()
     }
   }.bind(this))
