@@ -1,5 +1,6 @@
 body {
   display: flex;
+  width: 100%;
   min-width: 320px;
   min-height: 100vh;
   margin-top: 0;
@@ -7,5 +8,9 @@ body {
 }
 
 .lbh-container {
+  width: auto;
+}
+
+.lbh-breadcrumbs {
   width: 100%;
 }

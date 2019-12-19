@@ -1,12 +1,18 @@
-<main class="lbh-main-wrapper" role="main" >
-  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  	<?php if (have_posts()): ?>
-      <?php while (have_posts()) : the_post(); ?>
-        <?php if( have_rows('hero') ): ?>
-          <?php while( have_rows('hero') ): the_row(); ?>
-            <?php get_template_part('component-hero'); ?>
-          <?php endwhile; ?>
-        <?php else :?>
+<?php if (have_posts()): ?>
+  <?php while (have_posts()) : the_post(); ?>
+    <?php $hero = get_field('hero'); ?>
+    <?php if($hero['show_hero']): ?>
+      <main class="lbh-main-wrapper" role="main" >
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+          <?php include( locate_template( 'component-hero.php', false, false ) ); ?>
+          <?php if(!is_front_page()) : ?>
+            <div class="lbh-container">
+          <?php endif; ?>
+    <?php else :?>
+      <?php get_template_part('component-announcement'); ?>
+      <?php get_template_part('component-breadcrumb'); ?>
+      <main class="lbh-main-wrapper" role="main" >
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <div class="lbh-container">
             <h1 class="lbh-heading-h1" id="content"><?php the_title(); ?></h1>
             <?php if ( has_post_thumbnail()) : ?>
@@ -88,12 +94,15 @@
           <?php get_template_part('component-social-blocks'); ?>
         <?php endif; ?>
       </article>
-    <?php endwhile; ?>
-  <?php else: ?>
+    </main>
+  <?php endwhile; ?>
+<?php else: ?>
+  <main class="lbh-main-wrapper" role="main" >
     <article>
       <div class="lbh-container">
         <h2 class="lbh-heading-h2"><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
       </div>
     </article>
-  <?php endif; ?>	
-</main>
+  </main>
+<?php endif; ?>	
+

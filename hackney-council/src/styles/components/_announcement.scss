@@ -7,3 +7,11 @@
 .lbh-announcement h2 {
   @include lbh-heading-h3;
 }
+
+.lbh-announcement .lbh-content p,
+.lbh-announcement .lbh-content ul,
+.lbh-announcement .lbh-content ol {
+  font-weight: $lbh-font-weight-regular;
+}
+
+

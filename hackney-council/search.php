@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-
+<?php get_template_part('component-announcement'); ?>
+<?php get_template_part('component-breadcrumb'); ?>
 <main class="lbh-main-wrapper" role="main">
 	<div class="lbh-container">
 		<h1 class="lbh-heading-h1"><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>

@@ -1,6 +1,10 @@
 .lbh-content {
   @include lbh-font;
 
+  @include govuk-media-query($until: tablet) {
+    word-break: break-word;
+  }
+
   h1,
   .lbh-heading-h1 {
     @include lbh-heading-h1;
@@ -64,6 +68,55 @@
 
   td {
     @extend .govuk-table__cell;
+  }
+  // sass-lint:enable placeholder-in-extend
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .alignright {
+    @include lbh-rem(margin, 6, 0, 24, 24);
+    float: right;
+  }
+
+  .alignleft {
+    @include lbh-rem(margin, 6, 24, 24, 0);
+    float: left;
+  }
+
+  .image__third {
+    @include govuk-media-query($from: tablet) {
+      width: 50%;
+    }
+
+    @include govuk-media-query($from: desktop) {
+      width: 33.333%;
+    }
+  }
+
+  .image__half {
+    @include govuk-media-query($from: tablet) {
+      width: 50%;
+    }
+  }
+
+  // sass-lint:disable placeholder-in-extend
+  .fasc-button {
+    @extend .govuk-button;
+    @extend .lbh-button;
+    margin-top: 0;
+    background: lbh-colour("lbh-e01") !important;
+
+    &:hover {
+      background: lbh-colour("lbh-e02") !important;
+    }
+
+    &:focus {
+      color: $govuk-focus-text-colour !important;
+      background-color: $govuk-focus-colour !important;
+    }
   }
   // sass-lint:enable placeholder-in-extend
 }

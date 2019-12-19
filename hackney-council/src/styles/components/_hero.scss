@@ -162,4 +162,8 @@
   &__social-text {
     @include govuk-visually-hidden;
   }
+
+  & + .lbh-container {
+    @include lbh-rem(margin-top, 48);
+  }
 }

@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-
+<?php get_template_part('component-announcement'); ?>
+<?php get_template_part('component-breadcrumb'); ?>
 <main class="lbh-main-wrapper" role="main">
 	<div class="lbh-container">
 		<article id="post-404">
