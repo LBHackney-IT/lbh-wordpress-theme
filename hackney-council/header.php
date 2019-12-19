@@ -60,7 +60,9 @@
 						</div>
 					<?php endif; ?>
 					<div class="lbh-header__links">
-						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/wp-admin">Dashboard</a>
+						<?php if( current_user_can('editor') || current_user_can('administrator') ) :  ?>
+							<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/wp-admin">Dashboard</a>
+						<?php endif; ?>
 						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/news">News</a>
             <button class="lbh-header__menu-link" data-module="lbh-nav-button">
 							<span class="lbh-header__menu-link--menu">

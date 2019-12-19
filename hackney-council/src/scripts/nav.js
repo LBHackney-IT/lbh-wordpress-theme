@@ -60,21 +60,17 @@ Nav.prototype.openNav = function() {
 }
 
 Nav.prototype.toggleNav = function(e) {
-  if (e.type === 'click') {
-    if (this.$nav.classList.contains('lbh-nav--open')) {
-      this.closeNav()
-    } else {
-      this.openNav()
-    }
+  if (this.$nav.classList.contains('lbh-nav--open')) {
+    this.closeNav()
+  } else {
+    this.openNav()
   }
 }
 
 Nav.prototype.goToBreadcrumb = function(e) {
-  if (e.keyCode === 13 || e.type === 'click') {
-    var nodes = Array.prototype.slice.call(this.$breadcrumb.childNodes)
-    var index = nodes.indexOf(e.currentTarget.parentNode)
-    this.removeLists(index + 1)
-  }
+  var nodes = Array.prototype.slice.call(this.$breadcrumb.childNodes)
+  var index = nodes.indexOf(e.currentTarget.parentNode)
+  this.removeLists(index + 1)
 }
 
 Nav.prototype.bindBreadcrumbButtons = function() {
@@ -82,14 +78,12 @@ Nav.prototype.bindBreadcrumbButtons = function() {
   this.goToBreadcrumb = this.goToBreadcrumb.bind(this)
   for (var i = 0; i < this.$breadcrumbLinks.length; i++) {
     this.$breadcrumbLinks[i].addEventListener('click', this.goToBreadcrumb, false)
-    this.$breadcrumbLinks[i].addEventListener('keydown', this.goToBreadcrumb, false)
   }
 }
 
 Nav.prototype.unbindBreacrumbButtons = function() {
   for (var i = 0; i < this.$breadcrumbLinks; i++) {
     this.$breadcrumbLinks[i].removeEventListener('click', this.goToBreadcrumb, false)
-    this.$breadcrumbLinks[i].removeEventListener('keydown', this.goToBreadcrumb, false)
   }
 }
 
