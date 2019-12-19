@@ -1,0 +1,77 @@
+.lbh-comments {
+  @include lbh-body-m;
+
+  a {
+    @include lbh-link;
+  }
+
+  // sass-lint:disable placeholder-in-extend
+  label {
+    @extend .govuk-label;
+    @extend .lbh-label;
+  }
+
+  textarea {
+    @extend .govuk-textarea;
+    @extend .lbh-textarea;
+    @include lbh-rem(margin-top, 6);
+  }
+
+  input[type="submit"] {
+    @extend .govuk-button;
+    @extend .lbh-button;
+  }
+  // sass-lint:enable placeholder-in-extend
+
+  .comment + .comment {
+    @include lbh-rem(margin-top, 24);
+  }
+
+  .comment-author {
+    position: relative;
+  }
+
+  .comment-author,
+  .comment-meta {
+    @include lbh-body-xs;
+    @include lbh-rem(line-height, 18);
+  }
+
+  .comment-author img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    @include lbh-rem(width, 40);
+    @include lbh-rem(height, 40);
+    @include lbh-rem(margin-right, 12);
+    border-radius: 50%;
+  }
+
+  .comment-meta {
+    margin-top: 0;
+    float: left;
+  }
+
+  .fn,
+  .comment-meta {
+    @include lbh-rem(padding-left, 52);
+  }
+
+  p {
+    clear: both;
+  }
+
+  .form-submit {
+    margin-top: 0;
+  }
+
+  .reply {
+    @include lbh-rem(margin-top, 12);
+  }
+
+  .children {
+    @include lbh-rem(padding-left, 36);
+    list-style-type: none;
+  }
+}
