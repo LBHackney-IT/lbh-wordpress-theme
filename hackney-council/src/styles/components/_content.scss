@@ -51,6 +51,21 @@
   a {
     @include lbh-link;
   }
+
+  // sass-lint:disable placeholder-in-extend
+  table {
+    @extend .govuk-table;
+    @extend .lbh-table;
+  }
+
+  th {
+    @extend .govuk-table__header;
+  }
+
+  td {
+    @extend .govuk-table__cell;
+  }
+  // sass-lint:enable placeholder-in-extend
 }
 
 .post-edit-link {
