@@ -9,6 +9,7 @@
             <div class="lbh-container">
           <?php endif; ?>
     <?php else :?>
+      <?php get_template_part('component-phase-banner'); ?>
       <?php get_template_part('component-announcement'); ?>
       <?php get_template_part('component-breadcrumb'); ?>
       <main class="lbh-main-wrapper" role="main" >
