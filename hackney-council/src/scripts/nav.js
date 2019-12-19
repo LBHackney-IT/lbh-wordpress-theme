@@ -26,12 +26,25 @@ Nav.prototype.unbindServiceLinks = function () {
 
 Nav.prototype.bindNavButton = function(e) {
   this.$navButton.addEventListener('click', this.toggleNav.bind(this), false)
-  this.$navButton.addEventListener('keydown', this.toggleNav.bind(this), false)
   document.addEventListener('click', function(e) {
     if (this.isOpen === true && e.target !== this.$nav && !this.$nav.contains(e.target) && e.target !== this.$navButton && !this.$navButton.contains(e.target)) {
       this.closeNav()
     }  
   }.bind(this));
+}
+
+Nav.prototype.bindTabbing = function(e) {
+  this.$nav.addEventListener('focusin', function() {
+    if (!this.isOpen) {
+      this.openNav()
+    }
+  }.bind(this))
+
+  this.$nav.addEventListener('focusout', function() {
+    if (this.isOpen) {
+      this.closeNav()
+    }
+  }.bind(this))
 }
 
 Nav.prototype.closeNav = function() {
@@ -40,14 +53,18 @@ Nav.prototype.closeNav = function() {
   this.isOpen = false
 }
 
+Nav.prototype.openNav = function() {
+  this.$nav.classList.add('lbh-nav--open')
+  this.$navButton.classList.add('lbh-header__menu-link--open')
+  this.isOpen = true
+}
+
 Nav.prototype.toggleNav = function(e) {
-  if (e.keyCode === 13 || e.type === 'click') {
+  if (e.type === 'click') {
     if (this.$nav.classList.contains('lbh-nav--open')) {
       this.closeNav()
     } else {
-      this.$nav.classList.add('lbh-nav--open')
-      this.$navButton.classList.add('lbh-header__menu-link--open')
-      this.isOpen = true
+      this.openNav()
     }
   }
 }
@@ -98,7 +115,7 @@ Nav.prototype.addBreadcrumb = function(list) {
   button.classList.add("govuk-breadcrumbs__link")
   button.innerText = title
   listItem.appendChild(button)
-  this.$breadcrumb.append(listItem)
+  this.$breadcrumb.appendChild(listItem)
   this.unbindBreacrumbButtons()
   this.bindBreadcrumbButtons()
 }
@@ -124,7 +141,9 @@ Nav.prototype.showServiceNavItem = function(parent) {
     parent.classList.add('lbh-nav__item--selected')
     this.$navContainer.appendChild(list)
     this.addBreadcrumb(list)
-    list.focus()
+    if (this.isOpen) {
+      list.focus()
+    }
     this.$navContainer.childNodes[this.$navContainer.childNodes.length - 2].classList.add('lbh-nav__list--previous')
     list.classList.remove('lbh-nav__list--loading')
   }
@@ -142,6 +161,7 @@ Nav.prototype.init = function () {
   this.bindServiceLinks()
   this.bindBreadcrumbButtons()
   this.bindNavButton()
+  this.bindTabbing()
 
   // Select current page in nav on page load (and populate nav accordingly)
   var levels = ['level-1', 'level-2', 'level-3']

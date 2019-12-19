@@ -25,9 +25,11 @@
           <span class="lbh-social-block__icon-wrapper">
             <i class="fab fa-youtube"></i>
           </span>
-          <iframe width="560" height="500" src="https://www.youtube.com/embed/videoseries?list=PLwZ-4_VwwqbZXHuHJMIazWY9QVVevuZT3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/PWwNwWb0rsU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/64zJbpCA88s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <?php if(have_rows('youtube_videos')): ?>
+            <?php while(have_rows('youtube_videos')): the_row(); ?>
+              <?php the_sub_field('video'); ?>
+            <?php endwhile; ?>
+          <?php endif; ?>
         </div>
       </div>
       <div class="lbh-social-block lbh-social-block--twitter lbh-section__listing">

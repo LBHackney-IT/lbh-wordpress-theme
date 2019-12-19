@@ -87,6 +87,14 @@
                 <?php if(!is_front_page()) : ?>
                   <div class="lbh-container">
                 <?php endif; ?>
+              <?php elseif( get_row_layout() == 'social' ): ?>
+                <?php if(!is_front_page()) : ?>
+                  </div>
+                <?php endif; ?>
+                  <?php get_template_part('component-social-blocks'); ?>
+                <?php if(!is_front_page()) : ?>
+                  <div class="lbh-container">
+                <?php endif; ?>
               <?php endif; ?>
             <?php endwhile; ?>
           <?php endif; ?>
@@ -97,9 +105,6 @@
             <?php edit_post_link(); ?>
           <?php endif; ?>
         </div>
-        <?php if(is_front_page()) : ?>
-          <?php get_template_part('component-social-blocks'); ?>
-        <?php endif; ?>
       </article>
     </main>
   <?php endwhile; ?>
