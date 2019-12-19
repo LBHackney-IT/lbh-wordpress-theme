@@ -27,10 +27,19 @@ if (function_exists('add_theme_support'))
 
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
+
+    // The following aren't used but I've left in for content in the CMS that already has these sizes applied
     add_image_size('large', 700, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+
+    // These are used
+    add_image_size('full-width', 1920, '', true); // Full width - 960 * 2 for retina
+    add_image_size('other-width', 1220, '', true); // Half width / Third / Quarter - biggest when full width on mobile, 610 * 2 for retina
+    add_image_size('promo-image', 1536, '', true); // Promo component image
+    add_image_size('header-logo', 412, '', true);
+    add_image_size('block-icon', 216, '', true);
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
@@ -98,28 +107,16 @@ function html5blank_header_scripts()
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
 
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('html5blankscripts'); // Enqueue it!
-    }
-}
-
-// Load HTML5 Blank conditional scripts
-function html5blank_conditional_scripts()
-{
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
+        wp_register_script('hackney-wordpress', get_template_directory_uri() . '/dist/hackney-wordpress.min.js', array(), '1.0.1', true); // Custom scripts
+        wp_enqueue_script('hackney-wordpress'); // Enqueue it!
     }
 }
 
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
-    wp_enqueue_style('normalize'); // Enqueue it!
-
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.2', 'all');
-    wp_enqueue_style('html5blank'); // Enqueue it!
+    wp_register_style('hackney-wordpress', get_template_directory_uri() . '/dist/all.css', array(), '1.2', 'all');
+    wp_enqueue_style('hackney-wordpress'); // Enqueue it!
 }
 
 // Register HTML5 Blank Navigation

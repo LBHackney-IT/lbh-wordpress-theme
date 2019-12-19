@@ -1,0 +1,7 @@
+{
+  "config": "config/",
+  "dist": "dist/",
+  "node_modules": "node_modules/",
+  "sassdoc": "sassdoc/",
+  "src": "src/"
+}

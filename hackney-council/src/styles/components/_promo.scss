@@ -1,0 +1,24 @@
+.lbh-promo {
+  &__half {
+    width: 100%;
+
+    @include govuk-media-query($from: desktop) {
+      width: 50%;
+    }
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    height: 0;
+    padding-bottom: 66.67%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

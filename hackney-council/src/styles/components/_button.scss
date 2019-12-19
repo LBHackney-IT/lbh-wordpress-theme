@@ -1,0 +1,18 @@
+.body--purple .lbh-button {
+  &:not(.lbh-button--secondary) {
+    background: lbh-colour("lbh-e01");
+  }
+
+  &:not(.lbh-button--warning):not(.lbh-button--disabled):not([disabled]):hover,
+  &:hover {
+    color: lbh-colour("lbh-white");
+    background: lbh-colour("lbh-e02");
+  }
+
+  &--secondary,
+  &--secondary:link,
+  &--secondary:visited {
+    border-color: lbh-colour("lbh-e01");
+    color: lbh-colour("lbh-e01");
+  }
+}

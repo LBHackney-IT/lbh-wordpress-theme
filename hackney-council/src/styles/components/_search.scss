@@ -1,0 +1,18 @@
+.lbh-search {
+  display: flex;
+
+  .lbh-input {
+    box-sizing: border-box;
+    @include lbh-rem(height, 48);
+    @include lbh-rem(padding-left, 12);
+  }
+
+  .lbh-button {
+    box-sizing: border-box;
+    width: auto;
+    @include lbh-rem(height, 48);
+    margin: 0;
+    @include lbh-rem(border-radius, 0, 4, 4, 0);
+    box-shadow: none;
+  }
+}

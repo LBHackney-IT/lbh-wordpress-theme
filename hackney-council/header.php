@@ -26,56 +26,48 @@
 </script>
 
 	</head>
-	<body <?php body_class(); ?>>
-
-		
-
-			<!-- header -->
-			<header class="header clear" role="banner">
-				<div class="lbhHeaderBlock">
-					<div class="lbhContainer">
-						<div class="lbhRow">
-							<div class="lbhColumnFull">
-								<div class="lbhLHeaderLogoContainer">
-									<a href="<?php echo home_url(); ?>">
-										<img src="<?php the_field('header_logo', 'option'); ?>" alt="Hackney Council Logo" class="lbhHeaderLogo">
-									</a>
-								</div>
-								<div class="lbhHeaderMenuLinks">
-									<ul>
-										<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?>
-											<li class="lbhHeaderMenuLink--dashboard">
-												<a href="<?php echo home_url(); ?>/wp-admin">Dashboard</a>
-											</li>
-										<?php } ?>
-										<li>
-											<a href="<?php echo home_url(); ?>/search">Search</a>
-										</li>
-										<li>
-											<a href="<?php echo home_url(); ?>/news">News</a>
-										</li>
-										<li>
-											<a href="<?php echo home_url(); ?>/nav">A to Z</a>
-										</li>
-										
-									</ul>
-								</div>
-
-							</div>
+	<body <?php body_class('body--' . get_field('colour_scheme', 'option')); ?>>
+		<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+		<a class="govuk-skip-link lbh-skip-link" href="#main-content">Skip to main content</a>
+		<!-- header -->
+		<header class="lbh-header lbh-header--<?php echo get_field('colour_scheme', 'option'); ?> lbh-header--fixed">
+			<div class="lbh-header__main">
+				<div class="lbh-container lbh-header__wrapper lbh-header__wrapper--stacked">
+					<?php if (is_home()) : ?>
+						<h1 class="lbh-header__title">
+					<?php else : ?>
+						<div class="lbh-header__title">
+					<?php endif; ?>
+						<a href="<?php echo home_url(); ?>" class="lbh-header__title-link">
+							<?php if (get_field('header_logo', 'option')): ?>
+								<span class="lbh-header__logo lbh-header__logo--svg">
+									<?php echo wp_get_attachment_image(get_field('header_logo', 'option'), 'header-logo'); ?>
+								</span>
+							<?php endif; ?>
+							<?php if (get_field('header_logo_fallback', 'option')): ?>
+								<span class="lbh-header__logo lbh-header__logo--png">
+									<?php echo wp_get_attachment_image(get_field('header_logo_fallback', 'option'), 'header-logo'); ?>
+								</span>
+							<?php endif; ?>
+							<span class="lbh-header__logo-text">
+								Hackney
+							</span>
+							<span class="lbh-header__service-name lbh-header__service-name--short">Intranet</span>
+						</a>
+					<?php if (is_home()) : ?>
+						</h1>
+					<?php else : ?>
 						</div>
-					</div>
+					<?php endif; ?>
+					<nav class="lbh-header__nav">
+						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/nav">A to Z</a>
+						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/news">News</a>
+						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/search">Search</a>
+						<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?>
+							<a class="lbh-header__nav-link lbh-header__nav-link--dashboard" href="<?php echo home_url(); ?>/wp-admin">Dashboard</a>
+						<?php } ?>
+					</nav>
 				</div>
-				<div class="headerHackneyLines">
-					<div class="headerDarkGreenLine"></div>
-					<div class="headerMiddleGreenLine"></div>
-					<div class="headerLightGreenLine"></div>
-				</div>
-			</header>
-			<!-- /header -->
-<!-- wrapper -->
-
-	<!-- nav -->
-	<!-- <nav class="nav" role="navigation">
-		<a href="#content">Jump to content</a>
-	</nav> -->
-	<!-- /nav -->
+			</div>
+		</header>
+		<!-- /header -->

@@ -1,0 +1,13 @@
+.lbh-footer {
+  margin-top: auto;
+  @include lbh-rem(padding, 48, 0);
+  background: lbh-colour("lbh-a01");
+
+  .body--purple & {
+    background: lbh-colour("lbh-e01");
+  }
+
+  &__copy {
+    color: lbh-colour("lbh-white");
+  }
+}

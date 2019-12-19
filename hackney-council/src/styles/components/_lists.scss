@@ -1,0 +1,16 @@
+.lbh-list--anchor {
+  list-style-type: none;
+
+  .lbh-list__item {
+    position: relative;
+    @include lbh-rem(padding-left, 24);
+
+    &:before {
+      content: "\2014 ";
+      position: absolute;
+      left: 0;
+      @include lbh-rem(width, 12);
+      overflow: hidden;
+    }
+  }
+}
