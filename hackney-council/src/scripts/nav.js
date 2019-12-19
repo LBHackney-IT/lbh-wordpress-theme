@@ -3,7 +3,7 @@ function Nav ($module) {
   this.$serviceLinks = this.$nav.querySelectorAll('.lbh-nav__link--service')
   this.$navContainer = this.$nav.querySelector('[data-module="lbh-nav-container"]')
   this.$breadcrumb = this.$nav.querySelector('.govuk-breadcrumbs__list')
-  this.$navButton = document.querySelector('[data-module="lbh-nav-button"')
+  this.$navButton = document.querySelector('[data-module="lbh-nav-button"]')
   this.$breadcrumbLinks = this.$breadcrumb.querySelectorAll('.govuk-breadcrumbs__link')
   this.isOpen = false
 }
