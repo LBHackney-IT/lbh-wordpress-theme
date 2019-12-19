@@ -62,7 +62,7 @@
         overflow: hidden;
         @include lbh-rem(margin-right, -24);
         @include lbh-rem(margin-left, -24);
-        columns: 0;
+        columns: unset;
       }
     }
 
