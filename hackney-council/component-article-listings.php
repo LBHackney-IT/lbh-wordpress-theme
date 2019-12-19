@@ -16,7 +16,6 @@
               <div class="lbh-article__cta">
                 <span class="lbh-article__cta-text"><?php the_sub_field('cta_url_text'); ?></span>
                 <i class="fas fa-arrow-right"></i>
-                <!-- <FontAwesomeIcon icon="faArrowRight} /> -->
               </div>
             </a>
           </article>

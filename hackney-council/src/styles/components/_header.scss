@@ -213,4 +213,21 @@
   .lbh-skip-link:focus + & {
     @include lbh-rem(top, 40);
   }
+
+  .no-flexbox &__wrapper {
+    overflow: hidden;
+  }
+
+  .no-flexbox &__links {
+    float: right;
+  }
+
+  .no-flexbox &__nav-link,
+  .no-flexbox &__menu-link {
+    float: left;
+  }
+
+  .no-flexbox &__title {
+    float: left;
+  }
 }

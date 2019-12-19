@@ -15,7 +15,6 @@
                   <i class="fas fa-calendar-alt"></i>
                   <span class="lbh-article__cta-text"><?php the_sub_field('cta_url_text'); ?></span>
                   <i class="fas fa-arrow-right"></i>
-                  <!-- <FontAwesomeIcon icon="faArrowRight} /> -->
                 </div>
               </div>
               <div class="lbh-news__back">
@@ -27,7 +26,6 @@
                   <i class="fas fa-calendar-alt"></i>
                   <span class="lbh-article__cta-text"><?php the_sub_field('cta_url_text'); ?></span>
                   <i class="fas fa-arrow-right"></i>
-                  <!-- <FontAwesomeIcon icon="faArrowRight} /> -->
                 </div>
               </div>
             </a>
