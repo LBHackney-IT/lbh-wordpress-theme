@@ -1,7 +1,7 @@
 <section class="lbh-section">
   <div class="lbh-container">
-    <?php if (get_field('news_section_title')): ?>
-      <h2 class="lbh-heading-h1 lbh-section__title"><?php the_field('news_section_title'); ?></h2>
+    <?php if (get_sub_field('news_section_title')): ?>
+      <h2 class="lbh-heading-h1 lbh-section__title"><?php the_sub_field('news_section_title'); ?></h2>
     <?php endif; ?>
     <?php if( have_rows('news_listings') ): ?>
       <div class="lbh-section__list">

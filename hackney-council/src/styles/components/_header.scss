@@ -10,8 +10,13 @@
     }
   }
 
-  &--fixed + .lbh-breadcrumbs {
-    @include lbh-rem(margin-top, 162);
+  .body--purple &__service-name {
+    color: lbh-colour("lbh-h04");
+  }
+
+  &--fixed + .lbh-breadcrumbs,
+  &--fixed + .lbh-nav + .lbh-breadcrumbs {
+    @include lbh-rem(margin-top, 126);
 
     @include govuk-media-query($from: tablet) {
       @include lbh-rem(margin-top, 118);
