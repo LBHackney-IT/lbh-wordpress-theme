@@ -1,5 +1,6 @@
 .lbh-pagination {
   a {
+    @include lbh-body-m;
     @include lbh-link;
   }
 
