@@ -3,6 +3,10 @@
     @include lbh-link;
   }
 
+  span {
+    @include lbh-body-m;
+  }
+
   .page-numbers {
     @include lbh-rem(padding, 6, 12);
 
