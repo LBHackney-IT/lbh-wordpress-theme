@@ -115,7 +115,7 @@ function html5blank_header_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('hackney-wordpress', get_template_directory_uri() . '/dist/all.css', array(), '2.8', 'all');
+    wp_register_style('hackney-wordpress', get_template_directory_uri() . '/dist/all.css', array(), '2.9', 'all');
     wp_enqueue_style('hackney-wordpress'); // Enqueue it!
 }
 
