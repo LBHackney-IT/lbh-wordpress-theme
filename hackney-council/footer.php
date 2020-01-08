@@ -14,7 +14,9 @@
 					<span class="lbh-header__logo-text">
 						Hackney
 					</span>
-					<span class="lbh-header__service-name lbh-header__service-name--short">Intranet</span>
+					<?php if(get_field('service_name', 'option')) : ?>
+						<span class="lbh-header__service-name lbh-header__service-name--short"><?php echo get_field('service_name', 'option'); ?></span>
+					<?php endif; ?>
 				</a>
 				<ul class="lbh-footer__links govuk-list lbh-list">
 					<?php foreach(['footer_links_left', 'footer_links_middle', 'footer_links_right'] as $links): ?>
