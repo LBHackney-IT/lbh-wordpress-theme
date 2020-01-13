@@ -876,4 +876,8 @@ function render_nav_term($term, $level, $hierarchy) {
         return '';
     }
 }
+
+if( function_exists('acf_add_local_field_group') ):
+    require_once('acf.php');    
+endif;
 ?>
