@@ -24,7 +24,6 @@
 		<?php else : ?>
 			<p class="lbh-content__excerpt"><?php echo custom_field_excerpt(); ?></p>
 		<?php endif; ?>
-		
 
 		<?php edit_post_link(); ?>
 

@@ -41,25 +41,6 @@ if (function_exists('add_theme_support'))
     add_image_size('header-logo', 412, '', true);
     add_image_size('block-icon', 216, '', true);
 
-    // Add Support for Custom Backgrounds - Uncomment below if you're going to use
-    /*add_theme_support('custom-background', array(
-	'default-color' => 'FFF',
-	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
-
-    // Add Support for Custom Header - Uncomment below if you're going to use
-    /*add_theme_support('custom-header', array(
-	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
-	'header-text'			=> false,
-	'default-text-color'		=> '000',
-	'width'				=> 1000,
-	'height'			=> 198,
-	'random-default'		=> false,
-	'wp-head-callback'		=> $wphead_cb,
-	'admin-head-callback'		=> $adminhead_cb,
-	'admin-preview-callback'	=> $adminpreview_cb
-    ));*/
-
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
     
@@ -117,7 +98,7 @@ function html5blank_header_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('hackney-wordpress', get_template_directory_uri() . '/dist/all.css', array(), '2.9', 'all');
+    wp_register_style('hackney-wordpress', get_template_directory_uri() . '/dist/all.css', array(), '2.11', 'all');
     wp_enqueue_style('hackney-wordpress'); // Enqueue it!
 }
 
@@ -387,51 +368,6 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
 add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
 add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.
 
-// Shortcodes above would be nested like this -
-// [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
-
-/*------------------------------------*\
-	Custom Post Types
-\*------------------------------------*/
-
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
-// function create_post_type_html5()
-// {
-//     register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-//     register_taxonomy_for_object_type('post_tag', 'html5-blank');
-//     register_post_type('html5-blank', // Register Custom Post Type
-//         array(
-//         'labels' => array(
-//             'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-//             'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
-//             'add_new' => __('Add New', 'html5blank'),
-//             'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
-//             'edit' => __('Edit', 'html5blank'),
-//             'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-//             'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-//             'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-//             'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-//             'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-//             'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-//             'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
-//         ),
-//         'public' => true,
-//         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-//         'has_archive' => true,
-//         'supports' => array(
-//             'title',
-//             'editor',
-//             'excerpt',
-//             'thumbnail'
-//         ), // Go to Dashboard Custom HTML5 Blank post for supports
-//         'can_export' => true, // Allows export in Tools > Export
-//         'taxonomies' => array(
-//             'post_tag',
-//             'category'
-//         ) // Add Category and Post Tags support
-//     ));
-// }
-
 /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/
@@ -510,121 +446,7 @@ add_filter( 'post_thumbnail_html', 'remove_image_size_attributes' );
 // Remove image size attributes from images added to a WordPress post
 add_filter( 'image_send_to_editor', 'remove_image_size_attributes' );
 
-
-// Wordpress RestAPI Search initialize : Start
-add_action( 'rest_api_init', 'custom_api_get_search_data' );
-function custom_api_get_search_data() {
-    register_rest_route( 'wp/v2', '/search', array(
-        'methods' => 'GET',
-        'callback' => 'custom_api_get_search_data_callback'
-    ));
-}
-function custom_api_get_search_data_callback( $data ) {
-    $target_url = '/';
-    $this_url = site_url();
-    // Initialize the array that will receive the posts' data.
-    $posts_data = array();
-    // Get the posts using the 'post' and 'news' post types
-    $posts = get_posts( array(
-            'post_type' => 'any',
-            'posts_per_page' => -1
-        )
-    );
-    // Loop through the posts and push the desired data to the array we've initialized earlier in the form of an object
-    foreach( $posts as $post ) {
-        $id = $post->ID;
-        
-        $post->searchData = [];
-        // Push post content into search results
-        if($post->post_content > ""){
-            // Replace wp site url with target url
-            $content = str_replace($this_url, $target_url, $post->post_content);
-            array_push($post->searchData, $content);
-        }
-        //Push post exceprt into search results
-        if($post->post_excerpt > ""){
-            $excerpt = str_replace($this_url, $target_url, $post->post_excerpt);
-            array_push($post->searchData, $content);
-        }
-        // Push all acf fields into search results
-        $fields = get_fields($id);
-        if($fields){
-          $iterator = new RecursiveIteratorIterator(new RecursiveArrayIterator($fields));
-          foreach($iterator as $key => $value) {
-              if(
-                  $value !== null  && $value !== ""  &&   // check for empty strings
-                  strlen($value) > 50 &&                  // remove small strings
-                  substr($value, 0, 4 ) !== "http"        // remove links
-              ){
-                // Replace wp site url with target url
-                $content = str_replace($this_url, $target_url, $value);
-                array_push($post->searchData, $content);
-              }
-          }
-        }
-        $post->pathname = str_replace(site_url(), '', get_permalink($id));
-        // Remove unnecessary post properties
-        unset($post->post_content);
-	    unset($post->post_excerpt);
-        unset($post->post_date_gmt);
-        unset($post->comment_status);
-        unset($post->ping_status);
-        unset($post->post_password);
-        unset($post->post_name);
-        unset($post->to_ping);
-        unset($post->pinged);
-        unset($post->post_modified);
-        unset($post->post_modified_gmt);
-        unset($post->post_content_filtered);
-        unset($post->post_parent);
-        unset($post->guid);
-        unset($post->menu_order);
-        unset($post->post_mime_type);
-        unset($post->comment_count);
-        unset($post->filter);
-        $posts_data[] = $post;
-    }
-    return $posts_data;
-}
-
-
-// Set Empty fields must show as null in rest api
-function nullify_empty($value, $post_id, $field)
-{
-    if (empty($value)) {
-        return null;
-    }
-
-    return $value;
-}
-
-// Nullify empty responses
-// sources : https://github.com/gatsbyjs/gatsby/issues/4461
-// add_filter('acf/format_value', 'acf_nullify_empty', 100, 3);
-add_filter('acf/format_value', 'nullify_empty', 100, 3);
-add_filter('acf/format_value/type=image', 'nullify_empty', 100, 3);
-add_filter('acf/format_value/type=relationship', 'nullify_empty', 100, 3);
-add_filter('acf/format_value/type=repeater', 'nullify_empty', 100, 3);
-add_filter('acf/format_value/type=wysiwyg', 'nullify_empty', 100, 3);
-add_filter('acf/format_value/type=url', 'nullify_empty', 100, 3);
-add_filter('acf/format_value/type=text', 'nullify_empty', 100, 3);
-add_filter('acf/format_value/type=number', 'nullify_empty', 100, 3);
-
-
-// not sure if gallery is internally named gallery as well but this should work
-add_filter('acf/format_value/type=gallery', 'nullify_empty', 100, 3); 
-
-// Add Netlify to Dashboard
-function custom_dashboard_widget() {
-    echo "<p>Check Status here</p>";
-}
-function add_custom_dashboard_widget() {
-    wp_add_dashboard_widget('custom_dashboard_widget', 'Netlify Build Status', 'custom_dashboard_widget');
-}
-add_action('wp_dashboard_setup', 'add_custom_dashboard_widget');
-
 // Set a default service on pages to fix build breaking when no service is set
-
 add_action( 'save_post', 'set_post_default_category', 10,3 );
  
 function set_post_default_category( $post_id, $post, $update ) {
