@@ -62,6 +62,8 @@ if (function_exists('add_theme_support'))
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
+    
+    add_post_type_support('page', 'excerpt');
 
     // Localisation Support
     load_theme_textdomain('html5blank', get_template_directory() . '/languages');
@@ -532,18 +534,18 @@ function custom_api_get_search_data_callback( $data ) {
     foreach( $posts as $post ) {
         $id = $post->ID;
         
-$post->searchData = [];
+        $post->searchData = [];
         // Push post content into search results
         if($post->post_content > ""){
             // Replace wp site url with target url
             $content = str_replace($this_url, $target_url, $post->post_content);
             array_push($post->searchData, $content);
         }
-	//Push post exceprt into search results
-	if($post->post_excerpt > ""){
-		$excerpt = str_replace($this_url, $target_url, $post->post_excerpt);
-		array_push($post->searchData, $content);
-	}
+        //Push post exceprt into search results
+        if($post->post_excerpt > ""){
+            $excerpt = str_replace($this_url, $target_url, $post->post_excerpt);
+            array_push($post->searchData, $content);
+        }
         // Push all acf fields into search results
         $fields = get_fields($id);
         if($fields){
@@ -563,7 +565,7 @@ $post->searchData = [];
         $post->pathname = str_replace(site_url(), '', get_permalink($id));
         // Remove unnecessary post properties
         unset($post->post_content);
-	unset($post->post_excerpt);
+	    unset($post->post_excerpt);
         unset($post->post_date_gmt);
         unset($post->comment_status);
         unset($post->ping_status);
@@ -585,36 +587,6 @@ $post->searchData = [];
     return $posts_data;
 }
 
-//custom terms
-// function my_json_prepare_term( $data, $term, $context ) {
-//     global $wp_query;
-//     $route = $wp_query->query['json_route'];
-//     if ( ! preg_match( '/(terms\/.+)/', $route) )
-//         return $data;
-//     $args = array(
-//         'tax_query' => array(
-//             array(
-//                 'taxonomy' => $term->taxonomy,
-//                 'field' => 'slug',
-//                 'terms' => $term->slug
-//             )
-//         ),
-//         'posts_per_page' => 5
-//     );
-//     $posts = get_posts( $args );
-//     $posts_arr = array();
-//     foreach ( $posts as $p ) {
-//         $posts_arr[] = array(
-//             'ID' => $p->ID,
-//             'title' => $p->post_title
-//             );
-//     }
-//     $data['posts'] = $posts_arr;
-//     return $data;
-// }
-// add_filter( 'json_prepare_term', 'my_json_prepare_term', 10, 3 );
-
-// Wordpress RestAPI Search initialize : End
 
 // Set Empty fields must show as null in rest api
 function nullify_empty($value, $post_id, $field)
@@ -641,62 +613,6 @@ add_filter('acf/format_value/type=number', 'nullify_empty', 100, 3);
 
 // not sure if gallery is internally named gallery as well but this should work
 add_filter('acf/format_value/type=gallery', 'nullify_empty', 100, 3); 
-
-/**
- * Do stuff when page is saved : ie. Ensure taxonomy is selected
- * Save post metadata when a post is saved.
- *
- * @param int $post_id The post ID.
- * @param post $post The post object.
- * @param bool $update Whether this is an existing post being updated or not.
- */
-// function save_book_meta( $post_id, $post, $update ) {
-
-    /*
-     * In production code, $slug should be set only once in the plugin,
-     * preferably as a class property, rather than in each function that needs it.
-     */
-//     $post_type = get_post_type($post_id);
-    //  $service = "0";
-    //       $term = get_term($term_id, $taxonomy);
-    //     $term_id = $term->id;
-    //      $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); 
-    // If this isn't a 'page' post, don't update it.
-    //  if ( "page" != $post_type ) return;
-    //  if ($term === null){
-    //      $message = "You need to select a taxonomy";
-    //      echo "<script type='text/javascript'>alert('$message');</script>";
-    //  }else{
-    //      return;
-    //  }
-    // - Update the post's metadata.
-
-    //  if ( $_POST['service']  == "0") {
-        
-    //      $message = "You need to select a taxonomy";
-    //      echo "<script type='text/javascript'>alert('$message');</script>";
-    //      return true;
-    //     }else{
-    //      // update_post_meta( $post_id, 'book_author', sanitize_text_field( $_POST['book_author'] ) );
-    //      // Do nothing
-//  echo "<script type='text/javascript'>console.log('the cat is "+ $post_id + "')</script>";
-//  echo '<script>console.log('.$post_type.')</script>';
-//  echo "<script>console.log({$post_type})</script>";
-//  echo "<script>console.log(".json_encode($term).")</script>";
-    //  }
-
-    //     if ( isset( $_POST['publisher'] ) ) {
-    //         update_post_meta( $post_id, 'publisher', sanitize_text_field( $_POST['publisher'] ) );
-    //     }
-
-    // Checkboxes are present if checked, absent if not.
-    //     if ( isset( $_POST['inprint'] ) ) {
-    //         update_post_meta( $post_id, 'inprint', TRUE );
-    //     } else {
-    //         update_post_meta( $post_id, 'inprint', FALSE );
-    //     }
-// }
-// add_action( 'save_post', 'save_book_meta', 10, 3 );
 
 // Add Netlify to Dashboard
 function custom_dashboard_widget() {
@@ -732,45 +648,6 @@ function set_post_default_category( $post_id, $post, $update ) {
    
  
 }
-
-
-//Run update if page is lbhrobot for services but run every time for pages
-  
-//   			echo "<script>console.log('Its happening Mo!')</script>";
-/*        		function mass_update_posts() {
-                        echo "<script>console.log('Posts are being updated!')</script>";
-        			$args = array(
-        				'post_type'=>'page',
-        				'posts_per_page'   => -1
-        			);
-        			$my_posts = get_posts($args);
-        			foreach($my_posts as $key => $my_post) {
-        				$meta_values = get_post_meta( $my_post->ID);
-        				update_field('order', '3', $my_post->ID);
-        				update_field('show_or_hide_from_menu', 'show', $my_post->ID);
-        				update_field('redirect_page', 'no', $my_post->ID);
-        				update_field('redirect_url', 'none', $my_post->ID);
-        			}
-        		}
-        		add_action( 'init', 'mass_update_posts' );
-*/
-
-//$tax ="services";
-/*                $terms = get_terms( $tax, [
-                  'hide_empty' => false, // do not hide empty terms
-                ]);
-                echo "<script>console.log('Services are being udpated!')</script>";
-                foreach( $terms as $term ) {
-					$term_id = $term->term_id;
-					update_term_meta($term_id, 'order', '2');
-					update_term_meta($term_id, 'show_or_hide_from_menu', 'show');
-					update_term_meta($term_id, 'redirect_service', 'no');
-					update_term_meta($term_id, 'redirect_url', 'none');
-				
-	
-				}
-*/
-// End update if page is lbhrobot
 
 // login screen updates
 function smallenvelop_login_message( $message ) {
@@ -875,6 +752,28 @@ function render_nav_term($term, $level, $hierarchy) {
     } else {
         return '';
     }
+}
+
+// Custom Excerpt function for Advanced Custom Fields
+function custom_field_excerpt() {
+	global $post;
+    $text = '';
+    if( have_rows('lbh_page_builder') ): 
+        while ( have_rows('lbh_page_builder') ) : the_row();
+            if ( get_row_layout() == 'content' ) {
+                $text = get_sub_field('content');
+                $text = strip_shortcodes( $text );
+                $text = apply_filters('the_content', $text);
+                $text = str_replace(']]>', ']]>', $text);
+                $excerpt_length = 20; // 20 words
+                $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+                $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+                echo $text;
+                break;
+            }
+        endwhile;
+    endif;
+	// return apply_filters('the_excerpt', $text);
 }
 
 if( function_exists('acf_add_local_field_group') ):
