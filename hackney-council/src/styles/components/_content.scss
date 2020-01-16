@@ -39,6 +39,10 @@
     @include lbh-body-m;
   }
 
+  & &__excerpt {
+    @include lbh-rem(margin-top, 6);
+  }
+
   ul,
   ol {
     @include lbh-list;

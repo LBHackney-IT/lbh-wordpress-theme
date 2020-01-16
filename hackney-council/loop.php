@@ -18,6 +18,12 @@
 		<span class="lbh-date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
 		<!-- <span class="author"><?php //_e( 'Published by', 'html5blank' ); ?> <?php //the_author_posts_link(); ?></span> -->
 		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+		
+		<?php if(get_the_excerpt()) : ?>
+			<p class="lbh-content__excerpt"><?php the_excerpt(); ?></p>
+		<?php else : ?>
+			<p class="lbh-content__excerpt"><?php echo custom_field_excerpt(); ?></p>
+		<?php endif; ?>
 
 		<?php edit_post_link(); ?>
 

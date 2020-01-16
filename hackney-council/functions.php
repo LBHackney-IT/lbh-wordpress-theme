@@ -43,6 +43,8 @@ if (function_exists('add_theme_support'))
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
+    
+    add_post_type_support('page', 'excerpt');
 
     // Localisation Support
     load_theme_textdomain('html5blank', get_template_directory() . '/languages');
@@ -96,7 +98,7 @@ function html5blank_header_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('hackney-wordpress', get_template_directory_uri() . '/dist/all.css', array(), '2.9', 'all');
+    wp_register_style('hackney-wordpress', get_template_directory_uri() . '/dist/all.css', array(), '2.11', 'all');
     wp_enqueue_style('hackney-wordpress'); // Enqueue it!
 }
 
@@ -445,7 +447,6 @@ add_filter( 'post_thumbnail_html', 'remove_image_size_attributes' );
 add_filter( 'image_send_to_editor', 'remove_image_size_attributes' );
 
 // Set a default service on pages to fix build breaking when no service is set
-
 add_action( 'save_post', 'set_post_default_category', 10,3 );
  
 function set_post_default_category( $post_id, $post, $update ) {
@@ -573,6 +574,28 @@ function render_nav_term($term, $level, $hierarchy) {
     } else {
         return '';
     }
+}
+
+// Custom Excerpt function for Advanced Custom Fields
+function custom_field_excerpt() {
+	global $post;
+    $text = '';
+    if( have_rows('lbh_page_builder') ): 
+        while ( have_rows('lbh_page_builder') ) : the_row();
+            if ( get_row_layout() == 'content' ) {
+                $text = get_sub_field('content');
+                $text = strip_shortcodes( $text );
+                $text = apply_filters('the_content', $text);
+                $text = str_replace(']]>', ']]>', $text);
+                $excerpt_length = 20; // 20 words
+                $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+                $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+                echo $text;
+                break;
+            }
+        endwhile;
+    endif;
+	// return apply_filters('the_excerpt', $text);
 }
 
 if( function_exists('acf_add_local_field_group') ):
