@@ -1,4 +1,4 @@
-<div class="lbh-comments">
+<div id="comments" class="lbh-comments">
 	<?php if (have_comments()) : ?>
 		<h2 class="lbh-heading-h2"><?php comments_number(); ?></h2>
 		<ul class="lbh-list lbh-content">
