@@ -6,8 +6,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "govuk-frontend": "^3.4.0",
-    "lbh-frontend": "^1.6.0"
+    "govuk-frontend": "^3.5.0",
+    "lbh-frontend": "^1.8.3"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.2",

@@ -217,10 +217,6 @@
     }
   }
 
-  .lbh-skip-link:focus + & {
-    @include lbh-rem(top, 40);
-  }
-
   .no-flexbox &__wrapper {
     overflow: hidden;
   }
