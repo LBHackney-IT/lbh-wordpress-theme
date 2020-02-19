@@ -11,7 +11,7 @@
     <div class="lbh-container">
       <div class="lbh-hero__box">
         <h3 class="lbh-heading-h4 lbh-hero__box-title"><?php echo $hero['hero_box_title']; ?></h3>
-        <ul class="lbh-list lbh-list--bullet govuk-list govuk-list--bullet lbh-hero__box-list">
+        <ul class="lbh-list lbh-list--bullet lbh-hero__box-list">
           <?php if(count($hero['hero_box_items']) > 0): ?>
             <?php foreach ( $hero['hero_box_items'] as $item ) : the_row(); ?>
               <li><a href="<?php echo $item['cta_url']; ?>" class="lbh-hero__box-link lbh-link"><?php echo $item['cta_url_text']; ?></a></li>
