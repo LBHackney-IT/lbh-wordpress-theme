@@ -12,6 +12,11 @@
 $youtube: #ff0000;
 $google-plus: #dd4b39;
 $twitter: #00aced;
+$facebook: #3b5998;
+$instagram-yellow: #fdf497;
+$instagram-red: #fd5949;
+$instagram-pink: #d6249f;
+$instagram-blue: #285aeb;
 
 .lbh-social-block {
   position: relative;
@@ -74,12 +79,35 @@ $twitter: #00aced;
     .fa-twitter {
       color: $twitter;
     }
+
+    .fa-facebook {
+      color: $facebook;
+    }
+
+    .fa-instagram {
+      color: transparent;
+      background: radial-gradient(circle at 30% 107%, $instagram-yellow 0%, $instagram-yellow 5%, $instagram-red 45%, $instagram-pink 60%, $instagram-blue 90%);
+      background: -webkit-radial-gradient(circle at 30% 107%, $instagram-yellow 0%, $instagram-yellow 5%, $instagram-red 45%, $instagram-pink 60%, $instagram-blue 90%); // sass-lint:disable-line no-duplicate-properties
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
   }
 
   iframe {
     width: 100%;
-    height: auto;
     margin: 0;
+  }
+
+  &--instagram iframe {
+    min-width: unset !important;
+  }
+
+  &--facebook iframe {
+    height: 500px;
+  }
+
+  &--youtube iframe {
+    height: auto;
 
     & + iframe {
       @include lbh-rem(margin-top, 12);
