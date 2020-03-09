@@ -11,7 +11,6 @@ require('./gulp-tasks/compile-assets.js')
 require('./gulp-tasks/watch.js')
 // new tasks
 require('./gulp-tasks/copy-to-destination.js')
-require('./gulp-tasks/asset-version.js')
 
 // Umbrella scripts tasks for preview ---
 // Runs js lint and compilation
@@ -64,8 +63,7 @@ gulp.task('dev', gulp.series(
 gulp.task('build:dist', gulp.series(
   'clean',
   'copy-assets',
-  'copy:assets',
-  'update-assets-version'
+  'copy:assets'
 ))
 
 // Default task -------------------------
