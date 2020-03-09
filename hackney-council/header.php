@@ -65,7 +65,8 @@
 						<?php if( current_user_can('editor') || current_user_can('administrator') ) :  ?>
 							<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/wp-admin">Dashboard</a>
 						<?php endif; ?>
-						<?php if (get_posts()) : ?>
+						<?php $query = new WP_Query(array('post_type' => 'post')); ?>
+						<?php if ($query -> have_posts()) : ?>
 							<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/news">News</a>
 						<?php endif; ?>
             <button class="lbh-header__menu-link" data-module="lbh-nav-button">
