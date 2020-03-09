@@ -65,7 +65,9 @@
 						<?php if( current_user_can('editor') || current_user_can('administrator') ) :  ?>
 							<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/wp-admin">Dashboard</a>
 						<?php endif; ?>
-						<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/news">News</a>
+						<?php if (get_posts()) : ?>
+							<a class="lbh-header__nav-link" href="<?php echo home_url(); ?>/news">News</a>
+						<?php endif; ?>
             <button class="lbh-header__menu-link" data-module="lbh-nav-button">
 							<span class="lbh-header__menu-link--menu">
 								<span class="lbh-header__menu-link-text">Menu</span>
