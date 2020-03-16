@@ -45,10 +45,18 @@
     @include govuk-media-query($from: desktop) {
       @include lbh-rem(padding-right, 376);
     }
+
+    &--link {
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
+    }
   }
 
   &__box {
     @include lbh-rem(margin-top, 12);
+    margin-right: 15px;
+    margin-left: 15px;
     border-top: 2px solid lbh-colour("lbh-a03");
     @include lbh-rem(border-radius, 4);
     @include lbh-rem(padding, 24);
@@ -62,11 +70,15 @@
     @include govuk-media-query($from: desktop) {
       position: absolute;
       top: 50%;
-      right: 0;
+      right: 30px;
       @include lbh-rem(width, 284);
-      margin-top: 0;
+      margin: 0;
       @include lbh-rem(padding, 36, 36, 24, 36);
       transform: translateY(-50%);
+    }
+
+    @include govuk-media-query($from: 63.75em) {
+      right: calc((100% - 960px) / 2);
     }
   }
 
