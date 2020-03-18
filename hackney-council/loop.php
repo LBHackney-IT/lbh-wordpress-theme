@@ -15,7 +15,7 @@
 		<!-- /post title -->
 
 		<!-- post details -->
-		<span class="lbh-date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+		<span class="lbh-date"><span class="lbh-date__text">Last updated on: </span><?php the_modified_time('F j, Y g:i a'); ?></span>
 		<!-- <span class="author"><?php //_e( 'Published by', 'html5blank' ); ?> <?php //the_author_posts_link(); ?></span> -->
 		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
 		

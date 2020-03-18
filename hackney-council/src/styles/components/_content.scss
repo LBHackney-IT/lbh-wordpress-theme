@@ -148,6 +148,10 @@
   @include lbh-rem(margin-top, 12);
 }
 
+.lbh-date__text {
+  font-weight: $lbh-font-weight-medium;
+}
+
 .lbh-category {
   @include lbh-hint;
   margin-top: 0;
