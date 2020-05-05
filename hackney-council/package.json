@@ -23,6 +23,7 @@
     "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
     "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.0.1",
     "vinyl-named-with-path": "^1.0.0",
     "vinyl-paths": "^3.0.1",
     "webpack-stream": "^5.2.1"
