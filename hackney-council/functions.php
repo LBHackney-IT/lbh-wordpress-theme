@@ -425,7 +425,6 @@ function my_acf_block_render_callback( $block ) {
 // Enable the option show in rest
 add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
 
-// add options page
 // Add Options Page
 function add_my_options_page() {
     if( function_exists('acf_add_options_page') ) {
