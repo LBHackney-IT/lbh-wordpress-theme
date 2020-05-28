@@ -14,6 +14,6 @@ const zip = require('gulp-zip');
 
 gulp.task('default', () =>
 	gulp.src(['**/*', '!src/**/*', '!config/*', '!gulp-tasks/**/*', '!node_modules/**/*','!zips', '!.gitignore','!gulpfile.js', '!package*'])
-		.pipe(zip('hackey-council.zip'))
+		.pipe(zip('hackney-council.zip'))
 		.pipe(gulp.dest('../'))
 );
