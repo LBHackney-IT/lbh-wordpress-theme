@@ -425,8 +425,10 @@ function my_acf_block_render_callback( $block ) {
 // Enable the option show in rest
 add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
 
-// add options page
-acf_add_options_page();
+// Add Options Page
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+}
 
 
 /**
@@ -540,7 +542,7 @@ function render_nav_term($term, $level, $hierarchy) {
         $args = array(
             'post_type' => 'page',
             'orderby' => 'title',
-            'order' => 'ASC',
+            'order' => 'DESC',
             'posts_per_page' => -1,
             'tax_query' => array(
                 array(

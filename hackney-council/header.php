@@ -184,7 +184,7 @@
 				<div class="lbh-container">
 					<div class="govuk-breadcrumbs lbh-breadcrumbs">
 						<ol class="govuk-breadcrumbs__list"><li class="govuk-breadcrumbs__list-item">
-							<button class="govuk-breadcrumbs__link">Services</button>
+							<button class="govuk-breadcrumbs__link">Menu</button>
 						</li></ol>
 					</div>
 					<div class="lbh-nav__wrapper" data-module="lbh-nav-container"><ul class="lbh-nav__list lbh-nav__list--level-1" data-level="1" tabindex="-1">

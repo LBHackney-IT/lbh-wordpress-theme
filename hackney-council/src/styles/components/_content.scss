@@ -111,14 +111,14 @@
     @extend .govuk-button;
     @extend .lbh-button;
     margin-top: 0;
-    background: lbh-colour("lbh-a01") !important;
+    background: lbh-colour("lbh-primary-button") !important;
 
     .body--purple & {
       background: lbh-colour("lbh-e01") !important;
     }
 
     &:hover {
-      background: lbh-colour("lbh-a02") !important;
+      background: lbh-colour("lbh-primary-hover") !important;
 
       .body--purple & {
         background: lbh-colour("lbh-e02") !important;

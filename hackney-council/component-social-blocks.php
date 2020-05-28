@@ -8,7 +8,7 @@
           <div class="lbh-social-block lbh-social-block--google-plus lbh-section__listing">
             <div class="lbh-social-block__wrapper">
               <h3 class="lbh-social-block__title">
-                <img class="lbh-social-block__title-image" src="https://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
+                <img class="lbh-social-block__title-image" src="<?php echo get_template_directory_uri() . '/img/lbh_logo_black.svg'; ?>"/>
                 <span class="lbh-social-block__title-text"><?php the_sub_field('google_plus_username'); ?></span>
               </h3>
               <span class="lbh-social-block__icon-wrapper">
@@ -23,7 +23,7 @@
           <div class="lbh-social-block lbh-social-block--youtube lbh-section__listing">
             <div class="lbh-social-block__wrapper">
               <h3 class="lbh-social-block__title">
-                <img class="lbh-social-block__title-image" src="https://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
+                <img class="lbh-social-block__title-image" src="<?php echo get_template_directory_uri() . '/img/lbh_logo_black.svg'; ?>"/>
                 <span class="lbh-social-block__title-text"><?php the_sub_field('youtube_username'); ?></span>
               </h3>
               <span class="lbh-social-block__icon-wrapper">
@@ -38,7 +38,7 @@
           <div class="lbh-social-block lbh-social-block--twitter lbh-section__listing">
             <div class="lbh-social-block__wrapper">
               <h3 class="lbh-social-block__title">
-                <img class="lbh-social-block__title-image" src="https://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
+                <img class="lbh-social-block__title-image" src="<?php echo get_template_directory_uri() . '/img/lbh_logo_black.svg'; ?>"/>
                 <span class="lbh-social-block__title-text">@<?php the_sub_field('twitter_username'); ?></span>
               </h3>
               <span class="lbh-social-block__icon-wrapper">
@@ -51,7 +51,7 @@
           <div class="lbh-social-block lbh-social-block--facebook lbh-section__listing">
             <div class="lbh-social-block__wrapper">
               <h3 class="lbh-social-block__title">
-                <img class="lbh-social-block__title-image" src="https://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
+                <img class="lbh-social-block__title-image" src="<?php echo get_template_directory_uri() . '/img/lbh_logo_black.svg'; ?>"/>
                 <span class="lbh-social-block__title-text"><?php the_sub_field('facebook_username'); ?></span>
               </h3>
               <span class="lbh-social-block__icon-wrapper">
@@ -75,7 +75,7 @@
           <div class="lbh-social-block lbh-social-block--instagram lbh-section__listing">
             <div class="lbh-social-block__wrapper">
               <h3 class="lbh-social-block__title">
-                <img class="lbh-social-block__title-image" src="https://web-content-api.hackney.gov.uk/wp-content/uploads/Screen-Shot-2019-09-26-at-12.20.21.png"/>
+                <img class="lbh-social-block__title-image" src="<?php echo get_template_directory_uri() . '/img/lbh_logo_black.svg'; ?>"/>
                 <span class="lbh-social-block__title-text"><?php the_sub_field('instagram_username'); ?></span>
               </h3>
               <span class="lbh-social-block__icon-wrapper">

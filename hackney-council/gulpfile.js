@@ -9,6 +9,8 @@ require('./gulp-tasks/clean.js')
 require('./gulp-tasks/lint.js')
 require('./gulp-tasks/compile-assets.js')
 require('./gulp-tasks/watch.js')
+require('./gulp-tasks/zip.js')
+
 // new tasks
 require('./gulp-tasks/copy-to-destination.js')
 
@@ -58,6 +60,10 @@ gulp.task('copy-assets', gulp.series(
 gulp.task('dev', gulp.series(
   'clean',
   'copy-assets'
+))
+
+gulp.task('zip', gulp.series(
+  'default'
 ))
 
 gulp.task('build:dist', gulp.series(
