@@ -167,8 +167,10 @@
 			'taxonomy' => 'service',
 			'parent' => 0,
 			'hide_empty' => true,
+			'meta_key' => 'order',
+        	'orderby' => 'order'
 		]); ?>
-
+		
 		<?php
 			$hierarchy = [];
 			if(is_page()) {

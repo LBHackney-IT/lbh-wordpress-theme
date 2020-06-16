@@ -537,13 +537,16 @@ function render_nav_term($term, $level, $hierarchy) {
         $child_terms = get_terms([
             'taxonomy' => 'service',
             'parent' => $term->term_id,
-            'hide_empty' => false
+            'hide_empty' => false,
+			'meta_key' => 'order',
+        	'orderby' => 'order'
         ]);
         $args = array(
             'post_type' => 'page',
-            'orderby' => 'title',
-            'order' => 'DESC',
             'posts_per_page' => -1,
+			'meta_key' => 'order',
+        	'orderby' => 'order',
+			'order' => 'ASC',
             'tax_query' => array(
                 array(
                     'taxonomy' => 'service',
