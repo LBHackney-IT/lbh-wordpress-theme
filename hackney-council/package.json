@@ -7,7 +7,7 @@
   "license": "ISC",
   "dependencies": {
     "govuk-frontend": "^3.5.0",
-    "lbh-frontend": "^1.9.5"
+    "lbh-frontend": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.2",
