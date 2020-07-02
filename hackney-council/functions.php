@@ -426,12 +426,7 @@ function my_acf_block_render_callback( $block ) {
 add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
 
 // Add Options Page
-function add_my_options_page() {
-    if( function_exists('acf_add_options_page') ) {
-      acf_add_options_page();
-    }
-  }
-  add_action( 'plugins_loaded', 'add_my_options_page' );
+acf_add_options_page();
 
 
 /**
