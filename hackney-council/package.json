@@ -1,13 +1,13 @@
 {
   "name": "hackney-wordpress-theme",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "A wordpress theme for Hackney Council, inspired by GDS",
   "scripts": {},
   "author": "",
   "license": "ISC",
   "dependencies": {
     "govuk-frontend": "^3.5.0",
-    "lbh-frontend": "^1.9.5"
+    "lbh-frontend": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.2",

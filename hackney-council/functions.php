@@ -426,9 +426,7 @@ function my_acf_block_render_callback( $block ) {
 add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
 
 // Add Options Page
-if( function_exists('acf_add_options_page') ) {
-    acf_add_options_page();
-}
+acf_add_options_page();
 
 
 /**
@@ -537,13 +535,16 @@ function render_nav_term($term, $level, $hierarchy) {
         $child_terms = get_terms([
             'taxonomy' => 'service',
             'parent' => $term->term_id,
-            'hide_empty' => false
+            'hide_empty' => false,
+			'meta_key' => 'order',
+        	'orderby' => 'order'
         ]);
         $args = array(
             'post_type' => 'page',
-            'orderby' => 'title',
-            'order' => 'DESC',
             'posts_per_page' => -1,
+			'meta_key' => 'order',
+        	'orderby' => 'order',
+			'order' => 'ASC',
             'tax_query' => array(
                 array(
                     'taxonomy' => 'service',
