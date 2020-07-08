@@ -69,7 +69,8 @@ gulp.task('zip', gulp.series(
 gulp.task('build:dist', gulp.series(
   'clean',
   'copy-assets',
-  'copy:assets'
+  'copy:assets',
+  'zip'
 ))
 
 // Default task -------------------------

@@ -27,6 +27,7 @@
 
 	</head>
 	<body <?php body_class('body--' . get_field('colour_scheme', 'option')); ?>>
+		<?php if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); } ?>
 		<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 		<a class="govuk-skip-link lbh-skip-link" href="#main-content">Skip to main content</a>
 		<!-- header -->
@@ -167,8 +168,10 @@
 			'taxonomy' => 'service',
 			'parent' => 0,
 			'hide_empty' => true,
+			'meta_key' => 'order',
+        	'orderby' => 'order'
 		]); ?>
-
+		
 		<?php
 			$hierarchy = [];
 			if(is_page()) {
