@@ -6,11 +6,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "govuk-frontend": "^3.5.0",
+    "govuk-frontend": "^3.8.1",
     "lbh-frontend": "^3.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.2",
+    "autoprefixer": "^9.8.6",
+    "caniuse-lite": "^1.0.30001122",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -23,7 +24,7 @@
     "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-zip": "^5.0.1",
+    "gulp-zip": "^5.0.2",
     "vinyl-named-with-path": "^1.0.0",
     "vinyl-paths": "^3.0.1",
     "webpack-stream": "^5.2.1"
