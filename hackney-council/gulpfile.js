@@ -45,9 +45,7 @@ gulp.task('test', gulp.series(
   'scss:compile'
 ))
 
-// Copy assets task for local & heroku --
-// Copies files to
-// taskArguments.destination (public)
+// Build asssets
 // --------------------------------------
 gulp.task('copy-assets', gulp.series(
   'styles',

@@ -13,7 +13,15 @@ const zip = require('gulp-zip');
 // ------------------------------------------------------
 
 gulp.task('default', () =>
-	gulp.src(['**/*', '!src/**/*', '!config/*', '!gulp-tasks/**/*', '!node_modules/**/*','!zips', '!.gitignore','!gulpfile.js', '!package*'])
+	gulp.src([
+		'*.php',
+		'*.css',
+		'dist/*', 
+		'img/**/*',
+		'js/**/*',
+		'languages/**/*',
+		'screenshot.png'
+		], { "base" : "." })
 		.pipe(zip('hackney-council.zip'))
 		.pipe(gulp.dest('../'))
 );
