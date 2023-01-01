@@ -27,7 +27,7 @@
     "gulp-zip": "^5.0.2",
     "vinyl-named-with-path": "^1.0.0",
     "vinyl-paths": "^3.0.1",
-    "webpack-stream": "^5.2.1"
+    "webpack-stream": "^7.0.0"
   },
   "browserslist": [
     ">0.1%",
